@@ -1,30 +1,34 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem "rails", "3.1.0"
+gem "high_voltage"
+gem "paperclip"
+gem "validation_reflection"
+gem "formtastic"
+gem "dynamic_form"
+gem "jquery-rails"
+gem "sqlite3"
+gem "json"
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
-gem 'json'
-
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
+  gem "sass-rails", "  ~> 3.1.0"
+  gem "coffee-rails", "~> 3.1.0"
+  gem "uglifier"
 end
 
-gem 'jquery-rails'
+# RSpec needs to be in :development group to expose generators
+# and rake tasks without having to type RAILS_ENV=test.
+group :development, :test do
+  gem "rspec-rails", "~> 2.6.1"
+  gem "ruby-debug",   :platforms => :mri_18
+end
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
-
+group :test do
+  gem "cucumber-rails", "1.0.2"
+  gem "factory_girl_rails"
+  gem "database_cleaner"
+  gem "timecop"
+  gem "shoulda-matchers"
+  gem "launchy"
+  gem "capybara-webkit"
+end
