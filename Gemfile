@@ -7,7 +7,6 @@ gem "validation_reflection"
 gem "formtastic"
 gem "dynamic_form"
 gem "jquery-rails"
-gem "sqlite3"
 gem "json"
 
 group :assets do
@@ -19,8 +18,13 @@ end
 # RSpec needs to be in :development group to expose generators
 # and rake tasks without having to type RAILS_ENV=test.
 group :development, :test do
+  gem "sqlite3"
   gem "rspec-rails", "~> 2.6.1"
   gem "ruby-debug",   :platforms => :mri_18
+end
+
+group :production do
+  gem "pg"
 end
 
 group :test do
