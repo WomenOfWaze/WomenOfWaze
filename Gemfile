@@ -21,6 +21,8 @@ group :development, :test do
   gem "sqlite3"
   gem "rspec-rails", "~> 2.6.1"
   gem "ruby-debug",   :platforms => :mri_18
+  gem "factory_girl_rails"
+  gem "faker"
 end
 
 group :production do
