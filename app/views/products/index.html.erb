@@ -1,0 +1,57 @@
+<p>
+  <b>Category Name:</b>
+  <%= @category.name %>
+</p>
+
+<p>
+  <b>Category Description:</b>
+  <%= @category.description %>
+</p>
+
+<p>
+  <b>Sub Category Name:</b>
+  <%= @sub_category.name %>
+</p>
+
+<p>
+  <b>Sub Category Description:</b>
+  <%= @sub_category.description %>
+</p>
+
+<%#= link_to 'Edit Category', edit_category_path(@category) %> &nbsp;
+<%#= link_to 'Edit SubCategory', edit_sub_category_path(@sub_category) %>
+
+
+
+<h1>Listing products</h1>
+
+<table>
+  <tr>
+    <th>Photo</th>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= image_tag("/#{product.photo.url}",:width=>100,:height=>100) %></td>
+    <td><%= product.code %></td>
+    <td><%= product.name %></td>
+    <td><%= product.description %></td>
+    <td><%= product.price %></td>
+    <td><%= product.size %></td>
+    <td><%= link_to 'Show', product %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Product', new_product_path(:category_id => @category.id ,:sub_category_id => @sub_category.id) %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @sub_category.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @sub_category.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_sub_category_path(@sub_category) %> |
+<%= link_to 'Back', sub_categories_path(:category_id => @sub_category.category_id) %>
