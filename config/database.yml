@@ -7,8 +7,8 @@ development:
   adapter: mysql
   database: wow_dev
   host: localhost
-#  username: root
-#  password:
+  username: root
+  password:
   
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,8 +17,8 @@ test: &test
   adapter: mysql
   database: wow_test
   host: localhost
-#  username: root
-#  password:
+  username: root
+  password:
 
 cucumber:
   <<: *test

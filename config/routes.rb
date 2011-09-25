@@ -5,7 +5,7 @@ WomenOfWaze::Application.routes.draw do
 
   resources :categories
 
-  root :to => "categories#index"
+#  root :to => "categories#index"
 
-#  root :to => 'home#index'
+  root :to => 'home#index'
 end

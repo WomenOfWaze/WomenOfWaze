@@ -19,3 +19,5 @@ tmp/bundler
 */db/*.sqlite3
 */bin
 database.yml
+nbproject/*
+nbproject/*/*
