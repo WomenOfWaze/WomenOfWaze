@@ -5,4 +5,4 @@ before_script:
   - "mysql -e 'create database wow_development;'"
   - "mysql -e 'create database wow_test;'"
   - "cp config/database.yml.example config/database.yml"
-  - "bundle exec db:migrate"
+  - "bundle exec rake db:migrate"
