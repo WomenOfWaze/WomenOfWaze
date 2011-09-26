@@ -1,16 +1,9 @@
 class Product < ActiveRecord::Base
-  #  after_save :generate_code
-
+  include Mixins::PaperclipStorageDecider
+  
   belongs_to :sub_category
-  #Paperclip interpolation
-  Paperclip.interpolates :image_file_name do |attachment, style|
-    attachment.instance.image_file_name
-
-  end
-  has_attached_file :photo,
-    :url => "images/:attachment/:image_file_name",
-    :path => ":rails_root/public/assets/images/:attachment/:image_file_name"
  
+  has_attached_file :photo
 
   validates :name, :presence=>{ :message => "is required" }
   validates :description, :presence=>{ :message => "is required" }
@@ -22,11 +15,6 @@ class Product < ActiveRecord::Base
 
   def self.generate_code(product_id)
     "#{10000 + (product_id)}"
-  end
-
-  #Generate image file name
-  def image_file_name
-    self.photo_file_name
   end
 
 end
