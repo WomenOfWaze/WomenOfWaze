@@ -8,6 +8,8 @@ gem "formtastic"
 gem "dynamic_form"
 gem "jquery-rails"
 gem "json"
+gem 'aws-s3'
+gem "mysql"
 
 group :assets do
   gem "sass-rails", "  ~> 3.1.0"
