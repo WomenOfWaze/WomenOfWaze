@@ -7,6 +7,9 @@ env:
   - DB=postgres
 
 before_script:
-  - "mysql -e 'create database woo_test;'"
-  - "psql -c 'create database woo_test;' -U postgres"
+  - "mysql -e 'create database wow_development;'"
+  - "mysql -e 'create database wow_test;'"
+  - "psql -c 'create database wow_development;' -U postgres"
+  - "psql -c 'create database wow_test;' -U postgres"
   - "cp config/database.yml.example config/database.yml"
+  - "bundle exec rake db:drop db:create db:migrate"
