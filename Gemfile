@@ -7,10 +7,8 @@ gem "validation_reflection"
 gem "formtastic"
 gem "dynamic_form"
 gem "jquery-rails"
-gem "json"
 gem 'aws-s3'
-gem "mysql"
-gem "json", "1.5.3"
+gem "json"
 
 
 group :assets do
