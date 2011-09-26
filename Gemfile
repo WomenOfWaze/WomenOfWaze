@@ -10,6 +10,8 @@ gem "jquery-rails"
 gem "json"
 gem 'aws-s3'
 gem "mysql"
+gem "json", "1.5.3"
+
 
 group :assets do
   gem "sass-rails", "  ~> 3.1.0"
@@ -20,7 +22,9 @@ end
 # RSpec needs to be in :development group to expose generators
 # and rake tasks without having to type RAILS_ENV=test.
 group :development, :test do
-  gem "sqlite3"
+#  gem "sqlite3"
+#  gem "sqlite3-ruby"
+  gem "mysql", "2.8.1"
   gem "rspec-rails", "~> 2.6.1"
   gem "ruby-debug",   :platforms => :mri_18
   gem "factory_girl_rails"
@@ -38,5 +42,5 @@ group :test do
   gem "timecop"
   gem "shoulda-matchers"
   gem "launchy"
-  gem "capybara-webkit"
+#  gem "capybara-webkit"
 end

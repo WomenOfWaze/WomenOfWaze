@@ -1,0 +1,38 @@
+<p>
+  <b>Category Name:</b>
+  <%= @category.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @category.description %>
+</p>
+
+<%= link_to 'edit', edit_category_path(@category) %>
+
+<h1>Sub categories for <%=@category.name%></h1>
+
+<table border="1" >
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sub_categories.each do |sub_category| %>
+  <tr>
+    <td><%= link_to sub_category.name ,products_path(:sub_category_id => sub_category.id)%></td>
+    <td><%= sub_category.description %></td>
+    <td><%= link_to 'Show', sub_category %></td>
+    <td><%= link_to 'Edit', edit_sub_category_path(sub_category) %></td>
+    <td><%= link_to 'Destroy', sub_category, :confirm => 'Are you sure?', :method => :delete  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sub category', new_sub_category_path(:category_id => @category.id) %> &nbsp;
+<%= link_to 'Back', categories_path %>

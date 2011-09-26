@@ -1,8 +1,8 @@
 staging: &default
   access_key_id: <%= ENV['S3_ACCESS_KEY'] %>
   secret_access_key: <%= ENV['S3_SECRET_KEY'] %>
-  bucket: 'women_of_waze'
+  bucket: 'women-of-waze'
 
 production:
   <<: *default
-  bucket: 'women_of_waze'
+  bucket: 'women-of-waze'

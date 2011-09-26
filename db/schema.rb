@@ -10,10 +10,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110916144226) do
+ActiveRecord::Schema.define(:version => 20110922082300) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "products", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "code"
+    t.text     "description"
+    t.decimal  "price",              :precision => 10, :scale => 0
+    t.integer  "sub_category_id"
+    t.string   "size"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "new_arrival"
+  end
+
+  create_table "sub_categories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
