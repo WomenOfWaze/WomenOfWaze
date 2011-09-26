@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
   def index
+
     @sub_category = SubCategory.find_by_id(params[:sub_category_id]) if params[:sub_category_id]
     @category = Category.find_by_id(@sub_category.category_id) if @sub_category
     @products = @sub_category.products
@@ -86,5 +87,9 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url(:sub_category_id => @product.sub_category_id) }
       format.xml  { head :ok }
     end
+  end
+
+  def catalogue
+    @categories = Category.list_all_details
   end
 end
