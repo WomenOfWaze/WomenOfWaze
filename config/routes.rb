@@ -1,4 +1,6 @@
 WomenOfWaze::Application.routes.draw do
+  devise_for :users
+
   resources :products do
     collection do
       get 'catalogue'
@@ -12,4 +14,6 @@ WomenOfWaze::Application.routes.draw do
   #  root :to => "categories#index"
 
   root :to => 'home#index'
+
+  devise_for :users
 end
