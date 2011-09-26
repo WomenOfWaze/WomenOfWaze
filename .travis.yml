@@ -1,0 +1,13 @@
+rvm:
+  - 1.8.7
+  - 1.9.2
+  - 1.9.3
+
+env:
+  - DB=sqlite
+  - DB=mysql
+  - DB=postgres
+
+before_script:
+  - "mysql -e 'create database woo_test;'"
+  - "psql -c 'create database woo_test;' -U postgres"
