@@ -1,15 +1,16 @@
 class Product < ActiveRecord::Base
-#  after_save :generate_code
-  
+  #  after_save :generate_code
+
+  belongs_to :sub_category
   #Paperclip interpolation
   Paperclip.interpolates :image_file_name do |attachment, style|
     attachment.instance.image_file_name
+
   end
   has_attached_file :photo,
-    :url => "pics/:attachment/:image_file_name",
-    :path => ":rails_root/public/pics/:attachment/:image_file_name"
-                     
-  belongs_to :sub_category
+    :url => "images/:attachment/:image_file_name",
+    :path => ":rails_root/public/assets/images/:attachment/:image_file_name"
+ 
 
   validates :name, :presence=>{ :message => "is required" }
   validates :description, :presence=>{ :message => "is required" }
@@ -20,13 +21,12 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => ["image/gif","image/jpg","image/jpeg","image/png"], :message => 'invalid format'
 
   def self.generate_code(product_id)
-   "#{10000 + (product_id)}"
+    "#{10000 + (product_id)}"
   end
 
   #Generate image file name
   def image_file_name
-    a = (self.id)
-    "#{(a ** 5) + (13 * a) + (123456789)}#{File.extname(self.photo_file_name).downcase}"
+    self.photo_file_name
   end
-  
+
 end
