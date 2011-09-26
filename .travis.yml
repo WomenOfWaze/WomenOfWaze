@@ -12,3 +12,4 @@ env:
 before_script:
   - "mysql -e 'create database woo_test;'"
   - "psql -c 'create database woo_test;' -U postgres"
+  - "cp config/database.yml.example config/database.yml"
