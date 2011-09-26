@@ -9,6 +9,7 @@ gem "dynamic_form"
 gem "jquery-rails"
 gem 'aws-s3'
 gem "json"
+gem "devise"
 
 
 group :assets do
