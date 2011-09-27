@@ -149,7 +149,7 @@ table{
 			{
 			width:840px;
 			height:123px;
-			background-image:url(../images/logo_WOW.png);
+			background-image: url('logo_WOW.png');
 			background-repeat:no-repeat;
 			text-align:right;
 			font-size:10px;
