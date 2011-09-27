@@ -1,5 +1,10 @@
 namespace :db do
 
+  desc "Create user"
+  task :create_user => :environment do
+    User.create(:email => "wow.maitree@tcs.com", :password => "password", :password_confirmation => "password")
+  end
+  
   desc "populate Categories"
   task :populate_categories => [:environment] do
     Category.delete_all
@@ -43,5 +48,5 @@ namespace :db do
       end
     end
   end
-  task :load => [ :populate_categories, :populate_sub_categories ,:populate_products]
+  task :load => [ :create_user, :populate_categories, :populate_sub_categories ,:populate_products]
 end

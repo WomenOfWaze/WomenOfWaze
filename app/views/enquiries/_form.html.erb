@@ -1,0 +1,41 @@
+<%= form_for(@enquiry) do |f| %>
+  <% if @enquiry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@enquiry.errors.count, "error") %> prohibited this enquiry from being saved:</h2>
+      <ul>
+      <% @enquiry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :firstname %><br />
+    <%= text_field(:enquiry, :firstname, :onchange => "if $('enquiry[firstname]').length > 32 { alert('Your firstname needs to be shorter!'); }") %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field(:lastname, :onchange => "if $('enquiry[lastname]').length > 32 { alert('Your firstname needs to be shorter!'); }") %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label 'Contact Phone Number' %><br />
+    <%= telephone_field(:enquiry, :phone_country_code, :size => 1, :onchange => "if $('enquiry[phone_country_code]').length > 2 { alert('Your firstname needs to be shorter!'); }") %>
+    <%= telephone_field(:enquiry,:phone_city_code, :size => 2, :onchange => "if $('enquiry[phone_city_code]').length > 2 { alert('Your firstname needs to be shorter!'); }") %>
+    <%= telephone_field(:enquiry,:phone_number, :size => 7,:onchange => "if $('enquiry[phone_number]').length > 10 { alert('Your firstname needs to be shorter!'); }") %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :remarks %><br />
+    <%= f.text_area(:remarks,:cols => 25, :rows => 5) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'Submit' %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= text %></p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @enquiry.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @enquiry.lastname %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @enquiry.country %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @enquiry.phone_number %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @enquiry.email %>
+</p>
+
+<p>
+  <b>Remarks:</b>
+  <%= @enquiry.remarks %>
+</p>
+
+
+<%= link_to 'Edit', edit_enquiry_path(@enquiry) %> |
+<%= link_to 'Back', enquiries_path %>

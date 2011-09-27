@@ -1,3 +1,4 @@
+<%= link_to 'Link to Enquiry form' %>
 <table>
   <tr>
     <td style = "width:  500px;" valign="top">
@@ -24,12 +25,16 @@
             </tr>
             <tr>
               <% for product in sub_category.products %>
-                <td><%#= image_tag "bag.jpg",:width=>100,:height=>100 %>
-                  <%#= image_tag product.photo.url,:width=>100,:height=>100 %>
-                  <%= check_box_tag 'product' %>
+                <td>
+                  <%= image_tag product.photo.url,:width=>116,:height=>155 %><br/>
                   <%= product.name %><br/>
-                  <%=  label_tag 'pcode', "P Code: #{product.code}"%>
+                  <% if product.is_new_arrival? %>
+                    New Arrival! <br/>
+                  <% end %>
+                  <%=  label_tag 'pcode', "P Code: #{product.code}"%><br/>
                   <%=  label_tag 'cost', "Cost: Rs #{product.price}/-"%>
+
+                  <%#= link_to "Interested in buying", new_enquiry_url(:product_id => product.id) %>
                 </td>
               <%end%>
             </tr>

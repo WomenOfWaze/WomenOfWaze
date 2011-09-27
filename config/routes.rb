@@ -9,8 +9,8 @@ WomenOfWaze::Application.routes.draw do
   end
 
   resources :sub_categories
-
   resources :categories 
+  resources :enquiries
 
   #  root :to => "categories#index"
 

@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  
+  skip_before_filter :authenticate_user!, :only => :catalogue
   # GET /products
   # GET /products.xml
   def index
@@ -90,6 +92,6 @@ class ProductsController < ApplicationController
   end
 
   def catalogue
-    @categories = Category.list_all_details
+    @categories = Category.catalogue_details
   end
 end

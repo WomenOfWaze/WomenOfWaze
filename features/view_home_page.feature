@@ -5,4 +5,4 @@ Feature: View the home page
 
   Scenario: Viewing the home page
     Given I am on the home page
-     Then I should see "Coming soon!"
+     Then I should see "An initiative of TCS Maitree to empower the women of waze."

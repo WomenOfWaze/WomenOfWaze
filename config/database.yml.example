@@ -12,7 +12,7 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: wow_development
+  database: wow_dev
   pool: 5
   username: root
   password:
