@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :sub_categories
+  has_many :sub_categories,:order => 'name ASC'
 
   validates :name, :presence => { :message => "is required" } ,
             :uniqueness => { :message => "should be unique" },
@@ -8,7 +8,7 @@ class Category < ActiveRecord::Base
             :length => { :maximum => 64, :message => "should not be more than 64 characters" }
 
 
-  def self.list_all_details
+  def self.catalogue_details
     self.includes({:sub_categories => :products})
   end
 end
