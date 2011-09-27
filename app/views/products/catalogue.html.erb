@@ -34,7 +34,7 @@
                   <%=  label_tag 'pcode', "P Code: #{product.code}"%><br/>
                   <%=  label_tag 'cost', "Cost: Rs #{product.price}/-"%>
 
-                  <%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id) %>
+                  <%#= link_to "Interested in buying", new_enquiry_url(:product_id => product.id) %>
                 </td>
               <%end%>
             </tr>
