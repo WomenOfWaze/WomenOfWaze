@@ -10,7 +10,6 @@ gem "jquery-rails"
 gem 'aws-s3'
 gem "json"
 gem "devise"
-gem "mysql"
 
 group :assets do
   gem "sass-rails", "  ~> 3.1.0"
