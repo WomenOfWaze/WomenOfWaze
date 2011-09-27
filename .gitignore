@@ -21,3 +21,6 @@ tmp/bundler
 database.yml
 nbproject/*
 nbproject/*/*
+.idea
+.idea/*
+.idea/*/*
