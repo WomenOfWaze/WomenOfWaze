@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe EnquiriesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+describe EnquiriesHelper #do
+  #pending "add some examples to (or delete) #{__FILE__}"
+#end
