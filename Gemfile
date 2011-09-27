@@ -7,11 +7,15 @@ gem "validation_reflection"
 gem "formtastic"
 gem "dynamic_form"
 gem "jquery-rails"
+<<<<<<< Updated upstream
 gem 'aws-s3'
 gem "json", "1.5.3"
 gem "devise"
 
 
+=======
+gem "json"
+>>>>>>> Stashed changes
 group :assets do
   gem "sass-rails", "  ~> 3.1.0"
   gem "coffee-rails", "~> 3.1.0"

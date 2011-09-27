@@ -8,6 +8,8 @@ class ProductsController < ApplicationController
     @sub_category = SubCategory.find_by_id(params[:sub_category_id]) if params[:sub_category_id]
     @category = Category.find_by_id(@sub_category.category_id) if @sub_category
     @products = @sub_category.products
+    path = Dir.chdir("#{Rails.root}/public/pics/photos")
+    @photos = Dir.glob('*')
 
     
     respond_to do |format|
@@ -20,7 +22,9 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
-    
+
+    path = Dir.chdir("#{Rails.root}/public/pics/photos")
+    @photos = Dir.glob('*')
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @product }
