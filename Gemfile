@@ -29,7 +29,6 @@ end
 
 group :production do
   gem "pg"
-  gem 'therubyracer'
 end
 
 group :test do
