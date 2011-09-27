@@ -26,8 +26,8 @@ namespace :db do
   desc "populate products"
   task :populate_products => [:environment] do
     Product.delete_all
-    sample_bag_blue = File.new(File.join(Rails.root, 'app', 'assets', 'images', 'sample_bag_blue.jpg'))
-    sample_bag_red =  File.new(File.join(Rails.root, 'app', 'assets', 'images', 'sample_bag_red.jpg'))
+    sample_bag_blue = File.new(File.join(Rails.root, 'spec', 'fixtures', 'sample_bag_photos', 'sample_bag_blue.jpg'))
+    sample_bag_red =  File.new(File.join(Rails.root, 'spec', 'fixtures', 'sample_bag_photos', 'sample_bag_red.jpg'))
     SubCategory.all.each do |subcategory|
       4.times do |count|
         Product.create(
