@@ -92,6 +92,6 @@ class ProductsController < ApplicationController
   end
 
   def catalogue
-    @categories = Category.catalogue_details
+    @categories = Category.catalogue_details    
   end
 end
