@@ -39,11 +39,7 @@
 
 <% @products.each do |product| %>
   <tr>
-<<<<<<< Updated upstream
-    <td><%= image_tag("#{product.photo.url}",:width=>100,:height=>100) %></td>
-=======
     <td><%= image_tag(product.photo.url) %></td>
->>>>>>> Stashed changes
     <td><%= product.code %></td>
     <td><%= product.name %></td>
     <td><%= product.description %></td>
