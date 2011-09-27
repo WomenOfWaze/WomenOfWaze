@@ -12,7 +12,7 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: woo_development
+  database: wow_development
   pool: 5
   username: root
   password:
@@ -24,7 +24,7 @@ test:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: woo_test
+  database: wow_test
   pool: 5
   username: root
   password:
