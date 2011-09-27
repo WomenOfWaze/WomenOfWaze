@@ -217,7 +217,6 @@ PLATFORMS
 
 DEPENDENCIES
   aws-s3
-  capybara
   coffee-rails (~> 3.1.0)
   cucumber-rails (= 1.0.2)
   database_cleaner

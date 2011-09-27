@@ -11,6 +11,7 @@ gem 'aws-s3'
 gem "json"
 gem "devise"
 
+
 group :assets do
   gem "sass-rails", "  ~> 3.1.0"
   gem "coffee-rails", "~> 3.1.0"
@@ -38,6 +39,6 @@ group :test do
   gem "timecop"
   gem "shoulda-matchers"
   gem "launchy"
-  gem "capybara"
+  #gem "capybara"
 #  gem "capybara-webkit"
 end
