@@ -7,4 +7,4 @@ Feature: Allow a registered user to login
     And I fill in "user_email" with "foo@example.com"
     And I fill in "user_password" with "password"
     And I press "Sign in"
-    Then I should see "Coming soon!"  
+    Then I am on the home page
