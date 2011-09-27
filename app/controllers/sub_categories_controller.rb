@@ -16,7 +16,7 @@ class SubCategoriesController < ApplicationController
   def show
 #    @category = Category.find(params[:id])
     @sub_category = SubCategory.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @sub_category }

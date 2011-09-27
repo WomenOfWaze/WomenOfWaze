@@ -39,7 +39,11 @@
 
 <% @products.each do |product| %>
   <tr>
+<<<<<<< Updated upstream
     <td><%= image_tag("#{product.photo.url}",:width=>100,:height=>100) %></td>
+=======
+    <td><%= image_tag(product.photo.url) %></td>
+>>>>>>> Stashed changes
     <td><%= product.code %></td>
     <td><%= product.name %></td>
     <td><%= product.description %></td>
@@ -47,11 +51,12 @@
     <td><%= product.size %></td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', product, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Product', new_product_path(:category_id => @category.id ,:sub_category_id => @sub_category.id) %>
+<%= link_to 'New Product', new_product_path(:category_id => @category.id ,:sub_category_id => @sub_category.id) %>&nbsp;&nbsp;
+<%= link_to 'Back', sub_categories_path(:category_id => @category.id ,:sub_category_id => @sub_category.id) %>

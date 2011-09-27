@@ -13,7 +13,9 @@
     <td><%= link_to category.name, sub_categories_path(:category_id => category.id) %> </td>
     <td><%= category.description %></td>
     <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if category.sub_categories.empty? %>
+    <td><%= link_to 'Delete', category, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%end%>
   </tr>
 <% end %>
 </table>

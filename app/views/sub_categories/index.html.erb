@@ -27,7 +27,9 @@
     <td><%= sub_category.description %></td>
     <td><%= link_to 'Show', sub_category %></td>
     <td><%= link_to 'Edit', edit_sub_category_path(sub_category) %></td>
-    <td><%= link_to 'Destroy', sub_category, :confirm => 'Are you sure?', :method => :delete  %></td>
+    <% if sub_category.products.empty? %>
+    <td><%= link_to 'Delete', sub_category, :confirm => 'Are you sure?', :method => :delete  %></td>
+    <%end%>
   </tr>
 <% end %>
 </table>
