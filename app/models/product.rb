@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   
   belongs_to :sub_category
  
-  has_attached_file :photo
+  has_attached_file :photo, @paperclip_storage
 
   validates :name, :presence=>{ :message => "is required" }
   validates :description, :presence=>{ :message => "is required" }
