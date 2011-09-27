@@ -2,7 +2,7 @@ namespace :db do
 
   desc "Create user"
   task :create_user => :environment do
-    User.create(:email => "foo@example.com", :password => "password", :password_confirmation => "password")
+    User.create(:email => "wow.maitree@tcs.com", :password => "password", :password_confirmation => "password")
   end
   
   desc "populate Categories"
