@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
   validates :description, :presence=>true
 
 
-  def self.list_all_details
+  def self.catalogue_details
     self.includes({:sub_categories => :products})
   end
 end
