@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :sub_categories
+  has_many :sub_categories ,:order => "name ASC"
   validates :name, :presence=>true , :uniqueness =>true
   validates :description, :presence=>true
 
