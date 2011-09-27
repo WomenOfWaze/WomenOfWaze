@@ -13,6 +13,10 @@ class Product < ActiveRecord::Base
   validates_attachment_size :photo, :less_than => 5.megabytes, :message => "should be less than 5MB"
   validates_attachment_content_type :photo, :content_type => ["image/gif","image/jpg","image/jpeg","image/png"], :message => 'invalid format'
 
+  def is_new_arrival?
+    new_arrival == "1"
+  end
+
   def self.generate_code(product_id)
     "#{10000 + (product_id)}"
   end
