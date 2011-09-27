@@ -39,6 +39,6 @@ group :test do
   gem "timecop"
   gem "shoulda-matchers"
   gem "launchy"
-  gem "capybara"
+  #gem "capybara"
 #  gem "capybara-webkit"
 end

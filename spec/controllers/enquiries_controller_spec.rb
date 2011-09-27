@@ -21,7 +21,7 @@ require 'spec_helper'
 describe EnquiriesController do
 
   # This should return the minimal set of attributes required to create a valid
-  # Enquiry. As you add validations to Enquiry, be sure to
+  # enquiry. As you add validations to enquiry, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
     {}
@@ -29,32 +29,32 @@ describe EnquiriesController do
 
   describe "GET index" do
     it "assigns all Enquiries as @Enquiries" do
-      Enquiry = Enquiry.create! valid_attributes
+      enquiry = Enquiry.create! valid_attributes
       get :index
-      assigns(:Enquiries).should eq([Enquiry])
+      assigns(:enquiries).should eq([enquiry])
     end
   end
 
   describe "GET show" do
     it "assigns the requested Enquiry as @Enquiry" do
-      Enquiry = Enquiry.create! valid_attributes
-      get :show, :id => Enquiry.id.to_s
-      assigns(:Enquiry).should eq(Enquiry)
+      enquiry = Enquiry.create! valid_attributes
+      get :show, :id => enquiry.id.to_s
+      assigns(:enquiry).should eq(enquiry)
     end
   end
 
   describe "GET new" do
-    it "assigns a new Enquiry as @Enquiry" do
+    it "assigns a new enquiry as @enquiry" do
       get :new
-      assigns(:Enquiry).should be_a_new(Enquiry)
+      assigns(:enquiry).should be_a_new(enquiry)
     end
   end
 
   describe "GET edit" do
-    it "assigns the requested Enquiry as @Enquiry" do
-      Enquiry = Enquiry.create! valid_attributes
+    it "assigns the requested enquiry as @enquiry" do
+      enquiry = Enquiry.create! valid_attributes
       get :edit, :id => Enquiry.id.to_s
-      assigns(:Enquiry).should eq(Enquiry)
+      assigns(:enquiry).should eq(enquiry)
     end
   end
 
@@ -62,33 +62,33 @@ describe EnquiriesController do
     describe "with valid params" do
       it "creates a new Enquiry" do
         expect {
-          post :create, :Enquiry => valid_attributes
-        }.to change(Enquiry, :count).by(1)
+          post :create, :enquiry => valid_attributes
+        }.to change(enquiry, :count).by(1)
       end
 
       it "assigns a newly created Enquiry as @Enquiry" do
-        post :create, :Enquiry => valid_attributes
-        assigns(:Enquiry).should be_a(Enquiry)
-        assigns(:Enquiry).should be_persisted
+        post :create, :enquiry => valid_attributes
+        assigns(:enquiry).should be_a(enquiry)
+        assigns(:enquiry).should be_persisted
       end
 
       it "redirects to the created Enquiry" do
-        post :create, :Enquiry => valid_attributes
-        response.should redirect_to(Enquiry.last)
+        post :create, :enquiry => valid_attributes
+        response.should redirect_to(enquiry.last)
       end
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved Enquiry as @Enquiry" do
+      it "assigns a newly created but unsaved Enquiry as @enquiry" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Enquiry.any_instance.stub(:save).and_return(false)
-        post :create, :Enquiry => {}
-        assigns(:Enquiry).should be_a_new(Enquiry)
+        enquiry.any_instance.stub(:save).and_return(false)
+        post :create, :enquiry => {}
+        assigns(:enquiry).should be_a_new(enquiry)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Enquiry.any_instance.stub(:save).and_return(false)
+        enquiry.any_instance.stub(:save).and_return(false)
         post :create, :Enquiry => {}
         response.should render_template("new")
       end
@@ -96,62 +96,27 @@ describe EnquiriesController do
   end
 
   describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested Enquiry" do
-        Enquiry = Enquiry.create! valid_attributes
-        # Assuming there are no other Enquiries in the database, this
-        # specifies that the Enquiry created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Enquiry.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, :id => Enquiry.id, :Enquiry => {'these' => 'params'}
-      end
 
-      it "assigns the requested Enquiry as @Enquiry" do
-        Enquiry = Enquiry.create! valid_attributes
-        put :update, :id => Enquiry.id, :Enquiry => valid_attributes
-        assigns(:Enquiry).should eq(Enquiry)
-      end
-
-      it "redirects to the Enquiry" do
-        Enquiry = Enquiry.create! valid_attributes
-        put :update, :id => Enquiry.id, :Enquiry => valid_attributes
-        response.should redirect_to(Enquiry)
-      end
-    end
 
     describe "with invalid params" do
       it "assigns the Enquiry as @Enquiry" do
-        Enquiry = Enquiry.create! valid_attributes
+        enquiry = Enquiry.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Enquiry.any_instance.stub(:save).and_return(false)
-        put :update, :id => Enquiry.id.to_s, :Enquiry => {}
-        assigns(:Enquiry).should eq(Enquiry)
+        put :update, :id => enquiry.id.to_s, :enquiry => {}
+        assigns(:enquiry).should eq(enquiry)
       end
 
       it "re-renders the 'edit' template" do
-        Enquiry = Enquiry.create! valid_attributes
+        enquiry = Enquiry.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Enquiry.any_instance.stub(:save).and_return(false)
-        put :update, :id => Enquiry.id.to_s, :Enquiry => {}
+        put :update, :id => enquiry.id.to_s, :enquiry => {}
         response.should render_template("edit")
       end
     end
   end
 
-  describe "DELETE destroy" do
-    it "destroys the requested Enquiry" do
-      Enquiry = Enquiry.create! valid_attributes
-      expect {
-        delete :destroy, :id => Enquiry.id.to_s
-      }.to change(Enquiry, :count).by(-1)
-    end
 
-    it "redirects to the Enquiries list" do
-      Enquiry = Enquiry.create! valid_attributes
-      delete :destroy, :id => Enquiry.id.to_s
-      response.should redirect_to(Enquiries_url)
-    end
-  end
 
 end
