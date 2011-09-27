@@ -1,123 +1,105 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		 
-		<meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
-		
-		<link rel="stylesheet" href="css/reset.css"/>
-		<!--<link rel="stylesheet" href="css/960_24_col.css"/>
-		<link rel="stylesheet" href="css/text.css"/>-->
-		<link rel="stylesheet" href="css/style.css"/>
-		<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="css/default.css" type="text/css" media="screen" />
-		
-        <!-- to display HTML5 tags in IE8 as well -->
-        <!-- [if lt IE 8]-->
-        <script>
-        document.createElement('header');
-        document.createElement('nav');
-        document.createElement('section');
-        document.createElement('article');
-        document.createElement('aside');
-        document.createElement('footer');
-        document.createElement('hgroup');
-        </script>
-        <!-- [endif]-->
-        
-		<!--[if lt IE 9]>
-		<script src="http://html5shiv.google.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		 
-		<script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
-		<script type="text/javascript" src="scripts/jquery.nivo.slider.pack.js"></script>
-		<script type="text/javascript" src="scripts/events.js"></script>
-		
-		<title>WOW</title>
-	</head>
-		<body>
-			<div class="wrapper container_24">
-				<header class="banner">
-    			<span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>    
-				</header>
-                
-                <section class="slideshow">
-                	  <div class="slider-wrapper theme-default">
-						  <div class="ribbon"></div>
-						   <div id="slider" class="nivoSlider">
-								<img  src="images/ss1.jpg" alt="" />
-								<img  src="images/ss2.jpg" alt="" />
-								<img  src="images/ss3.jpg" alt="" />
-						   </div>
-                      </div>
-                </section>
-                
-                <nav>
-                	<div class="mainnav btn_who">
-						<div class='btn_who_inner'>
-							 <a>Who we are</a>
-						</div>
-					</div>
-                    <div class="mainnav btn_prod">
-						<div class='btn_prod_inner'>
-							 <a>Interested in Our Products</a>
-						</div>
-					</div>
-                    <div class="mainnav btn_contact">
-						<div class='btn_contact_inner'>
-							<a>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1"/>
+    <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+      document.createElement('hgroup');
+    </script>
+    <%= javascript_include_tag "jquery.nivo.slider.pack" %>
+    <%= javascript_include_tag "events" %>
+  </head>
+  <body>
+    <div class="wrapper container_24">
+      <header class="banner">
+        <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
+      </header>
+
+      <section class="slideshow">
+        <div class="slider-wrapper theme-default">
+          <div class="ribbon"></div>
+          <div id="slider" class="nivoSlider">
+            <%= image_tag "ss1.jpg" %>
+            <%= image_tag "ss2.jpg" %>
+            <%= image_tag "ss3.jpg" %>
+          </div>
+        </div>
+      </section>
+      <nav>
+        <div class="mainnav btn_who">
+          <div class='btn_who_inner'>
+            <a>Who we are</a>
+          </div>
+        </div>
+        <div class="mainnav btn_prod">
+          <div class='btn_prod_inner'>
+            <a>Interested in Our Products</a>
+          </div>
+        </div>
+        <div class="mainnav btn_contact">
+          <div class='btn_contact_inner'>
+            <a>
 								How to reach us?
-							</a>
-						</div>
-					</div>
-                </nav>
+            </a>
+          </div>
+        </div>
+      </nav>
 
-				<section class="bodycontent">
+      <section class="bodycontent">
 
-    <article class="content">
-      <table>
-        <tr>&nbsp;</tr>
-        <tr>
-          <td rowspan="2"><img class="thumb1" src="images/vid_img.jpg" width="170" height="130"/></td>
-        </tr>
-        <tr>
-          <td><table>
-              <tr>
-                <td class="subhead1">Video</td>
-              </tr>
-              <tr>
-                <td>We, the women of Waze, have step forward confidently to become economically self dependent. We strongly believe economic independence is the first step towards self reliance and empowerment.</br></br>
-                  We come from the the village of Wazapur (Taluka – Panvel, District – Raigad), around 60 kms from Mumbai, just off the Mumbai-Pune highway. We make beautiful bags made up of various materials including but not limited to jute,.... <a href="#" class="readmore">more</a></td>
-              </tr>
-            </table>
-      </table>
-    </article>
+        <article class="content">
+          <table>
+            <tr>&nbsp;</tr>
+            <tr>
+              <td rowspan="2">
+                <%= image_tag "vid_img.jpg" ,:width => "170" ,:height => "130" ,:class => "thumb1" %></td>
+            </tr>
+            <tr>
+              <td><table>
+                  <tr>
+                    <td class="subhead1">Video</td>
+                  </tr>
+                  <tr>
+                    <td>We, the women of Waze, have step forward confidently to become economically self dependent. We strongly believe economic independence is the first step towards self reliance and empowerment.</br></br>
+                      We come from the the village of Wazapur (Taluka ï¿½ Panvel, District ï¿½ Raigad), around 60 kms from Mumbai, just off the Mumbai-Pune highway. We make beautiful bags made up of various materials including but not limited to jute,.... <a href="#" class="readmore">more</a></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </article>
 
-    <aside class="homecontact">
-      <table>
-        <tr>&nbsp;</tr>
-        <tr>
-          <td class="subhead1">Contact Us</td>
-        </tr>
-        <tr>
-          <td><strong>Address:</strong>Lorem ipsum delor sit amet adipiscing District: Panvel</br></br></td>
-        </tr>
-        <tr>&nbsp;</tr>
-        <tr>
-          <td><strong>Phone:</strong>+91 022 3525 255 </br><strong>Email:</strong><a href="mailto:wow.maitree@tcs.com"> wow.maitree@tcs.com</a></td>
-        </tr>
-      </table>
-    </aside>
+        <aside class="homecontact">
+          <table>
+            <tr>&nbsp;</tr>
+            <tr>
+              <td class="subhead1">Contact Us</td>
+            </tr>
+            <tr>
+              <td><strong>Address:</strong>Lorem ipsum delor sit amet adipiscing District: Panvel</br></br></td>
+            </tr>
+            <tr>&nbsp;</tr>
+            <tr>
+              <td><strong>Phone:</strong>+91 022 3525 255 </br><strong>Email:</strong><a href="mailto:wow.maitree@tcs.com"> wow.maitree@tcs.com</a></td>
+            </tr>
+          </table>
+        </aside>
 
-  </section>
+      </section>
 
-</div>
+    </div>
 
-<footer class="foot">Copyright &copy; 2006-2011 - WOW: Women’s Organization of Waje Group, Panvel</footer>
+  <footer class="foot">Copyright &copy; 2006-2011 - WOW: Womenï¿½s Organization of Waje Group, Panvel</footer>
 
 
-		
-	</body>
-</HTML>	
-		
-		
+
+</body>
+</html>
+
+
