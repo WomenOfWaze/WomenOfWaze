@@ -16,11 +16,12 @@ class Product < ActiveRecord::Base
     :numericality => true
   validates :size, :presence=>{ :message => "is required" },
     :length => { :maximum => 15, :message => "should not be more than 15 characters" }
-  validates_attachment_presence :photo, :message => "=> Please upload the avatar file"
-  validates_attachment_size :photo, :less_than => 5.megabytes, :message => "should be less than 5MB"
+  validates_attachment_presence :photo, :message => "=> No file uploaded. Please upload the file."
+  validates_attachment_size :photo, :less_than => 5.megabytes, :message => "should be less than 5MB",
+                            :unless => Proc.new { |photo| photo.photo_file_name.blank? }
   validates_attachment_content_type :photo, 
     :content_type => ["image/gif","image/jpg","image/jpeg","image/png","image/pjpeg"],
-    :message => 'invalid format'
+    :message => '=> Invalid format(only .jpg, .gif, .jpeg and .png format are allowed)'
 
   def is_new_arrival?
     new_arrival == "1"
