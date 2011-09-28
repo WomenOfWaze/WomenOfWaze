@@ -34,12 +34,14 @@ class EnquiriesController < ApplicationController
       format.json { render :json => @enquiry }
     end
   end
+
   def create
     @enquiry = Enquiry.new(params[:enquiry])
 
     respond_to do |format|
       if @enquiry.save
-        format.html { render :text => "<font size='+4' color='green'>Thank you for queries.</font>" }
+	EnquiryMailer.enquiry_mail(@enquiry).deliver
+        format.html { render :text => "<font size='+4' color='green'>Thank you for queries. We will get back to you shortly.</font>" }
       else
         format.html { render :action => "new" }
         format.json { render :json => @enquiry.errors, :status => :unprocessable_entity }
