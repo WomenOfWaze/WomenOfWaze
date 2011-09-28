@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(:version => 20110926154658) do
   end
 
   create_table "enquiries", :force => true do |t|
-    t.string   "firstname",          :limit => 32, :null => false
-    t.string   "lastname",           :limit => 32, :null => false
+    t.string   "firstname",          :limit => 32,  :null => false
+    t.string   "lastname",           :limit => 32,  :null => false
     t.string   "country"
     t.integer  "phone_country_code", :limit => 8
     t.integer  "phone_city_code",    :limit => 3
     t.integer  "phone_number"
-    t.string   "email",              :limit => 65, :null => false
-    t.text     "remarks",                          :null => false
+    t.string   "email",              :limit => 65,  :null => false
+    t.string   "remarks",            :limit => 256, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -10,32 +10,42 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :firstname %><br />
-    <%= text_field(:enquiry, :firstname, :MAXLENGTH=>32,:onchange => "if $('enquiry[firstname]').length > 32 { alert('Your firstname needs to be shorter!'); }") %>
+    <%= f.label :firstname  %>
+    <%=  image_tag "required_star.gif" %>
+    <%= text_field(:enquiry, :firstname, :MAXLENGTH=>32,:onchange => "if $('enquiry[firstname]').length > 32 { alert('Your firstname needs to be shorter!'); }") %><br/>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br />
+    <br/>
+    <%= f.label :lastname %>
+    <%=  image_tag "required_star.gif" %>
     <%= f.text_field(:lastname,  :MAXLENGTH=>32,:onchange => "if $('enquiry[lastname]').length > 32 { alert('Your firstname needs to be shorter!'); }") %>
   </div>
   <div class="field">
-    <%= f.label :country %><br />
+    <br/>
+    <%= f.label :country %>
     <%= f.text_field :country %>
   </div>
   <div class="field">
-    <%= f.label 'Contact Phone Number' %><br />
+    <br/>
+    <%= f.label 'Contact Phone Number' %>
     <%= telephone_field(:enquiry, :phone_country_code, :size => 1, :MAXLENGTH=>4, :onchange => "if $('enquiry[phone_country_code]').length > 2 { alert('Your firstname needs to be shorter!'); }") %>
     <%= telephone_field(:enquiry,:phone_city_code, :size => 2, :MAXLENGTH=>2, :onchange => "if $('enquiry[phone_city_code]').length > 2 { alert('Your firstname needs to be shorter!'); }") %>
     <%= telephone_field(:enquiry,:phone_number, :size => 7, :MAXLENGTH=>10,:onchange => "if $('enquiry[phone_number]').length > 10 { alert('Your firstname needs to be shorter!'); }") %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <br/>
+    <%= f.label :email %>
+    <%=  image_tag "required_star.gif" %>
     <%= f.email_field :email %>
   </div>
   <div class="field">
-    <%= f.label :remarks %><br />
+    <br/>
+    <%= f.label :remarks %>
+    <%=  image_tag "required_star.gif" %>
     <%= f.text_area(:remarks,:cols => 25, :rows => 5, :MAXLENGTH=>256) %>
   </div>
   <div class="actions">
+    <br/><br/><br/>
     <%= submit_tag 'Submit' %>
   </div>
 <% end %>

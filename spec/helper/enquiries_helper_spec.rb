@@ -1,15 +1,14 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the EnquiriesHelper. For example:
-#
-# describe EnquiriesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
-describe EnquiriesHelper #do
-  #pending "add some examples to (or delete) #{__FILE__}"
-#end
+describe EnquiriesHelper do
+
+  it "should return the complete phone number with the country and city code" do
+  enquiry = Factory(:enquiry)
+  helper.complete_phone_number(enquiry).should == 1234121234567809
+end
+
+  it "should display the fullname of the person" do
+   enquiry = Factory(:enquiry, :firstname => "hi", :lastname => "bye")
+  helper.fullname(enquiry).should == "Hi Bye"
+  end
+end

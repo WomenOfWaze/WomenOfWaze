@@ -7,7 +7,7 @@ gem "validation_reflection"
 gem "formtastic"
 gem "dynamic_form"
 gem "jquery-rails"
-gem "json", "1.5.3"
+#gem "json", "1.5.3"
 gem "devise"
 
 group :assets do

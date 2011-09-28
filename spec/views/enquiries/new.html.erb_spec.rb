@@ -6,7 +6,9 @@ describe "Enquirys/new.html.erb" do
       :firstname => "MyString",
       :lastname => "MyString",
       :country => "MyString",
-      :phone => "MyString",
+      :phone_country_code => "MyString",
+      :phone_city_code => "MyString",
+      :phone_number => "MyString",
       :email => "MyString",
       :remarks => "MyText"
     ).as_new_record)
@@ -20,7 +22,7 @@ describe "Enquirys/new.html.erb" do
       assert_select "input#Enquiry_firstname", :name => "Enquiry[firstname]"
       assert_select "input#Enquiry_lastname", :name => "Enquiry[lastname]"
       assert_select "input#Enquiry_country", :name => "Enquiry[country]"
-      assert_select "input#Enquiry_phone", :name => "Enquiry[phone]"
+      assert_select "input#Enquiry_phone_country_code", :name => "Enquiry[phone_country_code]"
       assert_select "input#Enquiry_email", :name => "Enquiry[email]"
       assert_select "textarea#Enquiry_remarks", :name => "Enquiry[remarks]"
     end
