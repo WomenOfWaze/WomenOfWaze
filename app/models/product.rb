@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
                             :unless => Proc.new { |photo| photo.photo_file_name.blank? }
   validates_attachment_content_type :photo, 
     :content_type => ["image/gif","image/jpg","image/jpeg","image/png","image/pjpeg"],
-    :message => '=> Invalid format(only .jpg, .gif, .jpeg and .png format are allowed)'
+    :message => '=> Please upload images of types jpeg, png or gif only'
 
   def is_new_arrival?
     new_arrival == "1"
