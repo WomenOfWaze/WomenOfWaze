@@ -37,145 +37,32 @@
     <aricle class="prod_grid">
       <section id="breadcrumb"><%= link_to 'Home' ,root_url %>&gt; Our Products</section>
       <table class="prod_table" id="top">
+        <% for category in @categories %>
+        <% for sub_category in category.sub_categories %>
         <tr class="ptitle_row">
           <td colspan="4">
-            <p class="category">Jute Bags&colon;<span class="subcategory">Sub-category11</span></p>
-          </td>
-        </tr>
-        <tr class="prod_row">
-          <td class="prod_cell">
-            <%= image_tag 'p1_rashi.jpg',:width =>"115" ,:height => "150" %>
-            <p class="prod_title"><a href="#">Rashi</a></p>
-            <p class="prod_text">Pcode: BR001 </br> cost: Rs.200/- </br> Material: Jute</p>
-            <p class="btn_buy">Intersted in Buying</p>
-          </td>
-          <td class="prod_cell">
-            <%= image_tag 'p1_rashi.jpg',:width =>"115" ,:height => "150" %>
-            <p class="prod_title"><a href="#">Rashi</a></p>
-            <p class="prod_text">Pcode: BR001 </br> cost: Rs.200/- </br> Material: Jute</p>
-            <p class="btn_buy">Intersted in Buying</p>
-          </td>
-          <td class="prod_cell">
-            <%= image_tag 'p1_rashi.jpg',:width =>"115" ,:height => "150" %>
-            <p class="prod_title"><a href="#">Rashi</a></p>
-            <p class="prod_text">Pcode: BR001 </br> cost: Rs.200/- </br> Material: Jute</p>
-            <p class="btn_buy">Intersted in Buying</p>
-          </td>
-          <td class="prod_cell">
-            <%= image_tag 'p1_rashi.jpg',:width =>"115" ,:height => "150" %>
-            <p class="prod_title"><a href="#">Rashi</a></p>
-            <p class="prod_text">Pcode: BR001 </br> cost: Rs.200/- </br> Material: Jute</p>
-            <p class="btn_buy">Intersted in Buying</p>
-          </td>
-        </tr>
-        <tr class="ptitle_row">
-          <td colspan="4">
-            <p class="toplink"><a href="#">Send in your requst </a>&nbsp;&nbsp;| &nbsp;&nbsp; <a href="#top">Top</a> </br><hr class="prod_hr"></p>
+            <p class="category"><%= category.name %>&colon;<span class="subcategory"><%=sub_category.name%></span></p>
           </td>
         </tr>
 
-        <tr class="ptitle_row">
-          <td colspan="4">
-            <p class="category">Denim Bags&colon;<span class="subcategory">Sub-category21</span></p>
-          </td>
-        </tr>
+           <% for product_list in formatted_products(sub_category.products) %>
+            <tr class="prod_row">
+              <% for product in product_list %>
+                <td class="prod_cell">
+                  <%= image_tag product.photo.url,:width =>"115" ,:height => "150" %>
+                  <p class="prod_title"><%= link_to product.name, '#'%><% if product.is_new_arrival? %>&nbsp;New!<% end %></p>
+                  <p class="prod_text">Code: <%= product.code %></br> Price: Rs.<%= product.price %>/- </br></p>
+                  <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id) %></p>
+              </td>
+              <% end %>
+            </tr>
+          <%end%>
 
-        <tr class="prod_row">
-          <td class="prod_cell">
-            <%= image_tag 'p1_rashi.jpg',:width =>"115" ,:height => "150" %>
-            <p class="prod_title"><a href="#">Rashi</a></p>
-            <p class="prod_text">Pcode: BR001 </br> cost: Rs.200/- </br> Material: Jute</p>
-            <p class="btn_buy">Intersted in Buying</p>
-          </td>
-          <td class="prod_cell">
-            <%= image_tag 'p1_rashi.jpg',:width =>"115" ,:height => "150" %>
-            <p class="prod_title"><a href="#">Rashi</a></p>
-            <p class="prod_text">Pcode: BR001 </br> cost: Rs.200/- </br> Material: Jute</p>
-            <p class="btn_buy">Intersted in Buying</p>
-          </td>
-          <td class="prod_cell">
-            <%= image_tag 'p1_rashi.jpg',:width =>"115" ,:height => "150" %>
-            <p class="prod_title"><a href="#">Rashi</a></p>
-            <p class="prod_text">Pcode: BR001 </br> cost: Rs.200/- </br> Material: Jute</p>
-            <p class="btn_buy">Intersted in Buying</p>
-          </td>
-          <td class="prod_cell">
-            <%= image_tag 'p1_rashi.jpg',:width =>"115" ,:height => "150" %>
-            <p class="prod_title"><a href="#">Rashi</a></p>
-            <p class="prod_text">Pcode: BR001 </br> cost: Rs.200/- </br> Material: Jute</p>
-            <p class="btn_buy">Intersted in Buying</p>
-          </td>
-        </tr>
-        <tr class="prod_row">
-          <td class="prod_cell">
-            <%= image_tag 'p1_rashi.jpg',:width =>"115" ,:height => "150" %>
-            <p class="prod_title"><a href="#">Rashi</a></p>
-            <p class="prod_text">Pcode: BR001 </br> cost: Rs.200/- </br> Material: Jute</p>
-            <p class="btn_buy">Intersted in Buying</p>
-          </td>
-          <td class="prod_cell" colspan="3">
-            <%= image_tag 'p1_rashi.jpg',:width =>"115" ,:height => "150" %>
-            <p class="prod_title"><a href="#">Rashi</a></p>
-            <p class="prod_text">Pcode: BR001 </br> cost: Rs.200/- </br> Material: Jute</p>
-            <p class="btn_buy">Intersted in Buying</p>
-          </td>
-        </tr>
-        <tr class="ptitle_row">
-          <td colspan="4">
-            <p class="toplink"><a href="#">Send in your requst </a>&nbsp;&nbsp;| &nbsp;&nbsp; <a href="#top">Top</a> </br><hr class="prod_hr"></p>
-          </td>
-        </tr>
-
+        <%end%>
+        <%end%>
       </table>
 
       </article>
 
   </section>
 </div>
-<table>
-  <tr>
-    <td style = "width: 500px;" valign="top">
-      <div>
-        <% for category in @categories %>
-          <b><%= category.name %></b><br/><br/>
-          <% for sub_category in category.sub_categories %>
-            <div>
-              <a href="#<%= sub_category.id %>"><%= sub_category.name %></a>
-              <br/>
-            <%end%>
-          </div>
-        <%end%>
-      </div>
-    </td>
-    <td valign="top">
-      <table style ="width: 500px;" border ="1">
-        <% for category in @categories %>
-          <% for sub_category in category.sub_categories %>
-            <tr>
-              <td colspan ="4">
-                <a name="<%= sub_category.id %>"><i><%= sub_category.name %></i></a>
-              </td>
-            </tr>
-            <tr>
-              <% for product in sub_category.products %>
-                <td>
-                  <%= image_tag product.photo.url,:width=>116,:height=>155 %><br/>
-                  <%= product.name %><br/>
-                  <% if product.is_new_arrival? %>
-                    New Arrival! <br/>
-                  <% end %>
-                  <%= label_tag 'pcode', "P Code: #{product.code}"%><br/>
-                  <%= label_tag 'cost', "Cost: Rs #{product.price}/-"%>
-
-      <%#= link_to "Interested in buying", new_enquiry_url(:product_id => product.id) %>
-                </td>
-              <%end%>
-            </tr>
-          <%end%>
-        <%end%>
-      </table>
-
-    </td>
-  </tr>
-  <br/>
-</table>
