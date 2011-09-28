@@ -14,23 +14,15 @@
 
     <aside class="sidebar">
       <ul>
-        <li>Jute Bags
-          <ul>
-            <li>Sub-category 11</li>
-
-            <li>Sub-category 12</li>
-          </ul>
-        </li>
-        <li>Denim Bags
-          <ul>
-            <li>Sub-category 21</li>
-            <li>Sub-category 22</li>
-          </ul>
-
-        </li>
+        <% for category in @categories %>
+          <li class="cat"><%= category.name %>
+            <% for sub_category in category.sub_categories %>
+            <li class="subcat"><%= link_to sub_category.name, "##{sub_category.id}" %></li>
+          <% end %>
+          </li>
+        <% end %>
       </ul>
     </aside>
-
 
 
 
@@ -38,27 +30,34 @@
       <section id="breadcrumb"><%= link_to 'Home' ,root_url %>&gt; Our Products</section>
       <table class="prod_table" id="top">
         <% for category in @categories %>
-        <% for sub_category in category.sub_categories %>
-        <tr class="ptitle_row">
-          <td colspan="4">
-            <p class="category"><%= category.name %>&colon;<span class="subcategory"><%=sub_category.name%></span></p>
-          </td>
-        </tr>
-
-           <% for product_list in formatted_products(sub_category.products) %>
-            <tr class="prod_row">
-              <% for product in product_list %>
-                <td class="prod_cell">
-                  <%= image_tag product.photo.url,:width =>"115" ,:height => "150" %>
-                  <p class="prod_title"><%= link_to product.name, '#'%><% if product.is_new_arrival? %>&nbsp;New!<% end %></p>
-                  <p class="prod_text">Code: <%= product.code %></br> Price: Rs.<%= product.price %>/- </br></p>
-                  <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id) %></p>
+          <% for sub_category in category.sub_categories %>
+            <tr class="ptitle_row">
+              <td colspan="4">
+                <p class="category"><%= category.name %>&colon;<%= link_to sub_category.name," ",:name => "#{sub_category.id}",:class=>"subcategory"%></p>
               </td>
-              <% end %>
+            </tr>
+
+            <% for product_list in formatted_products(sub_category.products) %>
+              <tr class="prod_row">
+                <% for product in product_list %>
+                  <td class="prod_cell">
+                    <%= image_tag product.photo.url,:width =>"115" ,:height => "150" %>
+                    <p class="prod_title"><%= link_to product.name, '#'%><% if product.is_new_arrival? %>&nbsp;New!<% end %></p>
+                    <p class="prod_text">Code: <%= product.code %></br> Price: Rs.<%= product.price %>/- </br></p>
+                    <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id) %></p>
+                  </td>
+
+                <% end %>
+              </tr>
+            <%end%>
+            <tr class="ptitle_row">
+              <td colspan="4"><p class="toplink"><a href="#">Top</a> </br>
+
+                <hr class="prod_hr">
+                </p>
+              </td>
             </tr>
           <%end%>
-
-        <%end%>
         <%end%>
       </table>
 
