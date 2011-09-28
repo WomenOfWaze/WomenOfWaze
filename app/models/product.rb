@@ -18,7 +18,9 @@ class Product < ActiveRecord::Base
     :length => { :maximum => 15, :message => "should not be more than 15 characters" }
   validates_attachment_presence :photo, :message => "=> Please upload the avatar file"
   validates_attachment_size :photo, :less_than => 5.megabytes, :message => "should be less than 5MB"
-  validates_attachment_content_type :photo, :content_type => ["image/gif","image/jpg","image/jpeg","image/png"], :message => 'invalid format'
+  validates_attachment_content_type :photo, 
+    :content_type => ["image/gif","image/jpg","image/jpeg","image/png","image/pjpeg"],
+    :message => 'invalid format'
 
   def is_new_arrival?
     new_arrival == "1"
