@@ -14,6 +14,13 @@ class EnquiriesController < ApplicationController
     @enquiry = Enquiry.new
     @firstname_params = params[:firstname]
     @lastname_params = params[:lastname]
+    if params[:product_id]
+      @product = Product.find(params[:product_id])
+      if @product
+        @enquiry.remarks = "I am interested in buying Product #{@product.name} with Code #{@product.code}"
+      end
+    end
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @enquiry }
