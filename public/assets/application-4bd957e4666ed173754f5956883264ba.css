@@ -1,0 +1,1292 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+*/
+/*
+Skin Name: Nivo Slider Default Theme
+Skin URI: http://nivo.dev7studios.com
+Skin Type: flexible
+Description: The default skin for the Nivo Slider.
+Version: 1.0
+Author: Gilbert Pellegrom
+Author URI: http://dev7studios.com
+*/
+
+
+.theme-default .nivoSlider {
+	position:relative;
+	background:#fff url(../images/loading.gif) no-repeat 50% 50%;
+    -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
+    -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
+    box-shadow: 0px 1px 5px 0px #4a4a4a;
+}
+.theme-default .nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+.theme-default .nivoSlider a {
+	border:0;
+	display:block;
+}
+
+.theme-default .nivo-controlNav {
+	position:absolute;
+	left:50%;
+	bottom:0px;
+    margin-left:-40px; /* Tweak this to center bullets */
+}
+.theme-default .nivo-controlNav a {
+	display:block;
+	width:22px;
+	height:22px;
+	background:url(../images/bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
+}
+.theme-default .nivo-controlNav a.active {
+	background-position:0 -22px;
+}
+
+.theme-default .nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url(../images/arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+}
+.theme-default a.nivo-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+.theme-default a.nivo-prevNav {
+	left:15px;
+}
+
+.theme-default .nivo-caption {
+    font-family: Helvetica, Arial, sans-serif;
+}
+.theme-default .nivo-caption a {
+    color:#fff;
+    border-bottom:1px dotted #fff;
+}
+.theme-default .nivo-caption a:hover {
+    color:#fff;
+}
+/*
+ * Color, Border, and Button Rules
+ */
+
+.contentslider {
+  padding:10px; /* This acts as a border for the content slider */
+  background:#fff; /* This is the color of said border */
+}
+.cs_wrapper, .cs_article {
+  background:#FFF; /* Background color for the entries */
+}
+.cs_leftBtn, .cs_rightBtn {
+  width:30px; /* Should be as wide as the button graphic being used */
+  background:#333; /* This will probably match the contentslider bg color */
+}
+
+/*
+ * Article styles (font, color, etc.)
+ *
+ * If textResize is set to TRUE, sizing shouldn't need to be touched. However,
+ * depending on the sizes you have defined, additional tweaking may be
+ * required in order to get the text to display properly.
+ */
+.cs_article h2 {
+  font-size:200%;
+  line-height:1.125em;
+}
+  .cs_article h2 a {
+    color:#333;
+    text-decoration:none;
+  }
+.cs_article p {
+  font-size:85%;
+  line-height:1.5em;
+  color:#777;
+}
+.cs_article .readmore {
+  font-size:80%;
+}
+
+/*
+ ******************************************************************************
+ * These styles may be affected by the plugin, so avoid changing them if 
+ * it's not absolutely necessary.
+ ******************************************************************************
+ */
+.contentslider {
+  position:relative;
+  display:block;
+  width:450px;
+  height:200px;
+  margin:0 auto;
+  overflow:hidden;
+}
+.cs_wrapper {
+  position:relative;
+  display:block;
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+.cs_slider {
+  position:absolute;
+  width:10000px;
+  height:100%;
+  margin:0;
+  padding:0;
+}
+.cs_article {
+  float:left;
+  position:relative;
+  top:0;
+  left:0;
+  display:block;
+  width:450px;
+  height:100px;
+  margin:0 auto;
+  padding:0;
+}
+.cs_article h2 {
+  display:block;
+  width:46%;
+  margin:10px 26px 5px 67%;
+  text-align:left;
+}
+.cs_article img {
+  position:absolute;
+  top:0;
+  left:0;
+  width:44%;
+  border:0;
+  -ms-interpolation-mode:bicubic;
+}
+.cs_article p {
+  display:block;
+  width:46%;
+  margin:0 26px 5px 37%;
+  padding:0;
+  border:0;
+}
+.cs_article .readmore {
+  display:block;
+  width:26%;
+  margin:0 6% 1% 68%;
+  text-align:right;
+}
+.cs_leftBtn, .cs_rightBtn {
+  position:absolute;
+  top:0;
+  height:400px;
+  padding:10px 0;
+  z-index:10000;
+}
+.cs_leftBtn {
+  left:0;
+  outline:0;
+}
+.cs_rightBtn {
+  right:0;
+  outline:0;
+}
+.cs_leftBtn img, .cs_rightBtn img {
+  border:0;
+  position:relative;
+  top:100px;
+  margin:0;
+}
+/*
+ * jQuery Nivo Slider v2.6
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2011, Gilbert Pellegrom
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * March 2010
+ */
+ 
+ 
+/* The Nivo Slider styles */
+
+.nivoSlider {
+	position:relative;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:none;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+}
+/* Caption styles */
+.nivo-caption {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background:#000;
+	color:#fff;
+	opacity:0.8; /* Overridden by captionOpacity setting */
+	width:100%;
+	z-index:8;
+}
+.nivo-caption p {
+	padding:5px;
+	margin:0;
+}
+.nivo-caption a {
+	display:inline !important;
+}
+.nivo-html-caption {
+    display:none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+	position:absolute;
+	top:45%;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-prevNav {
+	left:0px;
+}
+.nivo-nextNav {
+	right:0px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav a {
+	position:relative;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-controlNav a.active {
+	font-weight:bold;
+}
+/* `XHTML, HTML4, HTML5 Reset
+----------------------------------------------------------------------------------------------------*/
+
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+dialog,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+font,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+meter,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+progress,
+q,
+rp,
+rt,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video,
+xmp {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+/*
+  Override the default (display: inline) for
+  browsers that do not recognize HTML5 tags.
+
+  IE8 (and lower) requires a shiv:
+  http://ejohn.org/blog/html5-shiv
+*/
+  display: block;
+}
+
+b,
+strong {
+/*
+  Makes browsers agree.
+  IE + Opera = font-weight: bold.
+  Gecko + WebKit = font-weight: bolder.
+*/
+  font-weight: bold;
+}
+
+img {
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+/*
+  For IE.
+  http://css-tricks.com/ie-fix-bicubic-scaling-for-images
+*/
+  -ms-interpolation-mode: bicubic;
+}
+
+li {
+/*
+  For IE6 + IE7.
+*/
+  display: list-item;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td,
+caption {
+  font-weight: normal;
+  vertical-align: top;
+  text-align: left;
+}
+
+q {
+  quotes: none;
+}
+
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+sub,
+sup,
+small {
+  font-size: 75%;
+}
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+svg {
+/*
+  For IE9.
+*/
+  overflow: hidden;
+}
+/************************
+-------COLORS------------
+************************
+
+************************/
+
+/***********************
+-------HTML5------------
+***********************/
+
+section, header, footer, aside, article, nav{
+		display:block;
+	}
+	
+/**********************
+-------General---------
+***********************/	
+	
+body{
+		font-family:Arial, Helvetica, sans-serif, Verdana;
+		font-size:12px;
+		color:#333333;
+		background-color:#f8f8f8;
+		padding:0px;
+		margin:0px;
+		min-width: 960px;
+	}
+
+a{
+		text-decoration:none;
+		color:blue;
+		font-size:68.8%
+	}
+	
+a:hover{
+		text-decoration:underline;
+	}
+	
+p{
+		font-size:12px;
+		line-height:18px;
+		font-family:arial,verdana;
+		color:#333333;
+	}	
+	
+h1,h2,h3,h4,h5,h6{
+		font-family:arial,verdana;
+		text-transform:none;
+		font-weight:normal;
+	}
+
+ul{
+		overflow:hidden;
+	}	
+	
+li{
+		margin-left:0px;
+		list-style-type:none;
+	}	
+.rounded{
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+	}	
+	
+	hr {
+  border: 0 #ccc solid;
+  border-top-width: 1px;
+  clear: both;
+  height: 0;
+}
+
+.prod_hr {
+  border: 0 #82ae4f solid;
+  border-top-width: 1px;
+  clear: both;
+  height: 0;
+  width:640px;
+  	padding-bottom:20px;
+}
+
+	
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+input[type="text"]{
+	border: 1px solid #CAE001;
+    color: #747533;
+    height: 25px;
+    padding: 2px 5px;
+    width: 170px;
+	}
+
+textarea{
+	height: 50px;
+    padding: 2px 5px;
+    width: 170px;
+	
+}
+table{
+		cellpadding:10px;
+		margin-bottom: 20px;
+}
+
+/*-------MAIN-----*/
+	.wrapper
+		{
+			margin:0px auto;
+			background-color:#FFFFFF;
+			width-min:960px;
+			overflow:auto;
+			display:block;
+			padding:0px 5px 0px 5px;
+			/*for main container shadow*/
+			-moz-box-shadow: 3px 3px 3px #e2e2e2;
+			-webkit-box-shadow: 3px 3px 3px #e2e2e2;
+			box-shadow: 3px 3px 3px #e2e2e2;
+			/*for rounded conners for main container*/
+			border-radius: 0px 0px 5px 5px;
+			-moz-border-radius:0px 0px 5px 5px;
+			-webkit-border-radius: 0px 0px 5px 5px;
+		}
+			
+		.container_24{
+			position:relative;
+			width: 960px;
+			}	
+			
+		.banner
+			{
+			width:840px;
+			height:123px;
+			background-image:url('logo_WOW.png');
+			background-repeat:no-repeat;
+			text-align:right;
+			font-size:10px;
+			color:#666666;
+			margin:0px auto;
+			}
+			a
+			{
+			text-decoration:underline;
+			font-size:10px;
+			color:#666666;
+			}
+			
+			.banner_sm
+			{
+			width:840px;
+			height:123px;
+			background-image:url('banner_sm.jpg');
+			background-repeat:no-repeat;
+			text-align:right;
+			font-size:10px;
+			color:#FFFFFF;
+			margin:0px auto;
+			}
+			
+			.banner_sm a
+			{
+			text-decoration:underline;
+			font-size:10px;
+			color:#ffffff;
+			}
+			
+		.slideshow
+		{
+		width:840px;
+		height:426px;
+		margin:0px auto;
+		padding-top:1px;
+		}
+		
+		nav
+		{
+		width:840px;
+		margin:0px auto;
+		padding-top:10px;
+		}
+		
+			
+		.mainnav
+		{
+			width:278px;
+			height:60px;
+			float:left;
+			
+			/*font-weight:bold;*/
+			font-size:20px;
+			color:#FFFFFF;
+			text-align:center;
+			vertical-align:middle;
+			padding-top:40px;
+		}
+		
+/****************************************************/
+		.nav2
+		{
+		width:840px;
+		margin:0px auto;
+		padding-top:1px;
+		}
+	
+		.mainnav_sm
+		{
+			width:278px;
+			height:40px;
+			float:left;
+			font-size:20px;
+			color:#FFFFFF;
+			text-align:center;
+			vertical-align:middle;
+			padding-top:20px;
+		}
+		
+		.prod_page
+		{
+		width:840px;
+		margin:0px auto;
+		padding-top:80px;
+
+		}
+		
+		.sidebar
+		{
+			width:150px;
+			float:left;
+			background-color:#CCCCCC;
+			padding:40px 0px 0px 20px;
+		}
+		
+		.prod_grid
+		{
+			width:650px;
+			float:right;
+			background-color:#ffffff;
+			padding:10px 0px 0px 20px;
+		}
+		
+		#breadcrumb
+		{
+			text-decoration:none;
+			font-size:10px;
+			color:#666666;
+			padding-bottom:20px;
+		}		
+		#breadcrumb a
+		{
+			text-decoration:underline;
+			font-size:10px;
+			color:#666666;
+		}	
+		
+		.prod_table
+		{
+			width:640px;
+			padding:10px 10px 10px 10px;
+		}
+		
+		.ptitle_row
+		{	
+			height:30px;
+		}
+		
+		.category
+		{
+			color:#333333;
+			font-weight:bold;
+			font-size:18px;
+		}
+		
+		.subcategory
+		{
+			color:#333333;
+			font-weight:bold;
+			font-size:14px;
+			font-style:italic;
+			padding-left:10px;
+		}
+		
+		.prod_row
+		{
+			background-color:#f3f3e4;
+			height:290px;
+		}
+		
+		.prod_cell
+		{
+			width:116px;
+			padding:22px 0px 0px 22px;
+		}
+		
+		.prod_cell a
+		{
+			border:none;
+		}
+		
+		.prod_cell a:hover
+		{
+			border:#ffffff;
+						
+		}
+		
+		
+		.prod_title
+		{
+			color:#bb0707;
+			font-weight:bold;
+			font-size:14px;
+			margin-left:5px;
+			line-height:25px;
+		}
+		
+		.prod_title a
+		{
+			color:#bb0707;
+			font-weight:bold;
+			text-decoration:none;
+			font-size:14px;
+		}
+		
+		.prod_title a:hover
+		{
+			color:#bb0707;
+			font-weight:bold;
+			text-decoration:underline;
+			font-size:14px;
+		}
+		
+		.prod_text
+		{
+			color:#333333;
+			font-weight:normal;
+			font-size:12px;
+			margin-left:5px;
+			padding-bottom:5px;
+			line-height:15px;
+		}
+		
+		.btn_buy
+		{
+			width:105px;
+			height:20px;
+			background-color:#baf279;
+			color:#000000;
+			font-size:11px;
+			border:medium #666666;
+			text-align:center;
+			/*for main container shadow*/
+				-moz-box-shadow: 2px 2px 2px #cacaca;
+				-webkit-box-shadow: 2px 2px 2px #cacaca;
+				box-shadow: 2px 2px 2px #cacaca;
+			/*for rounded conners for main container*/
+				border-radius: 6px 6px 6px 6px;
+				-moz-border-radius:6px 6px 6px 6px;
+				-webkit-border-radius: 6px 6px 6px 6px;
+		}
+			
+		.toplink
+		{
+		text-align:right;
+		font-size:11px;
+		padding-top:10px;
+	
+		}
+		.toplink a
+		{
+			text-decoration:none;
+			font-size:11px;
+			color:#333333;
+			}
+		
+/******************************************/
+			
+			
+		.btn_who{
+		background-color:#5885c8;
+		}
+
+		.btn_prod{
+		background-color:#82ae4f;
+		margin-left:3px;
+		}
+		
+		.btn_contact{
+		background-color:#38a4ab;
+		margin-left:3px;
+		}	
+		
+		
+		
+		
+		.bodycontent
+		{
+		width:840px;
+		margin:0px auto;
+		padding-top:120px;
+
+		}
+		
+		.content
+		{
+			width:560px;
+			text-align:left;
+			margin:0px auto;
+			float:left;
+			
+		}
+		.thumb1
+		{
+			padding-right:15px;
+		}
+		
+		.readmore
+		{
+			font-size:11px;
+			color:#0000FF;
+		}
+		
+		.homecontact
+		{
+			width:265px;
+			float:right;
+			padding-left:14px;
+			font-size:14px;
+			border-left: thin #666666;
+		}
+		
+		.homecontact a
+		{
+		font-size:14px;
+		}
+		
+		
+		
+
+		header{
+			overflow:hidden;
+			color:#333333;
+			height:123px;
+		}	
+	
+		.subhead1
+		{
+			font-size:14px;
+			font-weight:bold;
+			color:#bb0707;
+			text-align:left;
+			padding-bottom:10px;
+		}			
+		
+
+	.foot{
+		clear:both;
+		height:20px;
+		font-size:10px;
+		background-position:top center;
+		width:960px;
+		padding:20px;
+		text-align:center;
+		margin:0 auto;
+		color:#666666;
+	}
+	
+/************************
+-------COLORS------------
+************************
+Light Gray : #F2F2F2;
+dark gray : #E6E6E6;
+extra dark gray : #DCDCDA;
+More dark gray : #C4C4C4;
+dark black : #242729;
+dark orange : #D3741C;
+************************/
+
+/***********************
+-------HTML5------------
+***********************/
+
+section, header, footer, aside, article, nav{
+display:block;
+}
+
+/**********************
+-------General---------
+***********************/
+
+body{
+font-family:Arial, Helvetica, sans-serif, Verdana;
+font-size:75%;
+color:#333333;
+background-color:#f8f8f8;
+padding:0px;
+margin:0px;
+min-width: 960px;
+}
+
+a{
+text-decoration:none;
+color:blue;
+font-size:68.8%
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+p{
+font-size:12px;
+line-height:18px;
+font-family:arial,verdana;
+color:#333333;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-family:arial,verdana;
+text-transform:none;
+font-weight:normal;
+}
+
+ul{
+overflow:hidden;
+}
+
+li{
+margin-left:0px;
+list-style-type:none;
+}
+.rounded{
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+}
+
+hr {
+  border: 0 #ccc solid;
+  border-top-width: 1px;
+  clear: both;
+  height: 0;
+}
+.container_24{
+padding:0px 5px 0px 5px;
+position:relative;
+width: 960px;
+}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+input[type="text"]{
+border: 1px solid #CAE001;
+    color: #747533;
+    height: 25px;
+    padding: 2px 5px;
+    width: 170px;
+}
+
+textarea{
+height: 50px;
+    padding: 2px 5px;
+    width: 170px;
+
+}
+table{
+cellpadding:10px;
+margin-bottom: 20px;
+}
+
+
+
+.foot{
+clear:both;
+height:20px;
+font-size:10px;
+background-position:top center;
+width:960px;
+padding:20px;
+text-align:center;
+margin:0 auto;
+color:#666666;
+}
+
+/*-------MAIN-----*/
+.wrapper
+{
+margin:0px auto;
+background-color:#FFFFFF;
+width-min:960px;
+overflow:auto;
+display:block;
+padding:5px 60px 0px 60px;
+
+/*for main container shadow*/
+-moz-box-shadow: 3px 3px 3px #e2e2e2;
+-webkit-box-shadow: 3px 3px 3px #e2e2e2;
+box-shadow: 3px 3px 3px #e2e2e2;
+/*for IE8 - main container shadow*/
+/*-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=6, Direction=150,Color='#e2e2e2')";
+z-index:5;*/
+
+/*for rounded conners for main container*/
+border-radius: 0px 0px 5px 5px;
+-moz-border-radius:0px 0px 5px 5px;
+-webkit-border-radius: 0px 0px 5px 5px;
+}
+
+.banner
+{
+width:840px;
+height:123px;
+background-image: url('logo_WOW.png');
+background-repeat:no-repeat;
+text-align:right;
+font-size:10px;
+color:#666666;
+margin:0px auto;
+}
+
+
+.slideshow
+{
+width:840px;
+height:426px;
+margin:0px auto;
+padding-top:1px;
+}
+
+nav
+{
+width:840px;
+margin:0px auto;
+padding-top:10px;
+}
+.mainnav
+{
+width:278px;
+height:100px;
+float:left;
+
+/*font-weight:bold;*/
+font-size:20px;
+color:#FFFFFF;
+text-align:center;
+vertical-align:middle;
+padding-top:10px;
+}
+
+.btn_who_inner{
+background-color:#5885c8;
+height:100%;
+}
+
+.btn_who{
+background-color:#624C72;
+}
+.btn_prod{
+background-color:#786230;
+margin-left:3px;
+}
+
+.btn_prod_inner{
+background-color:#82AE4F;
+height:100%;
+}
+
+.btn_contact{
+background-color:#4F5C62;
+margin-left:3px;
+}
+
+.btn_contact_inner{
+background-color:#37A4AB;
+height:100%;
+}
+.bodycontent
+{
+width:840px;
+margin:0px auto;
+padding-top:120px;
+
+}
+
+.content
+{
+width:560px;
+text-align:left;
+margin:0px auto;
+float:left;
+
+}
+.thumb1
+{
+padding-right:15px;
+}
+
+.readmore
+{
+font-size:11px;
+color:#0000FF;
+}
+.homecontact
+{
+width:265px;
+float:right;
+padding-left:14px;
+font-size:14px;
+border-left: thin #666666;
+
+}
+.homecontact a
+{
+font-size:14px;
+}
+
+
+/*-------Header---------**/
+
+header{
+overflow:hidden;
+color:#333333;
+height:123px;
+}
+
+.subhead1
+{
+font-size:14px;
+font-weight:bold;
+color:#bb0707;
+text-align:left;
+padding-bottom:10px;
+}
+/*********BREADCRUMBS*******/
+#breadcrumb
+{
+
+}
+
+
+
+/* -------FOOTER-----*/
+
+p.footer {
+display:block;
+text-align:center;
+border:none;
+}
+
+section.slideshow div#slider
+{
+height:427px;
+}
+
+.buttonHover
+{
+cursor : pointer;
+height:110px !important;
+}
+
+div.mainnav a
+{
+height:100%;
+width:100%;
+font-size:20px;
+color:#FFFFFF;
+padding-top:40px;
+display:block;
+}
+
+div.mainnav a:hover{
+text-decoration:none;
+}
+
+#tcs_link
+{
+text-decoration:underline;
+font-size:10px;
+color:#666666;
+}

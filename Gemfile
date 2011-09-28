@@ -7,10 +7,8 @@ gem "validation_reflection"
 gem "formtastic"
 gem "dynamic_form"
 gem "jquery-rails"
-gem 'aws-s3'
 gem "json", "1.5.3"
 gem "devise"
-
 
 group :assets do
   gem "sass-rails", "  ~> 3.1.0"
@@ -30,6 +28,7 @@ end
 
 group :production do
   gem "pg"
+  gem "aws-s3"
 end
 
 group :test do

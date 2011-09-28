@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
   <head>
     <title>WomenOfWaze</title>
     <%= stylesheet_link_tag "reset.css" %>
@@ -10,10 +10,15 @@
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "jquery-1.6.1.min.js" %>
     <%= csrf_meta_tags %>
+    <%= javascript_include_tag "jquery.nivo.slider.pack.js" %>
+    <%= javascript_include_tag "events" %>
+
   </head>
   <body>
-
     <%= yield %>
 
-  </body>
+  
+</body>
+<%= render "layouts/footer" %>
+
 </html>

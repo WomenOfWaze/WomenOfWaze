@@ -20,7 +20,6 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
-    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @product }
@@ -92,6 +91,6 @@ class ProductsController < ApplicationController
   end
 
   def catalogue
-    @categories = Category.catalogue_details
+    @categories = Category.catalogue_details    
   end
 end

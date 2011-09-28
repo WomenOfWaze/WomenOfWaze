@@ -12,8 +12,6 @@
       document.createElement('footer');
       document.createElement('hgroup');
     </script>
-    <%= javascript_include_tag "jquery.nivo.slider.pack.js" %>
-    <%= javascript_include_tag "events" %>
   </head>
   <body>
     <div class="wrapper container_24">
@@ -39,13 +37,13 @@
         </div>
         <div class="mainnav btn_prod">
           <div class='btn_prod_inner'>
-            <a>Interested in Our Products</a>
+            <%= link_to 'Interested in Our Products', catalogue_products_url %>
           </div>
         </div>
         <div class="mainnav btn_contact">
           <div class='btn_contact_inner'>
             <a>
-								How to reach us?
+              How to reach us?
             </a>
           </div>
         </div>
@@ -95,11 +93,11 @@
 
     </div>
 
-  <footer class="foot">Copyright &copy; 2006-2011 - WOW: Women�s Organization of Waje Group, Panvel</footer>
+
 
 
 
 </body>
 </html>
-
-
+<%= javascript_include_tag "jquery.nivo.slider.pack.js" %>
+<%= javascript_include_tag "events" %>
