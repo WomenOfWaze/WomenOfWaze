@@ -22,3 +22,10 @@ test: &test
 
 cucumber:
   <<: *test
+
+production:
+  adapter: mysql
+  database: wow_prod
+  host: localhost
+  username: root
+  password: 
