@@ -1,3 +1,28 @@
 <h1>Contact Us</h1>
 
-<%= render 'form' %>
+<table border="1">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Phone-Number</th>
+    <th>Country</th>
+    <th>Email</th>
+    <th>Remarks</th>
+  </tr>
+
+<% @enquiries.each do |enquiry| %>
+  <tr>
+    <td><%= enquiry.firstname %> </td>
+    <td><%= enquiry.lastname %></td>
+    <td><%= complete_phone_number enquiry%></td>
+    <td><%= enquiry.country %></td>
+    <td><%= enquiry.email %></td>
+    <td><%= enquiry.remarks %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Enquiry', new_enquiry_path %>
+

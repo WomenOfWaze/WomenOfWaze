@@ -11,11 +11,11 @@
   <% end %>
   <div class="field">
     <%= f.label :firstname %><br />
-    <%= text_field(:enquiry, :firstname, :onchange => "if $('enquiry[firstname]').length > 32 { alert('Your firstname needs to be shorter!'); }") %>
+    <%= text_field(:enquiry, :firstname, :MAXLENGTH=>32,:onchange => "if $('enquiry[firstname]').length > 32 { alert('Your firstname needs to be shorter!'); }") %>
   </div>
   <div class="field">
     <%= f.label :lastname %><br />
-    <%= f.text_field(:lastname, :onchange => "if $('enquiry[lastname]').length > 32 { alert('Your firstname needs to be shorter!'); }") %>
+    <%= f.text_field(:lastname,  :MAXLENGTH=>32,:onchange => "if $('enquiry[lastname]').length > 32 { alert('Your firstname needs to be shorter!'); }") %>
   </div>
   <div class="field">
     <%= f.label :country %><br />
@@ -23,9 +23,9 @@
   </div>
   <div class="field">
     <%= f.label 'Contact Phone Number' %><br />
-    <%= telephone_field(:enquiry, :phone_country_code, :size => 1, :onchange => "if $('enquiry[phone_country_code]').length > 2 { alert('Your firstname needs to be shorter!'); }") %>
-    <%= telephone_field(:enquiry,:phone_city_code, :size => 2, :onchange => "if $('enquiry[phone_city_code]').length > 2 { alert('Your firstname needs to be shorter!'); }") %>
-    <%= telephone_field(:enquiry,:phone_number, :size => 7,:onchange => "if $('enquiry[phone_number]').length > 10 { alert('Your firstname needs to be shorter!'); }") %>
+    <%= telephone_field(:enquiry, :phone_country_code, :size => 1, :MAXLENGTH=>4, :onchange => "if $('enquiry[phone_country_code]').length > 2 { alert('Your firstname needs to be shorter!'); }") %>
+    <%= telephone_field(:enquiry,:phone_city_code, :size => 2, :MAXLENGTH=>2, :onchange => "if $('enquiry[phone_city_code]').length > 2 { alert('Your firstname needs to be shorter!'); }") %>
+    <%= telephone_field(:enquiry,:phone_number, :size => 7, :MAXLENGTH=>10,:onchange => "if $('enquiry[phone_number]').length > 10 { alert('Your firstname needs to be shorter!'); }") %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :remarks %><br />
-    <%= f.text_area(:remarks,:cols => 25, :rows => 5) %>
+    <%= f.text_area(:remarks,:cols => 25, :rows => 5, :MAXLENGTH=>256) %>
   </div>
   <div class="actions">
     <%= submit_tag 'Submit' %>

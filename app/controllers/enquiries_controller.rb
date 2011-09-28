@@ -1,13 +1,22 @@
 class EnquiriesController < ApplicationController
 
   def index
-    @enquiry = Enquiry.new
-    @firstname_params = params[:firstname]
-    @lastname_params = params[:lastname]
+    @enquiries = Enquiry.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @enquiry }
+      format.xml  { render :xml => @categories }
+    end
+  end
+
+
+  def new
+    @enquiry = Enquiry.new
+    @firstname_params = params[:firstname]
+    @lastname_params = params[:lastname]
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @enquiry }
     end
   end
 
@@ -28,6 +37,32 @@ class EnquiriesController < ApplicationController
         format.html { render :action => "new" }
         format.json { render :json => @enquiry.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+
+  def update
+    @enquiry = Enquiry.find(params[:id])
+
+    respond_to do |format|
+      if @enquiry.update_attributes(params[:enquiry])
+        format.html { redirect_to(@enquiry, :notice => 'Enquiry was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @enquiry.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /categories/1
+  # DELETE /categories/1.xml
+  def destroy
+    @enquiry = Enquiry.find(params[:id])
+    @enquiry.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(categories_url) }
+      format.xml  { head :ok }
     end
   end
 
