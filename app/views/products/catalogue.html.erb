@@ -8,9 +8,12 @@
     <div class="mainnav_sm btn_contact">How to reach us?</div>
   </nav>
 
-
-
   <section class="prod_page">
+
+  <% flash.each do |key, value| %>
+    <div class="flash_message <%= key %>"><%= value %></div>
+  <% end %>
+
 
     <aside class="sidebar">
       <ul>

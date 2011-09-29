@@ -1,4 +1,4 @@
-<%= form_for(@enquiry, :remote => true) do |f| %>
+<%= form_for(@enquiry) do |f| %>
   <% if @enquiry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@enquiry.errors.count, "error") %> prohibited this enquiry from being saved:</h2>
@@ -38,10 +38,7 @@
   <p>
   <div></div>
   <%= f.label 'Contact Number', :class => "lb_contact" %>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <%= telephone_field(:enquiry, :phone_country_code, :value => 91, :size => 1, :MAXLENGTH=>4) %>
-  <%= telephone_field(:enquiry,:phone_city_code,:value => 'citycode', :size => 3, :MAXLENGTH=>2) %>
-  <%= telephone_field(:enquiry,:phone_number, :size => 7, :MAXLENGTH=>10) %>
+  <%= f.text_field(:phone_number, :class => "inputstyle") %>
   </p>
   </br>
   <p>

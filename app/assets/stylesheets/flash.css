@@ -1,0 +1,16 @@
+.flash_message {
+    background: #dcdcdc;
+/*    border: 1px solid #c1c1c1;*/
+    padding: 6px 12px 6px 35px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+.flash_message.notice {
+    background: #d1e6b9 url('flash-icons.png') no-repeat 7px -5px;
+    color: #3d4f29;
+}
+.flash_message.error {
+    background: #f6cece url('flash-icons.png') no-repeat 7px -45px;
+    color: #4c1212;
+}
+
