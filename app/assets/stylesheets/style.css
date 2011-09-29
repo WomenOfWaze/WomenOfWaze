@@ -94,7 +94,6 @@ border: 1px solid #CAE001;
     height: 25px;
     padding: 2px 5px;
     width: 170px;
-    background-image: url('required-star.gif');
 }
 
 textarea{
@@ -318,7 +317,7 @@ text-decoration:underline;
 font-size:10px;
 color:#666666;
 }
-<<<<<<< Updated upstream
+
 /************************
 -------COLORS------------
 Red : #bb0707
@@ -840,6 +839,4 @@ nav {
 	-moz-border-radius:6px 6px 6px 6px;
 	-webkit-border-radius: 6px 6px 6px 6px;
 }
-=======
 
->>>>>>> Stashed changes

@@ -1,0 +1,33 @@
+<div id="product_wrapper">
+  <section class="bag">
+    <%= image_tag @product.photo.url, :width => '330', :height => '440' %>
+  </section>
+  <section class='bag_details'>
+    <H2 class='subhead2'><%= @product.name %></H2>
+    <table>
+      <tr class='alt_row'>
+        <td>Code :</td>
+        <td> <%= @product.code %></td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td>Rs. <%= @product.price %>/-</td>
+      </tr>
+      <tr class='alt_row'>
+        <td>Description</td>
+        <td><%= @product.description %></td>
+      </tr>
+      <tr>
+        <td>Available Size:</td>
+        <td><%= @product.size %></td>
+      </tr>
+      <tr class='alt_row'>
+        <td>Minimum no of Bags per order:</td>
+        <td>1</td>
+      </tr>
+    </table>
+  </section>
+  <div class='clear'></div>
+  <footer class="bag_footer">Copyright &copy; 2006-2011 - WOW: Women's Organization of Waje Group, Panvel</footer>
+
+</div>
