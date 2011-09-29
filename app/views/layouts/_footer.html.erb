@@ -1,1 +1,17 @@
-  <footer class="foot">Copyright &copy; 2006-2011 - WOW: Women's Organization of Waje Group, Panvel</footer>
+<footer class="foot">Copyright &copy; 2006-2011 - WOW: Women's Organization of Waje Group, Panvel</footer>
+
+<% unless Rails.env == "development" || Rails.env  == "test" %>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26011512-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+<%end%>
