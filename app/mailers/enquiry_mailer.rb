@@ -1,5 +1,5 @@
 class EnquiryMailer < ActionMailer::Base
-  default from: "wow.maitree@tcs.com"
+  default :from => "wow.maitree@tcs.com"
 
   TO_EMAIL = "womenofwaze@gmail.com" #wow.maitree@tcs.com
 

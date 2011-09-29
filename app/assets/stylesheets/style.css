@@ -440,7 +440,7 @@ table {
 .banner {
 	width:840px;
 	height:140px;
-	background-image:url(../images/banner_main.jpg);
+	background-image:url('banner_main.jpg');
 	background-repeat:no-repeat;
 	text-align:right;
 	font-size:10px;
@@ -461,7 +461,7 @@ header {
 .banner_sm {
 	width:840px;
 	height:140px;
-	background-image:url(../images/banner_sm.jpg);
+	background-image:url('banner_sm.jpg');
 	background-repeat:no-repeat;
 	text-align:right;
 	font-size:10px;
