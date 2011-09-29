@@ -20,7 +20,7 @@ FactoryGirl.define do
   factory :enquiry do
     firstname { Faker::Lorem.words(2).map { |word| word.titleize }.join(' ') }
     lastname { Faker::Lorem.words(2).map { |word| word.titleize }.join(' ') }
-    email "#{firstname}_#{lastname}@test.com"
+    email {"#{firstname}_#{lastname}@test.com"}
     country "India"
     remarks "Hi, how are you doing ?"
     phone_country_code 1234
