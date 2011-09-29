@@ -1,5 +1,3 @@
-
-<%= stylesheet_link_tag 'style-catalogue.css' %>
 <div class="wrapper container_24">
   <header class="banner_sm"> <span>An initiative of <a href="www.tcs.com">TCS</a> Maitree to empower the Women of Waze.</span> </header>
 
@@ -18,10 +16,10 @@
 
          <div class="address">
                 <%= image_tag "thumb_contact2.jpg", :width=>"120", :height=>"95" %>
-        	
+
             <p>For more details about WOW group products and initiative, you can contact us at following address.</p><br/>
-            <p><span class="subhead1">Address:</span><br/>Women’s Organization of Waze. <br/>Village of Wazapur, Taluka – Panvel, District – Raigad.  <br/><br/>Around 60 kms from Mumbai, just off the Mumbai-Pune highway.</p>
-			<p><span class="subhead1">Phone:</span><br/>+91 022 3525 255</p>
+            <p><span class="subhead1">Address:</span><br/>Women's Organization of Waze. <br/>Village of Wazapur, Taluka-Panvel, District-Raigad.  <br/><br/>Around 60 kms from Mumbai, just off the Mumbai-Pune highway.</p>
+			<p><span class="subhead1">Phone:</span><br/>91 022 3525 255</p>
 			<p><span class="subhead1">Email:</span><br/><a class="mail" href="mailto:wow.maitree@tcs.com">wow.maitree@tcs.com</a></p>
          </div>
     </aside>
@@ -30,6 +28,7 @@
     <!-- for inquiry form -->
     <aricle class="prod_grid">
     <section id="breadcrumb"> <%= link_to 'Home' ,root_url %>&gt; Reach to us</section>
-    <%= render :partial =>"form" %>
+    <%= render "form" %>
+
 
 

@@ -16,4 +16,10 @@ describe SubCategory do
     subject {FactoryGirl.build(:sub_category, :description => "")}
     it {should_not be_valid}
   end
+
+# describe SubCategory do
+#  it 'should belong to category' do
+#    SubCategory.should belong_to(:category)
+#    it {should_not be_valid}
+#  end
  end

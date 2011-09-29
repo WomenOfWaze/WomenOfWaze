@@ -1,84 +1,76 @@
-<table class="prod_table" id="top">
-  <tr>
-    <td><p class="category">Reach to us</p></td>
-  </tr>
-  <tr>
-    <td>Fill in your details below and we will get back to you...<br/>Fields with <%= image_tag "required_star.gif" %> are mandatory</td></tr>
-
-  <%= form_for(@enquiry, :remote => true) do |f| %>
-    <% if @enquiry.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@enquiry.errors.count, "error") %> prohibited this enquiry from being saved:</h2>
-        <ul>
-          <% @enquiry.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+<%= form_for(@enquiry, :remote => true) do |f| %>
+  <% if @enquiry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@enquiry.errors.count, "error") %> prohibited this enquiry from being saved:</h2>
+      <ul>
+        <% @enquiry.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
           <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <tr><td></br></td>></tr>
-    <tr>
-      <td class="form_td">
-        <p>
-          <div><%= image_tag "required_star.gif" %></div>
-          <%= f.label :firstname, :class => "lb_contact" %>
-          <%= text_field(:enquiry, :firstname,:class => "inputstyle", :MAXLENGTH=>32) %>
-        </p>
-        </br>
-        <p>
-          <div><%= image_tag "required_star.gif" %></div>
-          <%= f.label :lastname, :class => "lb_contact" %>
-          <%= f.text_field(:lastname, :class => "inputstyle", :MAXLENGTH=>32) %>
-        </p>
-        </br>
-        <p>
-        <div></div>
-          <%= f.label :country , :class => "lb_contact" %>
-          <%= f.text_field(:country, :class => "inputstyle") %>
-        </p>
-        </br>
-        <p>
-          <div></div>
-          <%= f.label 'Contact Number', :class => "lb_contact" %>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <%= telephone_field(:enquiry, :phone_country_code,:class => "inputstyle_customised", :value => 91, :size => 1, :MAXLENGTH=>4) %>
-          <%= telephone_field(:enquiry,:phone_city_code,:class => "inputstyle_customised",:value => 'city', :size => 3, :MAXLENGTH=>2) %>
-          <%= telephone_field(:enquiry,:phone_number,:class => "inputstyle_customised", :size => 8, :MAXLENGTH=>10) %>
-        </p>
-        </br>
-        <p>
-          <div><%= image_tag "required_star.gif" %></div>
-          <%= f.label :email , :class => "lb_contact" %>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <%= f.text_field(:email,:class => "inputstyle_customised",:size => 40) %>
-        </p>
-        </br>
-        <p>
-        <div><%= image_tag "required_star.gif" %></div>
-          <%= f.label "Interest Area" , :class => "lb_contact"  %>
-                    
-          <%= f.text_area(:remarks,:class=>"tareastyle", :rows=>"5", :cols=>"20", :required=>"required", :MAXLENGTH=>256) %>
-        </p>
-        </br>
-        <div class="inquiry_form">
-          <%= submit_tag 'Submit', :class => "subbtn" %>
-        </div>
-      <% end %>
-    </td>
-  </tr>
-  <tr><td>&nbsp;</td></tr>
-  <tr><td>&nbsp;</td></tr>
-  <tr><td>&nbsp;</td></tr>
-  <tr><td>&nbsp;</td></tr>
+          <% end %>
+          <table class="prod_table" id="top">
+            <tr>
+              <td><p class="category">Reach to us</p></td>
+            </tr>
+            <tr><td>Fill in your details below and we will get back to you...<br/>Fields with <%= image_tag "required_star.gif" %> are mandatory</td></tr>
+           </ul>
+    </div>
+   <tr><td></br></td></tr>
+  <tr>
+    <td class="form_td">
+      <p>
+      <div><%= image_tag "required_star.gif" %></div>
+      <%= f.label :firstname, :class => "lb_contact" %>
+      <%= text_field(:enquiry, :firstname,:class => "inputstyle", :MAXLENGTH=>32) %>
+    </p>
+    </br>
+    <p>
+    <div><%= image_tag "required_star.gif" %></div>
+    <%= f.label :lastname, :class => "lb_contact" %>
+    <%= f.text_field(:lastname, :class => "inputstyle", :MAXLENGTH=>32) %>
+  </p>
+  </br>
+  <p>
+  <div></div>
+  <%= f.label :country , :class => "lb_contact" %>
+  <%= f.text_field(:country, :class => "inputstyle") %>
+  </p>
+  </br>
+  <p>
+  <div></div>
+  <%= f.label 'Contact Number', :class => "lb_contact" %>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= telephone_field(:enquiry, :phone_country_code, :value => 91, :size => 1, :MAXLENGTH=>4) %>
+  <%= telephone_field(:enquiry,:phone_city_code,:value => 'citycode', :size => 3, :MAXLENGTH=>2) %>
+  <%= telephone_field(:enquiry,:phone_number, :size => 7, :MAXLENGTH=>10) %>
+  </p>
+  </br>
+  <p>
+  <div><%= image_tag "required_star.gif" %></div>
+  <%= f.label :email , :class => "lb_contact" %>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <%= f.email_field(:email,:width => "150px") %>
+  </p>
+  </br>
+  <p>
+  <div><%= image_tag "required_star.gif" %></div>
+  <%= f.label "Interest Area" , :class => "lb_contact"  %>
 
+  <%= f.text_area(:remarks,:class=>"tareastyle", :rows=>"5", :cols=>"20", :required=>"required", :MAXLENGTH=>256) %>
+  </p>
+  </br>
+  <div class="inquiry_form">
+    <%= submit_tag 'Submit', :class => "subbtn" %>
+  </div>
+<% end %>
+</td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td></tr>
 </table>
-
-
-
-
 </article> <!-- end of producst grid -->
-
 </section> <!-- end of prod page section - right pane -->
-
 </div> <!-- end of main container -->
+
 

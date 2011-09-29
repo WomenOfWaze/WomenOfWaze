@@ -1,36 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Photo:</b>
-  <%= image_tag @product.photo.url %>
-</p>
-
-<p>
-  <b>Code:</b>
-  <%= @product.code %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
-
-<p>
-  <b>Size:</b>
-  <%= @product.size %>
-</p>
-
-
+<%= render :partial => 'detail' %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path(:sub_category_id => @product.sub_category_id) %>
