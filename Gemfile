@@ -19,6 +19,8 @@ end
 # RSpec needs to be in :development group to expose generators
 # and rake tasks without having to type RAILS_ENV=test.
 group :development, :test do
+  gem 'execjs'
+  gem 'therubyracer'
   gem "mysql"
   gem "rspec-rails", "~> 2.6.1"
   gem "ruby-debug",   :platforms => :mri_18
@@ -38,6 +40,7 @@ group :test do
   gem "timecop"
   gem "shoulda-matchers"
   gem "launchy"
+  gem 'email_spec'
   #gem "capybara"
 #  gem "capybara-webkit"
 end
