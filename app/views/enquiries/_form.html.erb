@@ -37,7 +37,7 @@
   </br>
   <p>
   <div></div>
-  <%= f.label 'Contact Number', :class => "lb_contact" %>
+  <%= f.label :phone_number, 'Contact Number', :class => "lb_contact" %>
   <%= f.text_field(:phone_number, :class => "inputstyle") %>
   </p>
   </br>
@@ -50,8 +50,7 @@
   </br>
   <p>
   <div><%= image_tag "required_star.gif" %></div>
-  <%= f.label "Interest Area" , :class => "lb_contact"  %>
-
+  <%= f.label :remarks, "Interest Area" , :class => "lb_contact"  %>
   <%= f.text_area(:remarks,:class=>"tareastyle", :rows=>"5", :cols=>"20", :required=>"required", :MAXLENGTH=>256) %>
   </p>
   </br>

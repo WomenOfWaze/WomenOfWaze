@@ -16,4 +16,9 @@ FactoryGirl.define do
     name { Faker::Lorem.words(2).map { |word| word.titleize }.join(' ') }
     description { Faker::Lorem.words(2).map { |word| word.titleize }.join(' ') }
   end
+
+  factory :user do
+    email { Faker::Internet.email }
+    password { 'A-very-long-password' }
+  end
 end

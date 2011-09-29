@@ -14,6 +14,13 @@ module NavigationHelpers
     when /the login page/
       user_session_path
 
+    when /the product catalogue page/
+      catalogue_products_path
+
+    when /the product enquiry page for "([^"]*)"/
+      product = Product.find_by_name $1
+      new_enquiry_path(:product_id => product.id)
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

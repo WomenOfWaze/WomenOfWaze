@@ -46,4 +46,6 @@ end
 #   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
 #     DatabaseCleaner.strategy = :transaction
 #   end
-#
+
+require 'email_spec/cucumber'
+
