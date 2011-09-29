@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110926154658) do
+ActiveRecord::Schema.define(:version => 20110929185655) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -20,16 +21,14 @@ ActiveRecord::Schema.define(:version => 20110926154658) do
   end
 
   create_table "enquiries", :force => true do |t|
-    t.string   "firstname",          :limit => 32,  :null => false
-    t.string   "lastname",           :limit => 32,  :null => false
+    t.string   "firstname",    :limit => 32,  :null => false
+    t.string   "lastname",     :limit => 32,  :null => false
     t.string   "country"
-    t.integer  "phone_country_code", :limit => 8
-    t.integer  "phone_city_code",    :limit => 3
-    t.integer  "phone_number"
-    t.string   "email",              :limit => 65,  :null => false
-    t.string   "remarks",            :limit => 256, :null => false
+    t.string   "email",        :limit => 65,  :null => false
+    t.string   "remarks",      :limit => 256, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone_number"
   end
 
   create_table "products", :force => true do |t|
@@ -38,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20110926154658) do
     t.datetime "updated_at"
     t.string   "code"
     t.text     "description"
-    t.decimal  "price",              :precision => 10, :scale => 0
+    t.decimal  "price"
     t.integer  "sub_category_id"
     t.string   "size"
     t.string   "photo_file_name"
@@ -75,4 +74,3 @@ ActiveRecord::Schema.define(:version => 20110926154658) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
-
