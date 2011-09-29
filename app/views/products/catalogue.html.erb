@@ -26,7 +26,7 @@
 
 
 
-    <aricle class="prod_grid">
+    <article class="prod_grid">
       <section id="breadcrumb"><%= link_to 'Home' ,root_url %>&gt; Our Products</section>
       <table class="prod_table" id="top">
         <% for category in @categories %>
@@ -41,8 +41,8 @@
               <tr class="prod_row">
                 <% for product in product_list %>
                   <td class="prod_cell">
-                    <%= image_tag product.photo.url,:width =>"115" ,:height => "150" %>
-                    <p class="prod_title"><%= link_to product.name, '#'%><% if product.is_new_arrival? %>&nbsp;New!<% end %></p>
+                    <%= image_tag product.photo.url,:width =>"115" ,:height => "150", :id => "#{product.id}"%>
+                    <p class="prod_title"><%= link_to product.name, '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;New!<% end %></p>
                     <p class="prod_text">Code: <%= product.code %></br> Price: Rs.<%= product.price %>/- </br></p>
                     <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id) %></p>
                   </td>
@@ -61,7 +61,44 @@
         <%end%>
       </table>
 
-      </article>
+    </article>
 
   </section>
 </div>
+<div id="product_wrapper"></div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#product_wrapper").dialog({
+      autoOpen: false,
+      left:2,
+      top:10,
+      height:570,
+      width:700,
+      resizable: true,
+      modal: true
+      // close : closeProductDialog,
+      //open : openProductDialog
+    });
+
+    $(".product_dialogue").click(function(){
+      var detail_url = '<%= detail_product_url(0) %>';
+      $("#product_wrapper").dialog("open");
+      $("#product_wrapper").html('Loading...');
+      
+      $.ajax({
+        url : detail_url.replace('/0', '/' + $(this).attr('id')) ,
+        dataType: 'html',
+        success : function(data)
+        {
+
+          $("#product_wrapper").html(data);
+        }
+      });
+      
+    });
+
+  });
+
+ 
+</script>

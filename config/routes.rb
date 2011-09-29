@@ -6,6 +6,9 @@ WomenOfWaze::Application.routes.draw do
     collection do
       get 'catalogue'
     end
+    member do
+      get 'detail'
+    end
   end
 
   resources :sub_categories

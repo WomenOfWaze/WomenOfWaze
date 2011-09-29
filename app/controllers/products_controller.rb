@@ -93,4 +93,9 @@ class ProductsController < ApplicationController
   def catalogue
     @categories = Category.catalogue_details    
   end
+
+  def detail
+    @product = Product.find(params[:id])
+    render :partial => 'detail'
+  end
 end
