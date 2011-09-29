@@ -40,17 +40,17 @@
         <p>
           <div></div>
           <%= f.label 'Contact Number', :class => "lb_contact" %>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <%= telephone_field(:enquiry, :phone_country_code, :value => 91, :size => 1, :MAXLENGTH=>4) %>
-          <%= telephone_field(:enquiry,:phone_city_code,:value => 'citycode', :size => 3, :MAXLENGTH=>2) %>
-          <%= telephone_field(:enquiry,:phone_number, :size => 7, :MAXLENGTH=>10) %>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <%= telephone_field(:enquiry, :phone_country_code,:class => "inputstyle_customised", :value => 91, :size => 1, :MAXLENGTH=>4) %>
+          <%= telephone_field(:enquiry,:phone_city_code,:class => "inputstyle_customised",:value => 'city', :size => 3, :MAXLENGTH=>2) %>
+          <%= telephone_field(:enquiry,:phone_number,:class => "inputstyle_customised", :size => 8, :MAXLENGTH=>10) %>
         </p>
         </br>
         <p>
           <div><%= image_tag "required_star.gif" %></div>
           <%= f.label :email , :class => "lb_contact" %>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <%= f.email_field(:email,:width => "200px") %>
+          <%= f.text_field(:email,:class => "inputstyle_customised",:size => 40) %>
         </p>
         </br>
         <p>
