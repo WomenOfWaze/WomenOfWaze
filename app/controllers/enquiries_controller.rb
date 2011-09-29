@@ -32,7 +32,7 @@ class EnquiriesController < ApplicationController
 
     respond_to do |format|
       if @enquiry.save
-        format.html { render :text => "<font size='+4' color='green'>Thank you for queries.</font>" }
+       format.js { render :js => "alert('Thank you for queries.We will soon get back to you by mail!');window.location.replace('#{catalogue_products_url}');" }
       else
         format.html { render :action => "new" }
         format.json { render :json => @enquiry.errors, :status => :unprocessable_entity }
