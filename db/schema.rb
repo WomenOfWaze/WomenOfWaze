@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20110929185655) do
     t.datetime "updated_at"
     t.string   "code"
     t.text     "description"
-    t.decimal  "price"
+    t.decimal  "price",              :precision => 10, :scale => 0
     t.integer  "sub_category_id"
     t.string   "size"
     t.string   "photo_file_name"

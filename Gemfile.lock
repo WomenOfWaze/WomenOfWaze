@@ -30,6 +30,7 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
+    addressable (2.2.6)
     arel (2.2.1)
     aws-s3 (0.6.2)
       builder
@@ -108,6 +109,10 @@ GEM
     json (1.5.3)
     json (1.5.3-java)
     json_pure (1.6.0)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
+    letter_opener (0.0.2)
+      launchy
     linecache (0.46)
       rbx-require-relative (> 0.0.4)
     mail (2.3.0)
@@ -232,6 +237,7 @@ DEPENDENCIES
   high_voltage
   jquery-rails
   json (= 1.5.3)
+  letter_opener
   mysql
   paperclip
   pg

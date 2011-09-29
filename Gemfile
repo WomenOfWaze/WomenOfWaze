@@ -28,6 +28,10 @@ group :development, :test do
  gem "faker"
 end
 
+group :development do
+  gem 'letter_opener'
+end
+
 group :production do
   gem "pg"
   gem "aws-s3"
