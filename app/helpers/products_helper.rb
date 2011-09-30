@@ -9,5 +9,9 @@ module ProductsHelper
     end
     formatted
   end
+
+  def fomatted_name name
+     name.titleize
+  end
   
 end

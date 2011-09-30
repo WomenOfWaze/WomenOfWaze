@@ -1,6 +1,8 @@
 <%= stylesheet_link_tag 'style-catalogue.css' %>
 <div class="wrapper container_24">
-  <header class="banner_sm"> <span>An initiative of <a href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the Women of Waze.</span> </header>
+  <header class="banner_sm">
+    <span>An initiative of <a href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the Women of Waze.</span>
+  </header>
 
   <nav class="nav2">
     <div class="mainnav_sm btn_who">Who we are</div>
@@ -18,9 +20,9 @@
     <aside class="sidebar">
       <ul>
         <% for category in @categories %>
-          <li class="cat"><%= category.name %>
+          <li class="cat"><%= fomatted_name(category.name) %>
             <% for sub_category in category.sub_categories %>
-            <li class="subcat"><%= link_to sub_category.name, "##{sub_category.id}" %></li>
+            <li class="subcat"><%= link_to fomatted_name(sub_category.name), "##{sub_category.id}" %></li>
           <% end %>
           </li>
         <% end %>
@@ -36,7 +38,7 @@
           <% for sub_category in category.sub_categories %>
             <tr class="ptitle_row">
               <td colspan="4">
-                <p class="category"><%= category.name %>&colon;<%= link_to sub_category.name," ",:name => "#{sub_category.id}",:class=>"subcategory"%></p>
+                <p class="category"><%= fomatted_name(category.name) %>&colon;<%= link_to fomatted_name(sub_category.name)," ",:name => "#{sub_category.id}",:class=>"subcategory"%></p>
               </td>
             </tr>
 
@@ -45,7 +47,7 @@
                 <% for product in product_list %>
                   <td class="prod_cell">
                     <%= image_tag product.photo.url,:width =>"115" ,:height => "150", :id => "#{product.id}"%>
-                    <p class="prod_title"><%= link_to product.name, '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;New!<% end %></p>
+                    <p class="prod_title"><%= link_to fomatted_name(product.name), '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;New!<% end %></p>
                     <p class="prod_text">Code: <%= product.code %></br> Price: Rs.<%= product.price %>/- </br></p>
                     <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id) %></p>
                   </td>

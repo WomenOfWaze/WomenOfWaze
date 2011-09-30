@@ -14,16 +14,18 @@
     <%= javascript_include_tag "events" %>
 
 
-<%= stylesheet_link_tag 'jquery-ui-1.8.16.custom.css' %>
+    <%= stylesheet_link_tag 'jquery-ui-1.8.16.custom.css' %>
 
-<%= javascript_include_tag 'jquery-ui-1.8.16.custom.js' %>
+    <%= javascript_include_tag 'jquery-ui-1.8.16.custom.js' %>
 
   </head>
+
   <body>
+
     <%= yield %>
 
-  
-</body>
-<%= render "layouts/footer" %>
+
+    <%= render "layouts/footer" %>
+  </body>
 
 </html>
