@@ -3,7 +3,7 @@
     <%= image_tag @product.photo.url, :width => '330', :height => '440' %>
   </section>
   <section class='bag_details'>
-    <H2 class='subhead2'><%= @product.name %></H2>
+    <H2 class='subhead2'><%= fomatted_name @product.name %><% if @product.is_new_arrival? %>&nbsp;<%= image_tag 'new_tag.jpg' %><% end %></H2>
     <table>
       <tr class='alt_row'>
         <td>Code :</td>
@@ -11,21 +11,17 @@
       </tr>
       <tr>
         <td>Price</td>
-        <td>Rs. <%= @product.price %>/-</td>
+        <td>Rs. <%= @product.price.to_i %>/-</td>
       </tr>
       <tr class='alt_row'>
-        <td>Description</td>
-        <td><%= @product.description %></td>
+        <td>Size:</td>
+        <td><%= @product.size %>&nbsp;Inches</td>
       </tr>
-      <tr>
-        <td>Available Size:</td>
-        <td><%= @product.size %></td>
-      </tr>
-      <tr class='alt_row'>
-        <td>Minimum no of Bags per order:</td>
-        <td>1</td>
-      </tr>
+
     </table>
+    <tr class='alt_row'>
+    <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => @product.id),:style => 'text-decoration: none' %></p>
+    </tr>
   </section>
   <div class='clear'></div>
   <footer class="bag_footer">Copyright &copy; 2006-2011 - WOW: Women's Organization of Waje Group, Panvel</footer>

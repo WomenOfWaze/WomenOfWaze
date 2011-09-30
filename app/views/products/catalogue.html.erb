@@ -50,6 +50,7 @@
                     <%= link_to (image_tag product.photo.url,:width =>"115" ,:height => "150",:class => "product_dialogue" , :id => "#{product.id}") ,'#'%>
                     <p class="prod_title"><%= link_to fomatted_name(product.name), '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;<%= image_tag 'new_tag.jpg' %><% end %></p>
                     <p class="prod_text">Code: <%= product.code %><br/> Price: Rs&nbsp;<%= product.price.to_i %>/-</p>
+                    <p class="prod_text">Code: <%= product.code %><br/> Size:&nbsp;<%= product.size %>&nbsp;Inches</p>
                     <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id),:style => 'text-decoration: none' %></p>
                   </td>
                 <% end %>
@@ -59,6 +60,7 @@
                     <%= link_to (image_tag product.photo.url,:width =>"115" ,:height => "150",:class => "product_dialogue" , :id => "#{product.id}") ,'#'%>
                     <p class="prod_title"><%= link_to fomatted_name(product.name), '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;<%= image_tag 'new_tag.jpg' %><% end %></p>
                     <p class="prod_text">Code: <%= product.code %><br/> Price: Rs&nbsp;<%= product.price.to_i %>/-</p>
+                    <p class="prod_text">Code: <%= product.code %><br/> Size:&nbsp;<%= product.size %>&nbsp;Inches</p>
                     <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id),:style => 'text-decoration: none' %></p>
                   </td>
                   <%end%>
