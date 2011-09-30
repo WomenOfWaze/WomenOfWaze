@@ -4,8 +4,10 @@ module ProductsHelper
     b = []
     while !products.empty?
       b = products.take(4)
-      formatted << b
       products = products - b
+      size = b.size
+      (4 - size).times {b << "1"} if size < 4
+      formatted << b
     end
     formatted
   end

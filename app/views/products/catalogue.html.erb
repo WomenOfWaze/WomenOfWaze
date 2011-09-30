@@ -12,9 +12,9 @@
 
   <section class="prod_page">
 
-  <% flash.each do |key, value| %>
-    <div class="flash_message <%= key %>"><%= value %></div>
-  <% end %>
+    <% flash.each do |key, value| %>
+      <div class="flash_message <%= key %>"><%= value %></div>
+    <% end %>
 
 
     <aside class="sidebar">
@@ -44,32 +44,17 @@
 
             <% for product_list in formatted_products(sub_category.products) %>
               <tr class="prod_row">
-                <% if product_list.size == 4 %>
-                <% for product in product_list %>
-                  <td class="prod_cell">
-                    <%= link_to (image_tag product.photo.url,:width =>"115" ,:height => "150",:class => "product_dialogue" , :id => "#{product.id}") ,'#'%>
-                    <p class="prod_title"><%= link_to fomatted_name(product.name), '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;<%= image_tag 'new_tag.jpg' %><% end %></p>
-                    <p class="prod_text">Code: <%= product.code %><br/> Price: Rs&nbsp;<%= product.price.to_i %>/-</p>
-                    <p class="prod_text">Code: <%= product.code %><br/> Size:&nbsp;<%= product.size %>&nbsp;Inches</p>
-                    <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id),:style => 'text-decoration: none' %></p>
-                  </td>
-                <% end %>
-                  <%else%>
                   <% for product in product_list %>
-                  <td class="prod_cell">
-                    <%= link_to (image_tag product.photo.url,:width =>"115" ,:height => "150",:class => "product_dialogue" , :id => "#{product.id}") ,'#'%>
-                    <p class="prod_title"><%= link_to fomatted_name(product.name), '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;<%= image_tag 'new_tag.jpg' %><% end %></p>
-                    <p class="prod_text">Code: <%= product.code %><br/> Price: Rs&nbsp;<%= product.price.to_i %>/-</p>
-                    <p class="prod_text">Code: <%= product.code %><br/> Size:&nbsp;<%= product.size %>&nbsp;Inches</p>
-                    <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id),:style => 'text-decoration: none' %></p>
-                  </td>
-                  <%end%>
-                  <% (4- product_list.size).times do |i| %>
-                  <td class="prod_cell"></td>
-                  <%end%>
-                <%end%>
-                
-     
+                    <td class="prod_cell">
+                      <% if product.kind_of?(Product) %>
+                        <%= link_to (image_tag product.photo.url,:width =>"115" ,:height => "150",:class => "product_dialogue" , :id => "#{product.id}") ,'#'%>
+                        <p class="prod_title"><%= link_to fomatted_name(product.name), '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;<%= image_tag 'new_tag.jpg' %><% end %></p>
+                        <p class="prod_text">Code: <%= product.code %><br/> Price: Rs&nbsp;<%= product.price.to_i %>/-</p>
+                        <p class="prod_text">Code: <%= product.code %><br/> Size:&nbsp;<%= product.size %>&nbsp;Inches</p>
+                        <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id),:style => 'text-decoration: none' %></p>
+                      <% end %>
+                    </td>
+                  <% end %>
               </tr>
             <%end%>
             <tr class="ptitle_row">
@@ -91,36 +76,36 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-    $("#product_wrapper").dialog({
-      autoOpen: false,
-      left:2,
-      top:10,
-      height:580,
-      width:720,
-      resizable: false,
-      modal: true
-      // close : closeProductDialog,
-      //open : openProductDialog
-    });
+  $("#product_wrapper").dialog({
+  autoOpen: false,
+  left:2,
+  top:10,
+  height:580,
+  width:720,
+  resizable: false,
+  modal: true
+  // close : closeProductDialog,
+  //open : openProductDialog
+  });
 
-    $(".product_dialogue").click(function(){
-      var detail_url = '<%= detail_product_url(0) %>';
-      $("#product_wrapper").dialog("open");
-      $("#product_wrapper").html('Loading...');
-      
-      $.ajax({
-        url : detail_url.replace('/0', '/' + $(this).attr('id')) ,
-        dataType: 'html',
-        success : function(data)
-        {
+  $(".product_dialogue").click(function(){
+  var detail_url = '<%= detail_product_url(0) %>';
+  $("#product_wrapper").dialog("open");
+  $("#product_wrapper").html('Loading...');
 
-          $("#product_wrapper").html(data);
-        }
-      });
-      
-    });
+  $.ajax({
+  url : detail_url.replace('/0', '/' + $(this).attr('id')) ,
+  dataType: 'html',
+  success : function(data)
+  {
+
+  $("#product_wrapper").html(data);
+  }
+  });
 
   });
 
- 
+  });
+
+
 </script>
