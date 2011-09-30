@@ -6,7 +6,7 @@
 
   <nav class="nav2">
     <div class="mainnav_sm btn_who"><%= link_to 'Who we are', aboutus_url, :class=>"btn_inner_toolbar"  %></div>
-    <div class="mainnav_sm btn_prod"><%= link_to 'Shop for Our Products', catalogue_products_url, :class=>"btn_inner_toolbar"  %></div>
+    <div class="extendednav_sm btn_prod"><%= link_to 'Shop for Our Products', catalogue_products_url, :class=>"btn_inner_toolbar"  %></div>
     <div class="mainnav_sm btn_contact"><%= link_to 'Get in touch', new_enquiry_url, :class=>"btn_inner_toolbar"  %></div>
   </nav>
 
@@ -47,8 +47,8 @@
                 <% for product in product_list %>
                   <td class="prod_cell">
                     <% if product.kind_of?(Product) %>
-                      <%= link_to (image_tag product.photo.url,:width =>"115" ,:height => "150",:class => "product_dialogue" , :id => "#{product.id}") ,"#"%>
-                      <p class="prod_title"><%= link_to fomatted_name(product.name), '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;<%= image_tag 'new_tag.jpg' %><% end %></p>
+                      <%= link_to (image_tag product.photo.url,:width =>"115" ,:height => "150",:class => "product_dialogue" , :id => "#{product.id}") ,"##{product.code}"%>
+                      <p class="prod_title"><%= link_to fomatted_name(product.name), "##{product.code}", :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;<%= image_tag 'new_tag.jpg' %><% end %></p>
                       <p class="prod_text">Code: <%= product.code %><br/> Price: Rs&nbsp;<%= product.price.to_i %>/-<br/> Size:&nbsp;<%= product.size %>&nbsp;"</p>
                       <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id),:style => 'text-decoration: none' %></p>
                     <% end %>
