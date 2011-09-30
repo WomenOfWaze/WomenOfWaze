@@ -22,7 +22,7 @@
         <% for category in @categories %>
           <li class="cat"><%= fomatted_name(category.name) %>
             <% for sub_category in category.sub_categories %>
-            <li class="subcat"><%= link_to fomatted_name(sub_category.name), "##{sub_category.id}" %></li>
+            <li class="subcat"><%= link_to fomatted_name(sub_category.name), "##{sub_category.id}" ,:style => 'text-decoration: none'%></li>
           <% end %>
           </li>
         <% end %>
@@ -38,7 +38,7 @@
           <% for sub_category in category.sub_categories %>
             <tr class="ptitle_row">
               <td colspan="4">
-                <p class="category"><%= fomatted_name(category.name) %>&colon;<%= link_to fomatted_name(sub_category.name)," ",:name => "#{sub_category.id}",:class=>"subcategory"%></p>
+                <p class="category"><%= fomatted_name(category.name) %>&colon;<%= link_to fomatted_name(sub_category.name)," ",:name => "#{sub_category.id}",:class=>"subcategory",:style => 'text-decoration: none'%></p>
               </td>
             </tr>
 
@@ -49,7 +49,7 @@
                     <%= image_tag product.photo.url,:width =>"115" ,:height => "150", :id => "#{product.id}"%>
                     <p class="prod_title"><%= link_to fomatted_name(product.name), '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;<span class ="new_arrival">New!</span><% end %></p>
                     <p class="prod_text">Code: <%= product.code %></br> Price: Rs.<%= product.price %>/- </br></p>
-                    <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id) %></p>
+                    <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id),:style => 'text-decoration: none' %></p>
                   </td>
 
                 <% end %>
