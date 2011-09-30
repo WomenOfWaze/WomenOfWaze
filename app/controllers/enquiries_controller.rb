@@ -1,5 +1,5 @@
 class EnquiriesController < ApplicationController
-  skip_before_filter :authenticate_user!, :only => :new
+  skip_before_filter :authenticate_user!, :only => [:new, :create]
   def index
     @enquiries = Enquiry.all
 
