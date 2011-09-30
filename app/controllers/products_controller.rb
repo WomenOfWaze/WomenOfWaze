@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   
-  skip_before_filter :authenticate_user!, :only => :catalogue
+  skip_before_filter :authenticate_user!, :only => [:catalogue,:detail]
   # GET /products
   # GET /products.xml
   def index
