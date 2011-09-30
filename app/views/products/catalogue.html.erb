@@ -47,7 +47,7 @@
                 <% for product in product_list %>
                   <td class="prod_cell">
                     <%= image_tag product.photo.url,:width =>"115" ,:height => "150", :id => "#{product.id}"%>
-                    <p class="prod_title"><%= link_to fomatted_name(product.name), '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;New!<% end %></p>
+                    <p class="prod_title"><%= link_to fomatted_name(product.name), '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;<span class ="new_arrival">New!</span><% end %></p>
                     <p class="prod_text">Code: <%= product.code %></br> Price: Rs.<%= product.price %>/- </br></p>
                     <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id) %></p>
                   </td>
