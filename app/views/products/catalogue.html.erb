@@ -38,7 +38,7 @@
           <% for sub_category in category.sub_categories %>
             <tr class="ptitle_row">
               <td colspan="4">
-                <p class="category"><%= fomatted_name(category.name) %>&colon;<%= link_to fomatted_name(sub_category.name)," ",:name => "#{sub_category.id}",:class=>"subcategory",:style => 'text-decoration: none'%></p>
+                <p class="category"><%= fomatted_name(category.name) %>:<%= link_to fomatted_name(sub_category.name)," ",:name => "#{sub_category.id}",:class=>"subcategory",:style => 'text-decoration: none'%></p>
               </td>
             </tr>
 
@@ -46,13 +46,14 @@
               <tr class="prod_row">
                 <% for product in product_list %>
                   <td class="prod_cell">
-                    <%= image_tag product.photo.url,:width =>"115" ,:height => "150", :id => "#{product.id}"%>
+                    <%= link_to (image_tag product.photo.url,:width =>"115" ,:height => "150",:class => "product_dialogue" , :id => "#{product.id}") ,'#'%>
                     <p class="prod_title"><%= link_to fomatted_name(product.name), '#', :id => "#{product.id}", :class => "product_dialogue" %><% if product.is_new_arrival? %>&nbsp;<span class ="new_arrival">New!</span><% end %></p>
-                    <p class="prod_text">Code: <%= product.code %></br> Price: Rs.<%= product.price %>/- </br></p>
+                    <p class="prod_text">Code: <%= product.code %><br/> Price: Rs&nbsp;<%= product.price.to_i %>/-</p>
                     <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => product.id),:style => 'text-decoration: none' %></p>
                   </td>
 
                 <% end %>
+     
               </tr>
             <%end%>
             <tr class="ptitle_row">
@@ -78,9 +79,9 @@
       autoOpen: false,
       left:2,
       top:10,
-      height:570,
-      width:700,
-      resizable: true,
+      height:580,
+      width:720,
+      resizable: false,
       modal: true
       // close : closeProductDialog,
       //open : openProductDialog

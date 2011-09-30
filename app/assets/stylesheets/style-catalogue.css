@@ -450,6 +450,7 @@ nav {
     border-radius: 6px 6px 6px 6px;
     -moz-border-radius:6px 6px 6px 6px;
     -webkit-border-radius: 6px 6px 6px 6px;
+    
 }
 .toplink {
     text-align:right;
@@ -467,9 +468,9 @@ nav {
 
 #product_wrapper
 {
-    width: 682px;
+    width: 700px;
     height:500px;
-    border:1px solid black;
+    /*border:1px solid black;*/
     line-height: 15px;
     background-color:#F2F3E3;
     padding-top:20px;
@@ -527,7 +528,7 @@ tr.alt_row
     font-size:10px;
     background-position:top center;
     padding:5px;
-    text-align:left;
+    text-align:center;
     margin:0 auto;
     background-color: #BFC1AB;
     margin-top:30px;
