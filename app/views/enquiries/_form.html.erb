@@ -20,39 +20,43 @@
    <tr><td></br></td></tr>
   <tr>
     <td class="form_td">
-
+     <p>
 
       <%= f.label :firstname, 'First Name', :class => "lb_contact" %>
       <%= text_field(:enquiry, :firstname,:class => "inputstyle", :MAXLENGTH=>32) %>
                         <%= image_tag "required_star.gif" %>
 
+    </p>
     </br>
-    </br>
+    <p>
     <%= f.label :lastname, 'Last Name', :class => "lb_contact" %>
     <%= f.text_field(:lastname, :class => "inputstyle", :MAXLENGTH=>32) %>
     <%= image_tag "required_star.gif" %>
+    </p>
     </br>
-    </br>
+    <p>
   <%= f.label :country, 'Address' , :class => "lb_contact" %>
   <%= f.text_field(:country, :class => "inputstyle") %>
+  </p>
   </br>
-  </br>
+  <p>
   <%= f.label :phone_number, 'Contact Number', :class => "lb_contact" %>
   <%= f.text_field(:phone_number, :class => "inputstyle") %>
+  </p>
   </br>
-  </br>
+  <p>
 
   <%= f.label :email , :class => "lb_contact" %>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <%= f.email_field(:email,:width => "150px") %>
   <%= image_tag "required_star.gif" %>
+  </p>
   </br>
-  </br>
-
+<p>
   <%= f.label :remarks, "Area of Interest" , :class => "lb_contact"  %>
   <%= f.text_area(:remarks,:class=>"tareastyle", :rows=>"5", :cols=>"20", :required=>"required", :MAXLENGTH=>256) %>
   <%= image_tag "required_star.gif" %>
-  </br>
+  </p>
   </br>
   <div class="inquiry_form">
     <%= submit_tag 'Submit', :class => "subbtn" %>
