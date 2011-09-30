@@ -1,7 +1,76 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<%#= render :partial => 'detail' %>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
 
-<%= render :partial => 'detail' %>
+    <link rel="stylesheet" href="../stylesheets/reset.css"/>
+    <!--<link rel="stylesheet" href="css/960_24_col.css"/>
+		<link rel="stylesheet" href="css/text.css"/>-->
+    <link rel="stylesheet" href="../stylesheets/style.css"/>
+    <link rel="stylesheet" href="../stylesheets/admin_style.css"/>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path(:sub_category_id => @product.sub_category_id) %>
+    <!-- to display HTML5 tags in IE8 as well -->
+    <!-- [if lt IE 8]-->
+    <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+      document.createElement('hgroup');
+    </script>
+    <script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
+    <!-- [endif]-->
 
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.google.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+    <title>WOW</title>
+  </head>
+  <body>
+    <div class="wrapper container_24">
+      <header class="banner">
+        <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
+      </header>
+
+      <section class="bodycontent">
+        <div class="admin-banner">
+          <h3>Welcome Admin</h3>
+        </div>
+        <div class="center">
+          <div class="show-table">
+            <table>
+              <p id="notice"><%= notice %></p>
+              <tr>
+                <th> </th><td> <%= image_tag @product.photo.url, :height => 150, :width => 115 %></td>
+              </tr>
+              <tr>
+                <th>Code</th> <td><%= @product.code %></td>
+              </tr>
+              <tr>
+                <th>Name</th> <td><%= @product.name %></td>
+              </tr>
+              <tr>
+                <th>Description</th> <td> <%= @product.description %></td>
+              </tr>
+              <tr>
+                <th>Price</th> <td> <%= @product.price %></td>
+              </tr>
+              <tr>
+                <th>Size:</th> <td><%= @product.size %></td>
+              </tr>
+              <tr>
+                <td><%= link_to 'Edit', edit_product_path(@product) %></td>
+                <td><%= link_to 'Back', products_path(:sub_category_id => @product.sub_category_id) %></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

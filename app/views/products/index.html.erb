@@ -1,17 +1,83 @@
-<table>
-<% @products.each do |product| %>
-   <tr>
-     <td><%= image_tag product.photo.url %></td>
-     <td><%= product.code %></td>
-     <td><%= product.name %></td>
-     <td><%= product.description %></td>
-     <td><%= product.size %></td>
-     <td><%= link_to 'Show', product %></td>
-     <td><%= link_to 'Edit', edit_product_path(product) %></td>
-     <td><%= link_to 'Delete', product, :confirm => 'Are you sure?', :method => :delete %></td>
-     </tr>
- <% end %>
- </table>
- <%= link_to 'New Product', new_product_path(:category_id => @category.id ,:sub_category_id => @sub_category.id) %>&nbsp;&nbsp;
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
 
+        <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
+
+        <link rel="stylesheet" href="../stylesheets/reset.css"/>
+        <!--<link rel="stylesheet" href="css/960_24_col.css"/>
+		<link rel="stylesheet" href="css/text.css"/>-->
+        <link rel="stylesheet" href="../stylesheets/style.css"/>
+        <link rel="stylesheet" href="../stylesheets/admin_style.css"/>
+
+        <!-- to display HTML5 tags in IE8 as well -->
+        <!-- [if lt IE 8]-->
+        <script>
+            document.createElement('header');
+            document.createElement('nav');
+            document.createElement('section');
+            document.createElement('article');
+            document.createElement('aside');
+            document.createElement('footer');
+            document.createElement('hgroup');
+        </script>
+        <!-- [endif]-->
+
+        <!--[if lt IE 9]>
+		<script src="http://html5shiv.google.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+        <title>WOW</title>
+    </head>
+    <body>
+        <div class="wrapper container_24">
+            <header class="banner">
+                <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
+            </header>
+
+            <section class="admincontent">
+                <div class="admin-banner">
+                    <h3>Welcome Admin</h3>
+                </div>
+              <div class="page-header">Products for <%=@sub_category.name.capitalize%> Sub-Category</div>
+                <div class="admin-option">
+<%= link_to 'New Product',new_product_path(:category_id => @category.id ,:sub_category_id => @sub_category.id)%>&nbsp;&nbsp;&nbsp;
 <%= link_to 'Back', sub_categories_path(:category_id => @category.id ,:sub_category_id => @sub_category.id) %>
+                </div>
+                <br/><br/>
+                
+                <div class="categories-table">
+                    <table>
+                        <thead>
+                            <tr>
+                              <% if @products.empty?  %>
+                              <b>No Products for <%=@sub_category.name.capitalize%></b>
+                              <%else%>
+                              <th>Product Photo</th><th>Code</th><th>Name</th><th>Description</th><th>Size</th>
+                              <%end%>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @products.each do |product| %>
+                            <tr>
+                               <td class="p-category"><%= image_tag product.photo.url, :height => 150, :width => 115 %></td>
+                               <td><%= product.code %></td>
+                               <td><%= product.name %></td>
+                               <td><%= product.description %></td>
+                               <td><%= product.size %></td>
+                               <td>
+                               <%= link_to 'Show', product %>&nbsp;&nbsp;
+                               <%= link_to 'Edit', edit_product_path(product) %>&nbsp;&nbsp;
+                               <%= link_to 'Delete', product, :confirm => 'Are you sure?', :method => :delete %>
+                               </td>
+                             </tr>
+                            <%end%>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+        </div>
+</body>
+</html>

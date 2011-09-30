@@ -1,15 +1,68 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
 
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
 
-<p>
-  <b>Description:</b>
-  <%= @category.description %>
-</p>
+    <link rel="stylesheet" href="../stylesheets/reset.css"/>
+    <!--<link rel="stylesheet" href="css/960_24_col.css"/>
+		<link rel="stylesheet" href="css/text.css"/>-->
+    <link rel="stylesheet" href="../stylesheets/style.css"/>
+    <link rel="stylesheet" href="../stylesheets/admin_style.css"/>
 
+    <!-- to display HTML5 tags in IE8 as well -->
+    <!-- [if lt IE 8]-->
+    <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+      document.createElement('hgroup');
+    </script>
+    <script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
+      <!-- [endif]-->
 
-<%= link_to 'Edit', edit_category_path(@category) %> 
-<%= link_to 'Back', categories_path %>
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.google.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+    <title>WOW</title>
+  </head>
+  <body>
+    <div class="wrapper container_24">
+      <header class="banner">
+        <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
+      </header>
+
+      <section class="bodycontent">
+        <div class="admin-banner">
+          <h3>Welcome Admin</h3>
+        </div>
+        <div class="center">
+          <div class="admin-option">
+            <table>
+              <p id="notice"><%= notice %></p>
+
+              <p>
+                <b>Name:</b>
+                <%= @category.name %>
+              </p>
+
+              <p>
+                <b>Description:</b>
+                <%= @category.description %>
+              </p>
+              <tr>
+                <td><%= link_to 'Edit', edit_category_path(@category) %></td>
+                <td><%= link_to 'Back', categories_path %></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

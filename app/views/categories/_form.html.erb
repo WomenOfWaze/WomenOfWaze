@@ -1,25 +1,80 @@
-<%= form_for(@category) do |f| %>
-  <% if @category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
 
-      <ul>
-      <% @category.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
+
+    <link rel="stylesheet" href="../stylesheets/reset.css"/>
+    <!--<link rel="stylesheet" href="css/960_24_col.css"/>
+		<link rel="stylesheet" href="css/text.css"/>-->
+    <link rel="stylesheet" href="../stylesheets/style.css"/>
+    <link rel="stylesheet" href="../stylesheets/admin_style.css"/>
+
+    <!-- to display HTML5 tags in IE8 as well -->
+    <!-- [if lt IE 8]-->
+    <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+      document.createElement('hgroup');
+    </script>
+    <script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
+    
+    <!-- [endif]-->
+
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.google.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+    <title>WOW</title>
+  </head>
+  <body>
+    <div class="wrapper container_24">
+      <header class="banner">
+        <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
+      </header>
+     
+      <section class="admincontent">
+        <div class="admin-banner">
+          <h3>Welcome Admin</h3>
+        </div>
+        <div class="center">
+          <div class="admin-option">
+            <%= form_for(@category) do |f| %>
+              <% if @category.errors.any? %>
+                <div id="error_explanation" class ="field_with_errors">
+                  <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+                  <ul>
+                    <% @category.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+            <table>
+              <tr>
+                <td> <%= f.label :name %></td>
+                <td><%= f.text_field :name %></td>
+              </tr>
+
+              <tr>
+                <td>  <%= f.label :description %></td>
+                <td><%= f.text_area :description %></td>
+              </tr>
+              <tr>
+                <td><%= link_to 'Back', categories_path %></td>
+                <td><%= f.submit %></td>
+              </tr>
+              </table>
+            <% end %>
+          </div>
+        </div>
+      </section>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  </body>
+</html>

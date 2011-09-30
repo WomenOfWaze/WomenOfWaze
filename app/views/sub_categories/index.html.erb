@@ -1,40 +1,83 @@
-<p>
-  <b>Category Name:</b>
-  <%= @category.name %>
-</p>
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
 
-<p>
-  <b>Description:</b>
-  <%= @category.description %>
-</p>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
 
-<%= link_to 'edit', edit_category_path(@category) %>
+    <link rel="stylesheet" href="../stylesheets/reset.css"/>
+    <!--<link rel="stylesheet" href="css/960_24_col.css"/>
+		<link rel="stylesheet" href="css/text.css"/>-->
+    <link rel="stylesheet" href="../stylesheets/style.css"/>
+    <link rel="stylesheet" href="../stylesheets/admin_style.css"/>
 
-<h1>Sub categories for <%=@category.name%></h1>
+    <!-- to display HTML5 tags in IE8 as well -->
+    <!-- [if lt IE 8]-->
+    <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+      document.createElement('hgroup');
+    </script>
+    <!-- [endif]-->
 
-<table border="1" >
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.google.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 
-<% @sub_categories.each do |sub_category| %>
-  <tr>
-    <td><%= link_to sub_category.name ,products_path(:sub_category_id => sub_category.id)%></td>
-    <td><%= sub_category.description %></td>
-    <td><%= link_to 'Show', sub_category %></td>
-    <td><%= link_to 'Edit', edit_sub_category_path(sub_category) %></td>
-    <% if sub_category.products.empty? %>
-    <td><%= link_to 'Delete', sub_category, :confirm => 'Are you sure?', :method => :delete  %></td>
-    <%end%>
-  </tr>
-<% end %>
-</table>
+    <title>WOW</title>
+  </head>
+  <body>
+    <div class="wrapper container_24">
+      <header class="banner">
+        <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
+      </header>
 
-<br />
+      <section class="admincontent">
+        <div class="admin-banner">
+          <h3>Welcome Admin</h3>
+        </div>
 
-<%= link_to 'New Sub category', new_sub_category_path(:category_id => @category.id) %> &nbsp;
-<%= link_to 'Back', categories_path %>
+        <div class="page-header">Sub categories for <%=@category.name.capitalize%> Category</div>
+        
+        <div class="admin-option">
+<%= link_to 'New Sub category', new_sub_category_path(:category_id => @category.id) %>&nbsp;&nbsp;
+        <%= link_to 'Back', categories_path %>
+        </div>
+                      
+        <div class="categories-table">
+          <table>
+            <thead>
+              <tr>
+                <% if @sub_categories.empty?  %>
+                <b>No Sub-Category for <%=@category.name.capitalize%></b>
+                <%else%>
+                <th>Sub Category Name</th><th>Description</th><th></th>
+                <%end%>
+              </tr>
+            </thead>
+            <tbody>
+              <% @sub_categories.each do |sub_category| %>
+                <tr>
+                  <td class="p-category"><%= link_to sub_category.name ,sub_category %></td>
+                  <td><%= sub_category.description %></td>
+                  <td><%= link_to 'Edit', edit_sub_category_path(sub_category) %></td>
+                    <% if sub_category.products.empty? %>
+                    <td><%= link_to 'Delete', sub_category, :confirm => 'Are you sure?', :method => :delete  %></td>
+                  <%end%>
+                   <td><%= link_to 'Manage Product', products_path(:sub_category_id => sub_category.id) %></td>
+                  
+                </tr>
+              <%end%>
+            
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+    </div>
+  </body>
+</html>

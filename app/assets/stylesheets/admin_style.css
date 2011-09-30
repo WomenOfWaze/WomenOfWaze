@@ -1,0 +1,227 @@
+/*	-------ADMIN PAGE STYLES-----*/
+/*	-------Table Colors-----
+		Dark blue : #C2D4EC;
+		Light blue : #CDDAEC;
+		Light Gray : #EBEEF7;
+	------------------------*/
+/*----------1.categories.html---------*/
+.field_with_errors {
+  padding: 2px;
+/*  background-color: red;*/
+  color: red;
+  display: table;
+}
+
+.field_with_errors input{
+  padding: 2px;
+/*  background-color: red;*/
+  border: 1px solid red;
+  color: red;
+  display: table;
+}
+
+.admincontent {
+    width:960px;
+    margin:0px auto;
+    padding-top:20px;
+}
+.admin-banner{
+    height:30px;
+    text-align:center;
+    font-size:18px;
+    line-height:18px;
+    padding:10px 0px 0px 0px;
+    font-weight:normal;
+    background:#786230;
+    color:white;
+
+}
+.page-header{
+    text-align:center;
+    padding:10px 0px;
+    font-weight:normal;
+    font-size:16px;
+    color:white;
+    background:gray;
+}
+
+.admin-option{
+    margin-top:20px;
+}
+.admin-option a{
+    font-size:14px;
+    font-weight:normal;
+    background:#82AE4F;
+    padding:5px;
+    text-decoration:none;
+    color:white;
+}
+
+.admin-option a:hover,.admin-option  a:focus,.admin-option  a:active{
+    font-size:14px;
+    font-weight:normal;
+    background:goldenrod;
+    padding:5px;
+    text-decoration:none;
+    color:white;
+}
+
+
+
+.admin-option input[type="submit"]{
+    font-size:14px;
+    font-weight:normal;
+    background:#82AE4F;
+    padding:0px;
+    color:white;
+}
+
+.admin-option input[type="submit"]:hover,.admin-option input[type="submit"]:focus,.admin-option input[type="submit"]:active{
+    font-size:14px;
+    font-weight:normal;
+    background:goldenrod;
+    color:white;
+}
+
+
+.categories-table{
+    margin-top:30px;
+}
+.categories-table table{
+    width:960px;
+}
+.categories-table thead{
+    background:white;
+
+}
+
+.categories-table tbody{
+
+    background:#EBEEF7
+
+}
+
+.categories-table tr{
+    border-top:1px solid white;
+}
+
+.categories-table tr:hover{
+    background:#CDDAEC;
+}
+.categories-table th{
+    font-weight:bold;
+    text-align:left;
+    padding:10px 5px 10px 5px;
+
+}
+.categories-table td{
+    font-weight:bold;
+    text-align:left;
+    color:gray;
+    padding:10px 3px 10px 3px;
+
+}
+.categories-table td a{
+    font-size:14px;
+    font-weight:normal;
+    background:#82AE4F;
+    padding:2px;
+    text-decoration:none;
+    color:white;
+}
+
+.categories-table td a:hover,.categories-table td a:focus,.categories-table td a:active{
+    font-size:14px;
+    font-weight:normal;
+    background:goldenrod;
+    padding:2px;
+    text-decoration:none;
+    color:white;
+}
+
+.show-table{
+    margin-top:10px;
+}
+.show-table table{
+    width:460px;
+}
+.show-table thead{
+    background:white;
+
+}
+
+.show-table tbody{
+
+    background:#EBEEF7
+
+}
+
+.show-table tr{
+    border-top:1px solid white;
+}
+
+.show-table tr:hover{
+    background:#CDDAEC;
+}
+.show-table th{
+    font-weight:bold;
+    text-align:left;
+    padding:10px 5px 10px 5px;
+
+}
+.show-table td{
+    font-weight:bold;
+    text-align:left;
+    color:gray;
+    padding:10px 3px 10px 3px;
+
+}
+.show-table td a{
+    font-size:14px;
+    font-weight:normal;
+    background:#82AE4F;
+    padding:5px 10px;
+    text-decoration:none;
+    color:white;
+}
+
+.show-table td a:hover,.show-table td a:focus,.show-table td a:active{
+    font-size:14px;
+    font-weight:normal;
+    background:goldenrod;
+    padding:5px 10px;
+    text-decoration:none;
+    color:white;
+}
+td.p-category a{
+    padding:0px;
+    background:none;
+    color:#82AE4F;
+
+}
+td.p-category a:hover,td.p-category a:focus,td.p-category a:active{
+    text-decoration:underline;
+    background:none;
+    padding:0px;
+}
+/*----------1.edit-categories.html---------*/
+.center{
+    margin:10px 0px 0px 220px;
+}
+.admin-option table{
+    margin:50px;
+}
+.admin-option td{
+    padding:10px;
+    text-align:right;
+}
+.admin-option input[type="text"]{
+    padding:5px;
+    border:1px solid grey;
+    color:gray;
+}
+.admin-option textarea{
+    padding:5px;
+    border:1px solid grey;
+}
+

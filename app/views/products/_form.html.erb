@@ -1,47 +1,103 @@
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
 
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
+
+    <link rel="stylesheet" href="../stylesheets/reset.css"/>
+    <!--<link rel="stylesheet" href="css/960_24_col.css"/>
+		<link rel="stylesheet" href="css/text.css"/>-->
+    <link rel="stylesheet" href="../stylesheets/style.css"/>
+    <link rel="stylesheet" href="../stylesheets/admin_style.css"/>
+
+    <!-- to display HTML5 tags in IE8 as well -->
+    <!-- [if lt IE 8]-->
+    <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+      document.createElement('hgroup');
+    </script>
+    <script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
+    
+    <!-- [endif]-->
+
+    <!--[if lt IE 9]>
+		<script src="http://html5shiv.google.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+    <title>WOW</title>
+  </head>
+  <body>
+    <div class="wrapper container_24">
+      <header class="banner">
+        <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
+      </header>
+
+      <section class="admincontent">
+        <div class="admin-banner">
+          <h3>Welcome Admin</h3>
+        </div>
+        <div class="center">
+          <div class="admin-option">
+            <%= form_for(@product) do |f| %>
+              <% if @product.errors.any? %>
+                <div id="error_explanation" class ="field_with_errors">
+                  <h2><%= pluralize(@product.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+                  <ul>
+                    <% @product.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+            <table>
+              <tr>
+                <td><%= f.label :name %></td>
+                <td><%= f.text_field :name %></td>
+              </tr>
+
+              <tr>
+                <td><%= f.label :description %></td>
+                <td><%= f.text_area :description %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :price %>(in INR)</td>
+                <td><%= f.text_field :price %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :size %>(for e.g, 5x4x3 inches)</td>
+                <td><%= f.text_field :size %></td>
+              </tr>
+              <tr>
+                <td><%= f.check_box :new_arrival %></td>
+                <td><%= f.label :new_arrival %></td>
+              </tr>
+              <tr>
+                <% if @product.errors.any? %>
+                <td class="field_with_errors"><%= f.label :photo %></td>
+                <%else%>
+                <td><%= f.label :photo %></td>
+                <%end%>
+                <td><%= f.file_field :photo %></td>
+              </tr>
+              <% if @sub_category %>
+              <%= hidden_field_tag :sub_category_id, @sub_category.id %>
+              <%end%>
+              <tr>
+                <td><%= link_to 'Back', products_path(:sub_category_id => @product.sub_category_id) %></td>
+                <td><%= f.submit %></td>
+              </tr>
+              </table>
+            <% end %>
+          </div>
+        </div>
+      </section>
     </div>
-   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :price %>(in INR)<br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :size %>(for e.g, 5x4x3)<br />
-    <%= f.text_field :size %>
-  </div>
-  <br/>
-  <div class="field">
-  <%= f.check_box :new_arrival %>
-  <%= f.label :new_arrival %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= f.label :photo %> &nbsp;
-    <%= f.file_field :photo %>
-  </div>
-  <br/>
-<% if @sub_category %>
-   <%= hidden_field_tag :sub_category_id, @sub_category.id %>
-<%end%>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  </body>
+</html>
