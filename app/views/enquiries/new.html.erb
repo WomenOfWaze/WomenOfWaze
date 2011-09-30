@@ -1,12 +1,13 @@
+<%= stylesheet_link_tag 'style-catalogue.css' %>
 <div class="wrapper container_24">
   <header class="banner_sm">
     <span>An initiative of <a href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the Women of Waze.</span>
   </header>
 
   <nav class="nav2">
-    <div class="mainnav_sm btn_who">Who we are</div>
-    <div class="mainnav_sm btn_prod">Our Products</div>
-    <div class="mainnav_sm btn_contact">Get in touch</div>
+    <div class="mainnav_sm btn_who"><%= link_to 'Who we are', aboutus_url, :class=>"btn_inner_toolbar"  %></div>
+    <div class="mainnav_sm btn_prod"><%= link_to 'Shop for Our Products', catalogue_products_url, :class=>"btn_inner_toolbar"  %></div>
+    <div class="mainnav_sm btn_contact"><%= link_to 'Get in touch', new_enquiry_url, :class=>"btn_inner_toolbar"  %></div>
   </nav>
 
 

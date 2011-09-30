@@ -106,6 +106,8 @@ textarea{
 table{
     cellpadding:10px;
     margin-bottom: 20px;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 
@@ -146,16 +148,15 @@ table{
     -webkit-border-radius: 0px 0px 5px 5px;
 }
 
-.banner
-{
-    width:840px;
-    height:123px;
-    background-image:url('logo_WOW.png');
-    background-repeat:no-repeat;
-    text-align:right;
-    font-size:10px;
-    color:#666666;
-    margin:0px auto;
+.banner {
+	width:840px;
+	height:140px;
+	background-image:url('banner_main.jpg');
+	background-repeat:no-repeat;
+	text-align:right;
+	font-size:10px;
+	color:#666666;
+	margin:0px auto;
 }
 .slideshow
 {
@@ -243,13 +244,13 @@ nav
     width:265px;
     float:right;
     padding-left:14px;
-    font-size:14px;
+    font-size:12px;
     border-left: thin #666666;
 
 }
 .homecontact a
 {
-    font-size:14px;
+    font-size:12px;
 }
 
 
@@ -464,6 +465,22 @@ tr.alt_row
     vertical-align:middle;
     padding-top:20px;
 }
+
+.btn_inner_toolbar {
+    width:278px;
+    height:40px;
+    float:left;
+    font-size:20px;
+    color:#FFFFFF;
+    text-align:center;
+    vertical-align:middle;
+    text-decoration: none;
+}
+
+div.mainnav_sm a:hover{
+    text-decoration:none;
+}
+
 .prod_page {
     width:840px;
     margin:0px auto;

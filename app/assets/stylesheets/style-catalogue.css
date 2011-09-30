@@ -125,16 +125,7 @@ table {
 
 
 /*main banner homepage*/
-.banner {
-    width:840px;
-    height:123px;
-    background-image:url('logo_WOW.png');
-    background-repeat:no-repeat;
-    text-align:right;
-    font-size:10px;
-    color:#666666;
-    margin:0px auto;
-}
+
 a {
     text-decoration:underline;
     font-size:10px;
@@ -149,19 +140,19 @@ header {
 
 /* --- internal page small banner */
 .banner_sm {
-    width:840px;
-    height:123px;
-    background-image:url('banner_sm.jpg');
-    background-repeat:no-repeat;
-    text-align:right;
-    font-size:10px;
-    color:#FFFFFF;
-    margin:0px auto;
+	width:840px;
+	height:140px;
+	background-image:url('banner_sm.jpg');
+	background-repeat:no-repeat;
+	text-align:right;
+	font-size:10px;
+	color:#666666;
+	margin:0px auto;
 }
 .banner_sm a {
-    text-decoration:underline;
-    font-size:10px;
-    color:#ffffff;
+	text-decoration:underline;
+	font-size:10px;
+	color:#666666;
 }
 
 /* home page banner */

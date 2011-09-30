@@ -6,9 +6,9 @@
   </header>
 
   <nav class="nav2">
-    <div class="mainnav_sm btn_who">Who we are</div>
-    <div class="mainnav_sm btn_prod">Our Products</div>
-    <div class="mainnav_sm btn_contact">How to reach us?</div>
+    <div class="mainnav_sm btn_who"><%= link_to 'Who we are', aboutus_url, :class=>"btn_inner_toolbar" %></div>
+    <div class="mainnav_sm btn_prod"><%= link_to 'Shop for Our Products', catalogue_products_url, :class=>"btn_inner_toolbar"  %></div>
+    <div class="mainnav_sm btn_contact"><%= link_to 'Get in touch', new_enquiry_url, :class=>"btn_inner_toolbar"  %></div>
   </nav>
   <!-- for page display -->
   <section class="prod_page">
