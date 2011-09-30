@@ -23,4 +23,4 @@ Feature: Send a product enquiry
      Then they should see "Enquiry From - Abhishek Sharma" in the email subject
       And they should see "Please attend to the following request" in the email body
       And I should be on the product catalogue page
-      And I should see "Thank you for queries. We will soon get back to you by mail."
+      And I should see "Thank you for inquiries. We shall get in touch with you soon."

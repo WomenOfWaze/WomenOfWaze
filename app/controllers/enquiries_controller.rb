@@ -41,7 +41,7 @@ class EnquiriesController < ApplicationController
     respond_to do |format|
       if @enquiry.save    
         EnquiryMailer.enquiry_mail(@enquiry).deliver
-        format.html { redirect_to(catalogue_products_path, :notice => "Thank you for queries. We will soon get back to you by mail.") }
+        format.html { redirect_to(catalogue_products_path, :notice => "Thank you for inquiries. We shall get in touch with you soon.") }
       else
         format.html { render :action => "new" }
         format.json { render :json => @enquiry.errors, :status => :unprocessable_entity }
