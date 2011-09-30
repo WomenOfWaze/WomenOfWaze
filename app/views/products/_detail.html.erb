@@ -1,10 +1,10 @@
 
 <div id="product_wrapper">
   <section class="bag">
-    <%= image_tag @product.photo.url, :width => '330', :height => '440' %>
+    <%= image_tag @product.photo.url, :width => '330', :height => '440',:title => "#{@product.name.capitalize}" %>
   </section>
   <section class='bag_details'>
-    <H2 class='subhead2'><%= fomatted_name @product.name %><% if @product.is_new_arrival? %>&nbsp;<%= image_tag 'new_tag.jpg' %><% end %></H2>
+    <H2 class='subhead2'><%= formatted_name @product.name %><% if @product.is_new_arrival? %>&nbsp;<%= image_tag 'new_tag.jpg' %><% end %></H2>
     <table>
       <tr class='alt_row'>
         <td>Code :</td>

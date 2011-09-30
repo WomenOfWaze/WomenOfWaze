@@ -12,7 +12,7 @@ module ProductsHelper
     formatted
   end
 
-  def fomatted_name name
+  def formatted_name name
      name.titleize
   end
 
