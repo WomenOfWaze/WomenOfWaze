@@ -407,6 +407,13 @@ nav {
     margin-left:5px;
     line-height:25px;
 }
+.new_arrival {
+    color:green;
+    font-weight:bold;
+    font-size:14px;
+    margin-left:5px;
+    line-height:25px;
+}
 .prod_title a {
     color:#bb0707;
     font-weight:bold;
