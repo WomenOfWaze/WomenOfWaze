@@ -721,4 +721,13 @@ tr.alt_row
     -moz-border-radius:6px 6px 6px 6px;
     -webkit-border-radius: 6px 6px 6px 6px;
 }
+/*************************************************/
+/************* who we are **************/
 
+.sidebar_whoweare {
+	clear:both;
+	width:150px;
+	float:left;
+	margin-top:40px;
+}
+/**************************************/

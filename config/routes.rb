@@ -15,6 +15,8 @@ WomenOfWaze::Application.routes.draw do
   resources :categories 
   resources :enquiries
 
+  match "/aboutus" => "home#aboutus"
+
   #  root :to => "categories#index"
 
   root :to => 'home#index'
