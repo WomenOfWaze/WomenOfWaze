@@ -15,5 +15,9 @@ module ProductsHelper
   def fomatted_name name
      name.titleize
   end
+
+   def formatted_description text
+     text.capitalize
+  end
   
 end

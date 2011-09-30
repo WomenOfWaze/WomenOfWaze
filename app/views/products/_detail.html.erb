@@ -19,9 +19,15 @@
       </tr>
 
     </table>
-    <tr class='alt_row'>
+    <table>
+      <tr>
+        <td>
+          <b><%=  formatted_description(@product.description) %></b>
+        </td>
+      </tr>
+    </table>
     <p class="btn_buy"><%= link_to "Interested in buying", new_enquiry_url(:product_id => @product.id),:style => 'text-decoration: none' %></p>
-    </tr>
+
   </section>
   <div class='clear'></div>
   <footer class="bag_footer">Copyright &copy; 2006-2011 - WOW: Women's Organization of Waje Group, Panvel</footer>
