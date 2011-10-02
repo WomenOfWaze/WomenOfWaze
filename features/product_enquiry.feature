@@ -15,7 +15,7 @@ Feature: Send a product enquiry
       And I fill in "enquiry_country" with "India"
       And I fill in "enquiry_phone_number" with "022 3525 255"
       And I fill in "enquiry_email" with "abhishek.sharma@gmail.in"
-     Then the "Interest Area" field should contain "I am interested in buying Product Red Jewelry Bag with Code"
+     Then the "Area of Interest" field should contain "I am interested in buying Product Red Jewelry Bag with Code"
      When I press "Submit"
      Then "admin_gupta@wow.com" should receive an email
       And "admin_bhens@wow.com" should receive an email
