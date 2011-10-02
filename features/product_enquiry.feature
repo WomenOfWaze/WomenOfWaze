@@ -10,11 +10,11 @@ Feature: Send a product enquiry
         | admin_gupta@wow.com |
         | admin_bhens@wow.com |
       And I am on the product enquiry page for "Red Jewelry Bag"
-     When I fill in "Firstname" with "Abhishek"
-      And I fill in "Lastname" with "Sharma"
-      And I fill in "Country" with "India"
-      And I fill in "Contact Number" with "022 3525 255"
-      And I fill in "Email" with "abhishek.sharma@gmail.in"
+     When I fill in "enquiry_firstname" with "Abhishek"
+      And I fill in "enquiry_lastname" with "Sharma"
+      And I fill in "enquiry_country" with "India"
+      And I fill in "enquiry_phone_number" with "022 3525 255"
+      And I fill in "enquiry_email" with "abhishek.sharma@gmail.in"
      Then the "Interest Area" field should contain "I am interested in buying Product Red Jewelry Bag with Code"
      When I press "Submit"
      Then "admin_gupta@wow.com" should receive an email
