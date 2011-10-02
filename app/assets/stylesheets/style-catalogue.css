@@ -539,3 +539,18 @@ tr.alt_row
     margin-top:30px;
 
 }
+
+
+
+#error_explanation h2 {
+  padding: 2px;
+/*  background-color: red;*/
+  color: red;
+  display: table;
+}
+#error_explanation li{
+  padding: 2px;
+/*  background-color: red;*/
+  color: red;
+  display: table;
+}
