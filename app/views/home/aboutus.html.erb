@@ -5,10 +5,16 @@
     <span>An initiative of <a href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the Women of Waze.</span>
   </header>
 
-  <nav class="nav2">
-    <div class="extendednav_sm btn_who"><%= link_to 'Who we are', aboutus_url, :class=>"btn_inner_toolbar" %></div>
-    <div class="mainnav_sm btn_prod"><%= link_to 'Shop for Our Products', catalogue_products_url, :class=>"btn_inner_toolbar"  %></div>
-    <div class="mainnav_sm btn_contact"><%= link_to 'Get in touch', new_enquiry_url, :class=>"btn_inner_toolbar"  %></div>
+<nav class="nav2">
+    <div class="internalnav_sm btn_who">
+		<%= link_to 'Who we are', aboutus_url, :class=>"btn_inner_common btn_who_inner active_sel"  %>
+	</div>
+    <div class="internalnav_sm btn_prod">
+		<%= link_to 'Shop for Our Products', catalogue_products_url, :class=>"btn_inner_common btn_prod_inner"  %>
+	</div>
+    <div class="internalnav_sm btn_contact">
+		<%= link_to 'Get in touch', new_enquiry_url, :class=>"btn_inner_common btn_contact_inner"  %>
+	</div>
   </nav>
   <!-- for page display -->
   <section class="prod_page">

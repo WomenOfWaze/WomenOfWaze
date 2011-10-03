@@ -560,3 +560,70 @@ tr.alt_row
   color: red;
   display: table;
 }
+
+/* add the following styles for menu */
+
+.nav2 .btn_who {
+	background-color:#624C72;
+}
+
+.nav2 .btn_prod {
+	background-color:#786230;
+	margin-left:3px;
+}
+
+.nav2 .btn_contact {
+	background-color:#4F5C62;
+	margin-left:3px;
+}
+
+.nav2 a.btn_who_inner {
+	background-color:#5885c8;
+ text-decoration: none;
+
+}
+
+.nav2 a.btn_prod_inner {
+	background-color:#82AE4F;
+         text-decoration: none;
+
+}
+
+.nav2 a.btn_contact_inner {
+	background-color:#37A4AB;
+         text-decoration: none;
+
+}
+
+a.active_sel
+{
+	height:50px;
+}
+
+.internalnav_sm {
+	width:278px;
+	height:40px;
+	float:left;
+	font-size:20px;
+	color:#FFFFFF;
+	text-align:center;
+	vertical-align:middle;
+
+}
+
+.btn_inner_common{
+	width:278px;
+	float:left;
+	font-size:20px;
+	color:#FFFFFF;
+	text-align:center;
+	vertical-align:middle;
+	text-decoration:none;
+	margin-top: 10px;
+    padding-top: 10px;
+}
+
+.btn_hover_in
+{
+	height:50px;
+}

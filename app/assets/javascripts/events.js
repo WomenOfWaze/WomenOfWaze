@@ -8,11 +8,12 @@ $(document).ready(function(){
 		function(){
 			$(this).removeClass("buttonHover");
 		});
-
-$("nav.nav2 > div.mainnav_sm").hover(function(){
-			$(this).addClass("buttonHover");
+$("a.btn_inner_common").hover(function()
+		{
+				$(this).addClass("btn_hover_in");
 		},
-		function(){
-			$(this).removeClass("buttonHover");
+		function()
+		{
+			$(this).removeClass("btn_hover_in");
 		});
 });
