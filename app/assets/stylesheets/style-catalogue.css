@@ -338,8 +338,9 @@ div.extendednav_sm a:hover{
     color:#333333;
     clear:both;
     text-indent:10px;
-    padding:10px 10px 5px 0px;
-    line-height:0.5;
+    padding:10px 10px 5px 10px;
+    line-height:100%;
+    text-indent:0;
 }
 .subcat a {
     font-size:12px;
@@ -352,6 +353,9 @@ div.extendednav_sm a:hover{
     /*background-color:#d9e7ca;*/
     width:auto;
     text-decoration:underline;
+}
+.sidebar ul {
+    padding: 0;
 }
 
 /*************/
@@ -556,6 +560,11 @@ tr.alt_row
 }
 #error_explanation li{
   padding: 2px;
+/*  background-color: red;*/
+  color: red;
+  display: table;
+}
+#error_explanation {
 /*  background-color: red;*/
   color: red;
   display: table;

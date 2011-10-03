@@ -43,7 +43,13 @@ class EnquiriesController < ApplicationController
         EnquiryMailer.enquiry_mail(@enquiry).deliver
         format.html { redirect_to(catalogue_products_path, :notice => "Thank you for inquiries. We shall get in touch with you soon.") }
       else
-        format.html { render :action => "new" }
+        error_text = "We found errors with your submission. Fields marked with * are mandatory"
+        if !params[:product_id].blank?
+          format.html { redirect_to new_enquiry_path(:product_id => params[:product_id]) , :notice => error_text }
+        else
+          format.html { redirect_to new_enquiry_path , :notice => error_text }
+        end
+        
         format.json { render :json => @enquiry.errors, :status => :unprocessable_entity }
       end
     end

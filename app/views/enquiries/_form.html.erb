@@ -1,74 +1,69 @@
 <%= form_for(@enquiry) do |f| %>
-  <% if @enquiry.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@enquiry.errors.count, "error") %> prohibited this enquiry from being saved:</h2>
-      <ul>
-        <% @enquiry.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-          <% end %>
-          <% end %>
-          <table class="prod_table" id="top">
-            <tr>
-              <td><p class="category">Get in touch</p></td>
-            </tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td>You can also send online queries to inquire about bulk orders, exhibitions etc. by filling this form. We shall get back to you. </br></br>Our existing delivery network includes Mumbai, Thane and Pune cities. For delivery to other locations, we request the customers to bear shipping charges. <br/>
-<br/>
- Fields with <%= image_tag "required_star.gif" %> are mandatory.</td></tr>
-           </ul>
-    </div>
-   <tr><td></br></td></tr>
+<div>
+  <div id="error_explanation"><%= flash[:notice] %></div>
+      <table class="prod_table" id="top">
+        <tr>
+          <td><p class="category">Get in touch</p></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>You can also send online queries to inquire about bulk orders, exhibitions etc. by filling this form. We shall get back to you. </br></br>Our existing delivery network includes Mumbai, Thane and Pune cities. For delivery to other locations, we request the customers to bear shipping charges. <br/>
+            <br/>
+            Fields with <%= image_tag "required_star.gif" %> are mandatory.</td></tr>
+    </ul>
+  <tr><td></br></td></tr>
   <tr>
     <td class="form_td">
-     <p>
+      <p>
 
-      <%= f.label :firstname, 'First Name', :class => "lb_contact" %>
-      <%= text_field(:enquiry, :firstname,:class => "inputstyle", :MAXLENGTH=>32) %>
-                        <%= image_tag "required_star.gif" %>
+        <%= f.label :firstname, 'First Name', :class => "lb_contact" %>
+        <%= text_field(:enquiry, :firstname,:class => "inputstyle", :MAXLENGTH=>32) %>
+        <%= image_tag "required_star.gif" %>
 
-    </p>
-    </br>
-    <p>
-    <%= f.label :lastname, 'Last Name', :class => "lb_contact" %>
-    <%= f.text_field(:lastname, :class => "inputstyle", :MAXLENGTH=>32) %>
-    <%= image_tag "required_star.gif" %>
-    </p>
-    </br>
-    <p>
-  <%= f.label :country, 'Address' , :class => "lb_contact" %>
-  <%= f.text_field(:country, :class => "inputstyle") %>
-  </p>
-  </br>
-  <p>
-  <%= f.label :phone_number, 'Contact Number', :class => "lb_contact" %>
-  <%= f.text_field(:phone_number, :class => "inputstyle") %>
-  </p>
-  </br>
-  <p>
+      </p>
+      </br>
+      <p>
+        <%= f.label :lastname, 'Last Name', :class => "lb_contact" %>
+        <%= f.text_field(:lastname, :class => "inputstyle", :MAXLENGTH=>32) %>
+        <%= image_tag "required_star.gif" %>
+      </p>
+      </br>
+      <p>
+        <%= f.label :country, 'Address' , :class => "lb_contact" %>
+        <%= f.text_field(:country, :class => "inputstyle") %>
+      </p>
+      </br>
+      <p>
+        <%= f.label :phone_number, 'Contact Number', :class => "lb_contact" %>
+        <%= f.text_field(:phone_number, :class => "inputstyle") %>
+      </p>
+      </br>
+      <p>
 
-  <%= f.label :email , :class => "lb_contact" %>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <%= f.email_field(:email,:width => "150px") %>
-  <%= image_tag "required_star.gif" %>
-  </p>
-  </br>
-<p>
-  <%= f.label :remarks, "Area of Interest" , :class => "lb_contact"  %>
-  <%= f.text_area(:remarks,:class=>"tareastyle", :rows=>"5", :cols=>"20", :required=>"required", :MAXLENGTH=>256) %>
-  <%= image_tag "required_star.gif" %>
-  </p>
-  </br>
-  <div class="inquiry_form">
-    <%= submit_tag 'Submit', :class => "subbtn" %>
-  </div>
-<% end %>
-</td>
+        <%= f.label :email , :class => "lb_contact" %>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= f.email_field(:email,:width => "150px") %>
+        <%= image_tag "required_star.gif" %>
+      </p>
+      </br>
+      <p>
+        <%= f.label :remarks, "Area of Interest" , :class => "lb_contact"  %>
+        <%= f.text_area(:remarks,:class=>"tareastyle", :rows=>"5", :cols=>"20", :required=>"required", :MAXLENGTH=>256) %>
+        <%= image_tag "required_star.gif" %>
+      </p>
+      </br>
+      <div class="inquiry_form">
+        <%= submit_tag 'Submit', :class => "subbtn" %>
+      </div>
+      <input type="hidden" name="product_id" value="<%= params[:product_id] %>"/>
+    <% end %>
+  </td>
 </tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td>&nbsp;</td></tr>
 </table>
+</div>
 </article> <!-- end of producst grid -->
 </section> <!-- end of prod page section - right pane -->
 </div> <!-- end of main container -->
