@@ -5,7 +5,7 @@ class EnquiryMailer < ActionMailer::Base
     @enquiry = enquiry
     requestor_name = @enquiry.firstname << " " << @enquiry.lastname
     #mail(:to => User.all.map(&:email), :subject => "Enquiry From - " << requestor_name)
-    mail(:to => "womenofwaze@gmail.com", :subject => "Enquiry From - " << requestor_name)
+    mail(:to => "wow.maitree@tcs.com", :subject => "Enquiry From - " << requestor_name)
   end
 
 end
