@@ -1,4 +1,12 @@
-
+<script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+</script>
 <div id="product_wrapper">
   <section class="bag">
     <%= image_tag @product.photo.url, :width => '330', :height => '440',:title => "#{@product.name.capitalize}" %>
@@ -12,7 +20,7 @@
       </tr>
       <tr>
         <td>Price</td>
-        <td>&#x20b9;&nbsp;<%= @product.price.to_i %>/-</td>
+        <td>Rs.&nbsp;<%= @product.price.to_i %>/-</td>
       </tr>
       <tr class='alt_row'>
         <td>Size:</td>
