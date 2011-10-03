@@ -291,6 +291,12 @@ nav {
     padding-top:20px;
     text-decoration: none;
 }
+
+.buttonHover
+{
+    cursor : pointer;
+    height:50px !important;
+}
 div.extendednav_sm a:hover{
     text-decoration:none;
 }

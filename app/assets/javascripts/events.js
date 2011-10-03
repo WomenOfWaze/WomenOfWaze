@@ -8,4 +8,11 @@ $(document).ready(function(){
 		function(){
 			$(this).removeClass("buttonHover");
 		});
+
+$("nav.nav2 > div.mainnav_sm").hover(function(){
+			$(this).addClass("buttonHover");
+		},
+		function(){
+			$(this).removeClass("buttonHover");
+		});
 });
