@@ -5,7 +5,7 @@
 
         <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
 
-        <link rel="stylesheet" href="../stylesheets/reset.css"/>
+        <!-- <link rel="stylesheet" href="../stylesheets/reset.css"/>-->
         <!--<link rel="stylesheet" href="css/960_24_col.css"/>
 		<link rel="stylesheet" href="css/text.css"/>-->
         <link rel="stylesheet" href="../stylesheets/style.css"/>
@@ -38,11 +38,11 @@
 
             <section class="admincontent">
                 <div class="admin-banner">
-                    <h3>Welcome Admin</h3>
+                    Welcome Admin
                 </div>
-              <div class="page-header">Products for <%=@sub_category.name.capitalize%> Sub-Category</div>
+              <div class="admin-page-header">Products for <%=@sub_category.name.capitalize%> Sub-Category</div>
                 <div class="admin-option">
-<%= link_to 'New Product',new_product_path(:category_id => @category.id ,:sub_category_id => @sub_category.id)%>&nbsp;&nbsp;&nbsp;
+<%= link_to 'Add New Product',new_product_path(:category_id => @category.id ,:sub_category_id => @sub_category.id)%>&nbsp;&nbsp;&nbsp;
 <%= link_to 'Back', sub_categories_path(:category_id => @category.id ,:sub_category_id => @sub_category.id) %>
                 </div>
                 <br/><br/>
@@ -61,7 +61,7 @@
                         <tbody>
                             <% @products.each do |product| %>
                             <tr>
-                               <td class="p-category"><%= image_tag product.photo.url, :height => 150, :width => 115 %></td>
+                        <td class="p-category"><%= link_to((image_tag product.photo.url, :height => 150, :width => 115),product) %></td>
                                <td><%= product.code %></td>
                                <td><%= product.name %></td>
                                <td><%= product.description %></td>

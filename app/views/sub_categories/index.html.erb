@@ -5,7 +5,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
 
-    <link rel="stylesheet" href="../stylesheets/reset.css"/>
+    <!-- <link rel="stylesheet" href="../stylesheets/reset.css"/>-->
     <!--<link rel="stylesheet" href="css/960_24_col.css"/>
 		<link rel="stylesheet" href="css/text.css"/>-->
     <link rel="stylesheet" href="../stylesheets/style.css"/>
@@ -38,13 +38,13 @@
 
       <section class="admincontent">
         <div class="admin-banner">
-          <h3>Welcome Admin</h3>
+          Welcome Admin
         </div>
 
-        <div class="page-header">Sub categories for <%=@category.name.capitalize%> Category</div>
+        <div class="admin-page-header">Sub categories for <%=@category.name.capitalize%> Category</div>
         
         <div class="admin-option">
-<%= link_to 'New Sub category', new_sub_category_path(:category_id => @category.id) %>&nbsp;&nbsp;
+<%= link_to 'Add New SubCategory', new_sub_category_path(:category_id => @category.id) %>&nbsp;&nbsp;
         <%= link_to 'Back', categories_path %>
         </div>
                       

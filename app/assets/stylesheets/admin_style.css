@@ -36,7 +36,7 @@
     color:white;
 
 }
-.page-header{
+.admin-page-header{
     text-align:center;
     padding:10px 0px;
     font-weight:normal;
@@ -205,7 +205,7 @@ td.p-category a:hover,td.p-category a:focus,td.p-category a:active{
     padding:0px;
 }
 /*----------1.edit-categories.html---------*/
-.center{
+.admin-center{
     margin:10px 0px 0px 220px;
 }
 .admin-option table{
