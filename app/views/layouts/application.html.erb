@@ -17,6 +17,19 @@
 
     <%= javascript_include_tag 'jquery-ui-1.8.16.custom.js' %>
 
+    <!-- to display HTML5 tags in IE8 as well -->
+<!-- [if lt IE 8]-->
+<script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+        </script>
+<!-- [endif]-->
+
   </head>
 
   <body>

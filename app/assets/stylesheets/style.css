@@ -124,6 +124,18 @@ table{
     color:#666666;
 }
 
+.small_foot{
+    clear:both;
+    height:10px;
+    font-size:10px;
+    background-position:top center;
+    width:420px;
+    text-align:center;
+    margin:0 auto;
+    color:#666666;
+
+}
+
 /*-------MAIN-----*/
 .wrapper
 {
@@ -232,6 +244,7 @@ nav
 .thumb1
 {
     padding-right:15px;
+    border: none;
 }
 
 .readmore

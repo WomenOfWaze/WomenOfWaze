@@ -56,7 +56,7 @@
             <tr>&nbsp;</tr>
             <tr>
               <td rowspan="2">
-                <%= image_tag "vid_img.jpg" ,:width => "170" ,:height => "130" ,:class => "thumb1" %></td>
+                <%= link_to (image_tag "vid_img.jpg" ,:width => "170" ,:height => "130" ,:class => "thumb1"), "", :id => "video_dialogue" %></td>
             </tr>
             <tr>
               <td><table>
@@ -92,12 +92,30 @@ We are a group of women trained and skilled in embroidery, stitching and craftwo
       </section>
 
     </div>
-
-
-
-
-
-</body>
+        <div id="video_wrapper" style="display:none;align:center" title="Women of Waze"><iframe width="454" height="315" src="http://www.youtube.com/embed/hLWKwDPrIN8" frameborder="0" allowfullscreen></iframe><%= render :partial => 'layouts/popup_footer' %></div>
+ </body>
 </html>
 <%= javascript_include_tag "jquery.nivo.slider.pack.js" %>
 <%= javascript_include_tag "events" %>
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("#video_wrapper").dialog({
+  autoOpen: false,
+  left:2,
+  top:10,
+  height:410,
+  width:495,
+  resizable: true,
+  modal: true
+  // close : closeProductDialog,
+  //open : openProductDialog
+  });
+
+  $("#video_dialogue").click(function(){
+    $("#video_wrapper").dialog("open");
+        return false;
+   });
+  });
+
+
+</script>
