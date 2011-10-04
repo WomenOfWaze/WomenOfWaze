@@ -17,7 +17,7 @@ Feature: Send a product enquiry
       And I fill in "enquiry_email" with "abhishek.sharma@gmail.in"
      Then the "Area of Interest" field should contain "I am interested in buying Product Red Jewelry Bag with Code"
      When I press "Submit"
-     Then "womenofwaze@gmail.com" should receive an email
+     Then "wow.maitree@tcs.com" should receive an email
       # And "admin_bhens@wow.com" should receive an email
      When they open the email
      Then they should see "Enquiry From - Abhishek Sharma" in the email subject
