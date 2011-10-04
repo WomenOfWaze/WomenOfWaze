@@ -18,7 +18,7 @@ describe EnquiryMailer do
  end
  subject { EnquiryMailer.enquiry_mail(enquiry) }
 
- it { should deliver_to("womenofwaze@gmail.com") } #it's hard coded into code!
+ it { should deliver_to("wow.maitree@tcs.com") } #it's hard coded into code!
  it { should have_subject("Enquiry From - Rocky Jaiswal") }
  it { should have_body_text("Requestor First Name - Rocky") }
  it { should have_body_text("Requestor Last Name - Jaiswal") }
