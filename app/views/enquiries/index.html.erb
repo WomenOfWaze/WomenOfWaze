@@ -1,3 +1,23 @@
+<html>
+<head>
+<style type="text/css">
+.logout
+{
+text-align:center;
+font-size: 20px ;
+}
+</style>
+</head>
+
+<body>
+
+<div class="logout">
+<%= link_to 'logout', destroy_user_session_path %>
+</div>
+
+</body>
+</html>
+
 <h1>Contact Us</h1>
 
 <table border="1">
@@ -23,6 +43,7 @@
 </table>
 
 <br />
-
+<div class="admin-option">
 <%= link_to 'New Enquiry', new_enquiry_path %>
-
+<%= link_to 'Back to admin home', admin_path %>
+</div>

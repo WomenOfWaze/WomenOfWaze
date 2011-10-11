@@ -1,77 +1,80 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
 
-        <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
 
-       <!-- <link rel="stylesheet" href="../stylesheets/reset.css"/>-->
-        <!--<link rel="stylesheet" href="css/960_24_col.css"/>
+    <!-- <link rel="stylesheet" href="../stylesheets/reset.css"/>-->
+    <!--<link rel="stylesheet" href="css/960_24_col.css"/>
 		<link rel="stylesheet" href="css/text.css"/>-->
-        <link rel="stylesheet" href="../stylesheets/style.css"/>
-        <link rel="stylesheet" href="../stylesheets/admin_style.css"/>
-        
-        <!-- to display HTML5 tags in IE8 as well -->
-        <!-- [if lt IE 8]-->
-        <script>
-            document.createElement('header');
-            document.createElement('nav');
-            document.createElement('section');
-            document.createElement('article');
-            document.createElement('aside');
-            document.createElement('footer');
-            document.createElement('hgroup');
-        </script>
-        <!-- [endif]-->
+    <link rel="stylesheet" href="../stylesheets/style.css"/>
+    <link rel="stylesheet" href="../stylesheets/admin_style.css"/>
 
-        <!--[if lt IE 9]>
+    <!-- to display HTML5 tags in IE8 as well -->
+    <!-- [if lt IE 8]-->
+    <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+      document.createElement('hgroup');
+    </script>
+    <!-- [endif]-->
+
+    <!--[if lt IE 9]>
 		<script src="http://html5shiv.google.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-        <title>WOW</title>
-    </head>
-    <body>
-        <div class="wrapper container_24">
-            <header class="banner">
-                <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
-            </header>
-            
-            <section class="admincontent">
-                <div class="admin-banner">
-                    Welcome Admin
-                </div>
-                <div class="admin-page-header">Categories Page</div>
-                <div class="admin-option"><%= link_to 'Add New Category', new_category_path %></div>
-                <div class="categories-table">
-                    <table>
-                        <thead>
-                            <tr>
-                              <% if @categories.empty? %>
-                              <b>No Categories</b>
-                              <%else%>
-                              <th>Category Name</th><th>Description</th><th></th>
-                              <%end%>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% @categories.each do |category| %>
-                            <tr>
-                               <td class="p-category"><%= link_to category.name, category %></td>
-                               <td><%= category.description %></td>
-                               <td><%= link_to 'Edit', edit_category_path(category) %></td>
-                               <%if category.sub_categories.empty? %>
-                               <td><%= link_to 'Delete', category, :confirm => 'Are you sure?', :method => :delete %></td>
-                               <%else%>
-                               <td> </td>
-                               <%end%>
-                               <td><%= link_to 'Manage SubCategory', sub_categories_path(:category_id => category.id) %></td>
-                            </tr>
-                            <%end%>
-                        </tbody>
-                    </table>
-                </div>
+    <title>WOW</title>
+  </head>
+  <body>
+    <div class="wrapper container_24">
+      <header class="banner">
+        <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
+      </header>
 
-            </section>
-        </div>    
-</body>
+
+      <%= render :partial => 'shared/logout' %>
+
+      <section class="admincontent">
+        <div class="admin-banner">
+          Welcome Admin
+        </div>
+        <div class="admin-page-header">Categories Page</div>
+        <div class="admin-option"><%= link_to 'Add New Category', new_category_path %></div>
+        <div class="admin-option"><%= link_to 'Back to admin home', admin_path %></div>
+        <div class="categories-table">
+          <table>
+            <thead>
+              <tr>
+                <% if @categories.empty? %>
+              <b>No Categories</b>
+            <%else%>
+              <th>Category Name</th><th>Description</th><th></th>
+            <%end%>
+            </tr>
+            </thead>
+            <tbody>
+              <% @categories.each do |category| %>
+                <tr>
+                  <td class="p-category"><%= link_to category.name, category %></td>
+                  <td><%= category.description %></td>
+                  <td><%= link_to 'Edit', edit_category_path(category) %></td>
+                  <%if category.sub_categories.empty? %>
+                    <td><%= link_to 'Delete', category, :confirm => 'Are you sure?', :method => :delete %></td>
+                  <%else%>
+                    <td> </td>
+                  <%end%>
+                  <td><%= link_to 'Manage SubCategory', sub_categories_path(:category_id => category.id) %></td>
+               </tr>
+              <%end%>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>

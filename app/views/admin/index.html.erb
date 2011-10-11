@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
@@ -5,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
 
-    <!--<link rel="stylesheet" href="../stylesheets/reset.css"/>-->
+    <!-- <link rel="stylesheet" href="../stylesheets/reset.css"/>-->
     <!--<link rel="stylesheet" href="css/960_24_col.css"/>
 		<link rel="stylesheet" href="css/text.css"/>-->
     <link rel="stylesheet" href="../stylesheets/style.css"/>
@@ -22,7 +23,6 @@
       document.createElement('footer');
       document.createElement('hgroup');
     </script>
-    <script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
     <!-- [endif]-->
 
     <!--[if lt IE 9]>
@@ -37,34 +37,13 @@
         <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
       </header>
 
-      <%= render :partial => 'shared/logout' %>
-
-      <section class="bodycontent">
+       <%= render :partial => 'shared/logout' %>
+      <section class="admincontent">
         <div class="admin-banner">
           Welcome Admin
         </div>
-        <div class="admin-center">
-          <div class="admin-option">
-            <table>
-              <p id="notice"><%= notice %></p>
+      
+        <div class="admin-option"><%= link_to 'Manage Categories', categories_path %></div>
+        <div class="admin-option"><%= link_to 'View Enquiries', enquiries_path %></div>
+        
 
-              <p>
-                <b>Name:</b>
-                <%= @category.name %>
-              </p>
-
-              <p>
-                <b>Description:</b>
-                <%= @category.description %>
-              </p>
-              <tr>
-                <td><%= link_to 'Edit', edit_category_path(@category) %></td>
-                <td><%= link_to 'Back', categories_path %></td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </section>
-    </div>
-  </body>
-</html>

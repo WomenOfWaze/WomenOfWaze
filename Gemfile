@@ -7,8 +7,10 @@ gem "validation_reflection"
 gem "formtastic"
 gem "dynamic_form"
 gem "jquery-rails"
-gem "json", "1.5.3"
+gem 'aws-s3'
+gem "json"
 gem "devise"
+gem "mysql"
 
 group :assets do
   gem "sass-rails", "  ~> 3.1.0"
@@ -34,17 +36,15 @@ end
 
 group :production do
   gem "pg"
-  gem "aws-s3"
 end
 
 group :test do
- gem "cucumber-rails", "1.0.2"
- gem "factory_girl_rails"
- gem "database_cleaner"
- gem "timecop"
- gem "shoulda-matchers"
-#  gem "launchy"
- gem 'email_spec'
- # gem "capybara"
- #gem "capybara-webkit"
+  gem "cucumber-rails", "1.0.2"
+  gem "factory_girl_rails"
+  gem "database_cleaner"
+  gem "timecop"
+  gem "shoulda-matchers"
+  gem "launchy"
+  gem "capybara"
+#  gem "capybara-webkit"
 end

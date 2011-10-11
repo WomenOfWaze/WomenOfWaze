@@ -35,7 +35,7 @@
       <header class="banner">
         <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
       </header>
-
+      <%= render :partial => 'shared/logout' %>
       <section class="admincontent">
         <div class="admin-banner">
           Welcome Admin
@@ -45,7 +45,8 @@
         
         <div class="admin-option">
 <%= link_to 'Add New SubCategory', new_sub_category_path(:category_id => @category.id) %>&nbsp;&nbsp;
-        <%= link_to 'Back', categories_path %>
+        <%= link_to 'Back to categories', categories_path %>
+        <div class="admin-option"><%= link_to 'Back to admin home', admin_path %></div>
         </div>
                       
         <div class="categories-table">

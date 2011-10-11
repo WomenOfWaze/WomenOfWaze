@@ -23,7 +23,7 @@
       document.createElement('hgroup');
     </script>
     <script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
-    
+
     <!-- [endif]-->
 
     <!--[if lt IE 9]>
@@ -37,7 +37,7 @@
       <header class="banner">
         <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
       </header>
-
+      <%= render :partial => 'shared/logout' %>
       <section class="admincontent">
         <div class="admin-banner">
           Welcome Admin
@@ -56,23 +56,23 @@
                   </ul>
                 </div>
               <% end %>
-            <table>
-              <tr>
-                <td><%= f.label :name %></td>
-                <td><%= f.text_field :name %></td>
-              </tr>
+              <table>
+                <tr>
+                  <td><%= f.label :name %></td>
+                  <td><%= f.text_field :name %></td>
+                </tr>
 
-              <tr>
-                <td><%= f.label :description %></td>
-                <td><%= f.text_area :description%></td>
-              </tr>
-              <% if @category %>
-              <%= hidden_field_tag :category_id, @category.id %>
-              <%end%>
-              <tr>
-                <td><%= link_to 'Back', sub_categories_path(:category_id => @sub_category.category_id ) %></td>
-                <td><%= f.submit %></td>
-              </tr>
+                <tr>
+                  <td><%= f.label :description %></td>
+                  <td><%= f.text_area :description%></td>
+                </tr>
+                <% if @category %>
+                  <%= hidden_field_tag :category_id, @category.id %>
+                <%end%>
+                <tr>
+                  <td><%= link_to 'Back', sub_categories_path(:category_id => @sub_category.category_id ) %></td>
+                  <td><%= f.submit %></td>
+                </tr>
               </table>
             <% end %>
           </div>
