@@ -237,6 +237,11 @@ td.p-category a:hover,td.p-category a:focus,td.p-category a:active{
     padding:10px;
     text-align: justify;
 }
+
+.admin-option td .error {
+    color: red;
+}
+
 .admin-option input[type="text"]{
     padding:5px;
     border:1px solid grey;
