@@ -1,54 +1,25 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
-
-   <!-- <link rel="stylesheet" href="../stylesheets/reset.css"/>-->
-    <!--<link rel="stylesheet" href="css/960_24_col.css"/>
-		<link rel="stylesheet" href="css/text.css"/>-->
-    <link rel="stylesheet" href="../stylesheets/style.css"/>
     <link rel="stylesheet" href="../stylesheets/admin_style.css"/>
-
-    <!-- to display HTML5 tags in IE8 as well -->
-    <!-- [if lt IE 8]-->
-    <script>
-      document.createElement('header');
-      document.createElement('nav');
-      document.createElement('section');
-      document.createElement('article');
-      document.createElement('aside');
-      document.createElement('footer');
-      document.createElement('hgroup');
-    </script>
-    <script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
-    
-    <!-- [endif]-->
-
-    <!--[if lt IE 9]>
-		<script src="http://html5shiv.google.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-    <title>WOW</title>
+    <%= javascript_include_tag "jquery.validate.min.js", "admin_custom.js" %>
   </head>
   <body>
     <div class="wrapper container_24">
+      <div class="logout_layout"><%= render :partial => 'shared/logout' %></div>
       <header class="banner">
         <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
       </header>
-      <%= render :partial => 'shared/logout' %>
       <section class="admincontent">
         <div class="admin-banner">
           Welcome Admin
         </div>
         <div class="admin-center">
           <div class="admin-option">
-            <%= form_for(@product) do |f| %>
+            <%= form_for(@product, :html => { :id => "submit_form" }) do |f| %>
               <% if @product.errors.any? %>
                 <div id="error_explanation" class ="field_with_errors">
                   <h2><%= pluralize(@product.errors.count, "error") %> prohibited this category from being saved:</h2>
-
                   <ul>
                     <% @product.errors.full_messages.each do |msg| %>
                       <li><%= msg %></li>
@@ -67,16 +38,16 @@
                 <td><%= f.text_area :description %></td>
               </tr>
               <tr>
-                <td><%= f.label :price %>(in INR)</td>
+                <td><%= f.label :price,"Price(in INR)" %></td>
                 <td><%= f.text_field :price %></td>
               </tr>
               <tr>
-                <td><%= f.label :size %>(for e.g, 5x4x3 inches)</td>
+                <td><%= f.label :size,"Size(for e.g, 5x4x3)" %></td>
                 <td><%= f.text_field :size %></td>
               </tr>
               <tr>
-                <td><%= f.check_box :new_arrival %></td>
-                <td><%= f.label :new_arrival %></td>
+                <td> </td>
+                <td><%= f.check_box :new_arrival %>&nbsp;<%= f.label :new_arrival %></td>
               </tr>
               <tr>
                 <% if @product.errors.any? %>

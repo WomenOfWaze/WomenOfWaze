@@ -1,64 +1,35 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome-1">
-
-    <!-- <link rel="stylesheet" href="../stylesheets/reset.css"/>-->
-    <!--<link rel="stylesheet" href="css/960_24_col.css"/>
-		<link rel="stylesheet" href="css/text.css"/>-->
-    <link rel="stylesheet" href="../stylesheets/style.css"/>
     <link rel="stylesheet" href="../stylesheets/admin_style.css"/>
-
-    <!-- to display HTML5 tags in IE8 as well -->
-    <!-- [if lt IE 8]-->
-    <script>
-      document.createElement('header');
-      document.createElement('nav');
-      document.createElement('section');
-      document.createElement('article');
-      document.createElement('aside');
-      document.createElement('footer');
-      document.createElement('hgroup');
-    </script>
-    <!-- [endif]-->
-
-    <!--[if lt IE 9]>
-		<script src="http://html5shiv.google.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-    <title>WOW</title>
   </head>
   <body>
     <div class="wrapper container_24">
+      <div class="logout_layout"><%= render :partial => 'shared/logout' %></div>
       <header class="banner">
         <span>An initiative of <a id="tcs_link" href="http://www.tcs.com/homepage/Pages/default.aspx" target="blank">TCS</a> Maitree to empower the women of waze.</span>
       </header>
-      <%= render :partial => 'shared/logout' %>
       <section class="admincontent">
         <div class="admin-banner">
           Welcome Admin
         </div>
-
-        <div class="admin-page-header">Sub categories for <%=@category.name.capitalize%> Category</div>
-        
+        <div class="admin-page-header">Sub-Categories for '<%=@category.name.capitalize%>' Category</div>
         <div class="admin-option">
-<%= link_to 'Add New SubCategory', new_sub_category_path(:category_id => @category.id) %>&nbsp;&nbsp;
-        <%= link_to 'Back to categories', categories_path %>
-        <div class="admin-option"><%= link_to 'Back to admin home', admin_path %></div>
+          <%= link_to 'Add New SubCategory', new_sub_category_path(:category_id => @category.id) %>&nbsp;&nbsp;
+          <%= link_to 'Back to Categories', categories_path %>&nbsp;&nbsp;
+          <%= link_to 'Back to Admin Home', admin_path %>
         </div>
-                      
+
         <div class="categories-table">
           <table>
             <thead>
               <tr>
                 <% if @sub_categories.empty?  %>
-                <b>No Sub-Category for <%=@category.name.capitalize%></b>
-                <%else%>
-                <th>Sub Category Name</th><th>Description</th><th></th>
-                <%end%>
-              </tr>
+              <b>No Sub-Category for '<%=@category.name.capitalize%>' Category</b>
+            <%else%>
+              <th>Sub-Category Name</th><th>Description</th><th>Edit</th><th>Delete</th><th>Manage Associated Products</th>
+            <%end%>
+            </tr>
             </thead>
             <tbody>
               <% @sub_categories.each do |sub_category| %>
@@ -66,14 +37,15 @@
                   <td class="p-category"><%= link_to sub_category.name ,sub_category %></td>
                   <td><%= sub_category.description %></td>
                   <td><%= link_to 'Edit', edit_sub_category_path(sub_category) %></td>
-                    <% if sub_category.products.empty? %>
+                  <% if sub_category.products.empty? %>
                     <td><%= link_to 'Delete', sub_category, :confirm => 'Are you sure?', :method => :delete  %></td>
+                  <%else%>
+                    <td><a class="admin-undelete" title="You cannot delete this sub category until you delete all the products associated with it.">Delete</a></td>
                   <%end%>
-                   <td><%= link_to 'Manage Product', products_path(:sub_category_id => sub_category.id) %></td>
-                  
+                  <td><%= link_to 'Manage Products', products_path(:sub_category_id => sub_category.id) %></td>
                 </tr>
               <%end%>
-            
+
             </tbody>
           </table>
         </div>

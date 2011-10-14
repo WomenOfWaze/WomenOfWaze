@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @product }
@@ -46,7 +47,8 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.xml
   def create
-    @product = Product.new(params[:product].merge(:sub_category_id => params[:sub_category_id]))
+    @sub_category = SubCategory.find_by_id(params[:sub_category_id]) if params[:sub_category_id]
+    @product = Product.new(params[:product].merge(:sub_category_id => params[:sub_category_id])) if @sub_category
     #To be moved to the model, the below line of code
     @product.code = Product.generate_code(@product.id) if @product and @product.save
     

@@ -5,16 +5,15 @@
 		Light Gray : #EBEEF7;
 	------------------------*/
 /*----------1.categories.html---------*/
+
 .field_with_errors {
   padding: 2px;
-/*  background-color: red;*/
   color: red;
   display: table;
 }
 
 .field_with_errors input{
   padding: 2px;
-/*  background-color: red;*/
   border: 1px solid red;
   color: red;
   display: table;
@@ -39,14 +38,15 @@
 .admin-page-header{
     text-align:center;
     padding:10px 0px;
-    font-weight:normal;
+    font-weight:bold;
     font-size:16px;
-    color:white;
-    background:gray;
+    color:black;
+    background:lightgray;
 }
 
 .admin-option{
     margin-top:20px;
+    padding-left:12px;
 }
 .admin-option a{
     font-size:14px;
@@ -110,17 +110,39 @@
 }
 .categories-table th{
     font-weight:bold;
-    text-align:left;
-    padding:10px 5px 10px 5px;
-
+    text-align: left;
+    color:black;
+    font-size:14px;
+    padding:10px 3px 10px 3px;
+    padding-left:12px;
+    background:#CDDAEC;
 }
 .categories-table td{
     font-weight:bold;
-    text-align:left;
+    text-align: left;
     color:gray;
     padding:10px 3px 10px 3px;
-
+    padding-left:12px;
 }
+
+.categories-table td a.admin-undelete{
+    font-size:14px;
+    font-weight:normal;
+    background:red;
+    padding:2px;
+    text-decoration:none;
+    color:white;
+}
+
+.categories-table td a.admin-undelete:hover,.categories-table td a.admin-undelete:focus,.categories-table td a.admin-undelete:active{
+    font-size:14px;
+    font-weight:normal;
+    background:red;
+    padding:2px;
+    text-decoration:none;
+    color:white;
+}
+
 .categories-table td a{
     font-size:14px;
     font-weight:normal;
@@ -213,7 +235,7 @@ td.p-category a:hover,td.p-category a:focus,td.p-category a:active{
 }
 .admin-option td{
     padding:10px;
-    text-align:right;
+    text-align: justify;
 }
 .admin-option input[type="text"]{
     padding:5px;
@@ -225,3 +247,11 @@ td.p-category a:hover,td.p-category a:focus,td.p-category a:active{
     border:1px solid grey;
 }
 
+.logout_layout a {
+    font-size:11px;
+    color: black;
+}
+
+.logout_layout a:hover,.logout_layout a:focus,.logout_layout a:active{
+    text-decoration:underline;
+}
