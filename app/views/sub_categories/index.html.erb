@@ -13,7 +13,7 @@
         <div class="admin-banner">
           Welcome Admin
         </div>
-        <div class="admin-page-header">Sub-Categories for '<%=@category.name.capitalize%>' Category</div>
+        <div class="admin-page-header">Sub-Categories for '<%=@category.name.capitalize%>' Category</div><br/><br/>
         <div class="admin-option">
           <%= link_to 'Add New SubCategory', new_sub_category_path(:category_id => @category.id) %>&nbsp;&nbsp;
           <%= link_to 'Back to Categories', categories_path %>&nbsp;&nbsp;

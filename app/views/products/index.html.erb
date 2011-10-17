@@ -15,7 +15,7 @@
         <div class="admin-banner">
           Welcome Admin
         </div>
-        <div class="admin-page-header">Products for '<%=@sub_category.name.capitalize%>' Sub-Category</div>
+        <div class="admin-page-header">Products for '<%=@sub_category.name.capitalize%>' Sub-Category</div><br/><br/>
         <div class="admin-option">
           <%= link_to 'Add New Product',new_product_path(:category_id => @category.id ,:sub_category_id => @sub_category.id)%>&nbsp;&nbsp;&nbsp;
           <%= link_to 'Back to Sub-Categories', sub_categories_path(:category_id => @category.id ,:sub_category_id => @sub_category.id) %>&nbsp;&nbsp;

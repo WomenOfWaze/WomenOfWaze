@@ -45,25 +45,29 @@
 }
 
 .admin-option{
-    margin-top:20px;
+    margin-top:2px;
     padding-left:12px;
 }
 .admin-option a{
     font-size:14px;
     font-weight:normal;
     background:#82AE4F;
-    padding:5px;
+    padding:5px 1px 6px 2px;
     text-decoration:none;
     color:white;
+    padding-left:9px;
+    padding-right:9px;
 }
 
 .admin-option a:hover,.admin-option  a:focus,.admin-option  a:active{
     font-size:14px;
     font-weight:normal;
-    background:goldenrod;
-    padding:5px;
+    background:#82AE4F;
+    padding:5px 1px 6px 2px;
     text-decoration:none;
     color:white;
+    padding-left:9px;
+    padding-right:9px;
 }
 
 
@@ -72,14 +76,17 @@
     font-size:14px;
     font-weight:normal;
     background:#82AE4F;
-    padding:0px;
+    padding:3px;
+    text-decoration:none;
     color:white;
 }
 
 .admin-option input[type="submit"]:hover,.admin-option input[type="submit"]:focus,.admin-option input[type="submit"]:active{
     font-size:14px;
     font-weight:normal;
-    background:goldenrod;
+    background:#82AE4F;
+    padding:3px;
+    text-decoration:none;
     color:white;
 }
 
@@ -129,7 +136,7 @@
     font-size:14px;
     font-weight:normal;
     background:red;
-    padding:2px;
+    padding:5px;
     text-decoration:none;
     color:white;
 }
@@ -138,7 +145,7 @@
     font-size:14px;
     font-weight:normal;
     background:red;
-    padding:2px;
+    padding:5px;
     text-decoration:none;
     color:white;
 }
@@ -147,7 +154,7 @@
     font-size:14px;
     font-weight:normal;
     background:#82AE4F;
-    padding:2px;
+    padding:5px;
     text-decoration:none;
     color:white;
 }
@@ -156,7 +163,7 @@
     font-size:14px;
     font-weight:normal;
     background:goldenrod;
-    padding:2px;
+    padding:5px;
     text-decoration:none;
     color:white;
 }
@@ -240,6 +247,7 @@ td.p-category a:hover,td.p-category a:focus,td.p-category a:active{
 
 .admin-option td .error {
     color: red;
+    padding-left:10px;
 }
 
 .admin-option input[type="text"]{

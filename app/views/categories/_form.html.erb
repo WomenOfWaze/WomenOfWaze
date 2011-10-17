@@ -20,7 +20,6 @@
               <% if @category.errors.any? %>
                 <div id="error_explanation" class ="field_with_errors">
                   <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
                   <ul>
                     <% @category.errors.full_messages.each do |msg| %>
                       <li><%= msg %></li>
@@ -30,17 +29,16 @@
               <% end %>
               <table>
                 <tr>
-                  <td> <%= f.label :name %></td>
+                  <td><%= f.label :name %></td>
                   <td><%= f.text_field :name %></td>
                 </tr>
-
                 <tr>
-                  <td>  <%= f.label :description %></td>
+                  <td><%= f.label :description %></td>
                   <td><%= f.text_area :description %></td>
                 </tr>
                 <tr>
-                  <td><%= link_to 'Back', categories_path %></td>
-                  <td><%= f.submit %></td>
+                <td><%= link_to 'Back', categories_path %></td>
+                <td><%= f.submit %></td>
                 </tr>
               </table>
             <% end %>
